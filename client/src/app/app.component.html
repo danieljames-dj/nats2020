@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <h1>Indian Nationals 2020</h1>
+    </mat-toolbar-row>
+  
+    <mat-toolbar-row>
+      <div>
+        <a class="example-icon">Home</a>
+        <a class="example-icon">Competitors</a>
+        <a class="example-icon">Register</a>
+      </div>
+      <span class="example-spacer"></span>
+      <a *ngIf="loggedIn===false" (click)="login()">Login</a>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-card *ngIf="loggedIn===true" class="example-card">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{name}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src={{avatarUrl}} alt="Photo of a Shiba Inu">
+</mat-card>
