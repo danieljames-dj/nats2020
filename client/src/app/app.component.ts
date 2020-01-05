@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class AppComponent {
     loggedIn = false;
-    pages = ["Home", "Our Team", "Registration", "Competitors"];
+    pages = ["Our Team", "Registration", "Competitors", "Schedule", "Merchandise", "Accommodation", "Travel", "FAQ"];
     selectedPage = "Home";
     name = ""
     avatarUrl = ""
