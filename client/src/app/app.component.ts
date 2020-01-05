@@ -8,6 +8,8 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class AppComponent {
     loggedIn = false;
+    pages = ["Home", "Our Team", "Registration", "Competitors"];
+    selectedPage = "Home";
     name = ""
     avatarUrl = ""
 
@@ -45,7 +47,15 @@ export class AppComponent {
         })
     }
 
-    public login() {
+    login() {
         window.location.replace("https://www.worldcubeassociation.org/oauth/authorize?client_id=cavDExYlzIT3bo_X6ZaYwJ55CJceHT4Yrmx1PVtYwxM&redirect_uri=http%3A%2F%2Flocalhost%3A4200&response_type=code&scope=public+dob+email")
+    }
+
+    openPage(page) {
+        this.selectedPage = page
+    }
+
+    logout() {
+        //
     }
 }

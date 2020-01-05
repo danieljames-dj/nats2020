@@ -5,18 +5,21 @@
   
     <mat-toolbar-row>
       <div>
-        <a class="example-icon">Home</a>
-        <a class="example-icon">Competitors</a>
-        <a class="example-icon">Register</a>
+        <span *ngFor="let page of pages" [ngClass]="{'example-icon': true, 'selected': selectedPage === page}" (click)="openPage(page)">{{page}}</span>
       </div>
       <span class="example-spacer"></span>
-      <a *ngIf="loggedIn===false" (click)="login()">Login</a>
+      <a class="example-icon" *ngIf="loggedIn===false" (click)="login()">Login</a>
+      <a class="example-icon" *ngIf="loggedIn===true" (click)="logout()">Logout</a>
     </mat-toolbar-row>
 </mat-toolbar>
-<mat-card *ngIf="loggedIn===true" class="example-card">
+<app-home *ngIf="selectedPage === 'Home'"></app-home>
+<app-team *ngIf="selectedPage === 'Our Team'"></app-team>
+<app-competitors *ngIf="selectedPage === 'Competitors'"></app-competitors>
+<app-registration *ngIf="selectedPage === 'Registration'"></app-registration>
+<!-- <mat-card *ngIf="loggedIn===true" class="example-card">
     <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>{{name}}</mat-card-title>
     </mat-card-header>
     <img mat-card-image src={{avatarUrl}} alt="Photo of a Shiba Inu">
-</mat-card>
+</mat-card> -->
