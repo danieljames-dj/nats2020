@@ -10,6 +10,12 @@ if (!process.env.PRODUCTION != 'true') {
 	app.use(cors({origin: '*'}))
 }
 
+const buildPath = path.join(__dirname, '../client/dist/client')
+app.use(express.static(buildPath));
+app.get('/*', (req, res) => {
+	res.sendFile(path.join(buildPath, 'index.html'));
+});
+
 app.get('/api/getAccessToken', (req, res) => {
 	tokenResponseJson = getAccessToken(req.query.code, res)
 })
