@@ -14,6 +14,11 @@ export class AppComponent {
     avatarUrl = ""
 
     constructor(private httpClient: HttpClient) {
+        if (localStorage.getItem('loggedIn') != undefined) {
+            localStorage.setItem('loggedIn', this.loggedIn.toString())
+        } else {
+            this.loggedIn = localStorage.getItem('loggedIn') == 'true'
+        }
         var url = new URL(window.location.href)
         var code = url.searchParams.get("code");
         if (code != undefined) {

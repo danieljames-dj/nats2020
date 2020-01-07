@@ -5,7 +5,7 @@
                 <mat-icon>menu</mat-icon>
             </button>
         </div>
-        <h1 style="font-size: 150%;">Indian Nationals 2020</h1>
+        <h1 style="font-size: 150%;" [ngClass]="{'example-icon': true}" (click)="openPage('Home')">Indian Nationals 2020</h1>
         <div fxShow="true" fxHide.lt-lg="true">
             <span *ngFor="let page of pages" [ngClass]="{'example-icon': true, 'selected': selectedPage === page}" (click)="openPage(page)">{{page}}</span>
         </div>
