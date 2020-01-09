@@ -35,7 +35,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/client",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -53,6 +52,7 @@
           },
           "configurations": {
             "production": {
+              "outputPath": "dist/client",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -80,6 +80,36 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "beta_production": {
+                "outputPath": "dist/client_beta",
+                "fileReplacements": [
+                    {
+                    "replace": "src/environments/environment.ts",
+                    "with": "src/environments/environment.beta_prod.ts"
+                    }
+                ],
+                "optimization": true,
+                "outputHashing": "all",
+                "sourceMap": false,
+                "extractCss": true,
+                "namedChunks": false,
+                "aot": true,
+                "extractLicenses": true,
+                "vendorChunk": false,
+                "buildOptimizer": true,
+                "budgets": [
+                    {
+                    "type": "initial",
+                    "maximumWarning": "2mb",
+                    "maximumError": "5mb"
+                    },
+                    {
+                    "type": "anyComponentStyle",
+                    "maximumWarning": "6kb",
+                    "maximumError": "10kb"
+                    }
+                ]
             }
           }
         },
