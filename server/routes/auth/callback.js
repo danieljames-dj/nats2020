@@ -1,3 +1,4 @@
+const {URLSearchParams} = require('url')
 const fetch = require('node-fetch');
 const md5 = require('md5');
 const {CLIENT_ID, CLIENT_SECRET, WCA_OAUTH_REDIRECT_URI} = require('../../config');
