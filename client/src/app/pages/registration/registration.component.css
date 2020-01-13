@@ -14,3 +14,6 @@
 img{
     max-height: 50px;
 }
+mat-button-toggle{
+    margin: 5px;
+}
