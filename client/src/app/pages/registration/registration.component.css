@@ -1,0 +1,16 @@
+.events{
+    text-align:center;
+    position:relative;
+    margin:20px auto auto auto;
+    width:auto;
+    padding:20px 5% 30px 5%;
+    display:table;
+    background-color:#fff;
+    border-radius:20px;
+    font-size:25px;
+    border-width:10px;
+    max-width: 470px;
+  }
+img{
+    max-height: 50px;
+}
