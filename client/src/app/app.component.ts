@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AppComponent {
     loggedIn = false;
-    pages = ["Our Team", "Registration", "Competitors", "Schedule", "Merchandise", "Accommodation", "Travel", "FAQ"];
+    pages = ["Team", "Registration", "Competitors", "Schedule", "Events", "Merchandise", "Accommodation", "Travel", "FAQs"];
     selectedPage = "Home";
     name = ""
     avatarUrl = ""

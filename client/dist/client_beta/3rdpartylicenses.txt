@@ -82,6 +82,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+@angular/forms
+MIT
+
 @angular/material
 MIT
 The MIT License
@@ -108,6 +111,8 @@ THE SOFTWARE.
 
 
 @angular/material/button
+
+@angular/material/button-toggle
 
 @angular/material/card
 

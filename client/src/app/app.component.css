@@ -8,7 +8,7 @@
 }
 
 .selected {
-    background-color: blue;
+    background-color: #e7e7e7;
 }
 
 mat-card img{
@@ -17,7 +17,7 @@ mat-card img{
 }
 
 .mat-sidenav-container{
-  background-color: lightskyblue;
+  background-color: #ffffff;
   min-height: 93vh !important;
 }
 
