@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
     MatIconModule, MatButtonModule, MatSidenavModule, MatToolbarModule
   } from '@angular/material';
-
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import {HttpClientModule} from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import { HomeComponent } from './pages/home/home.component';
@@ -32,8 +32,10 @@ import { CompetitorsComponent } from './pages/competitors/competitors.component'
     MatCardModule,
     MatSidenavModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatButtonToggleModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

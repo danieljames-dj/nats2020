@@ -1,1 +1,160 @@
-<p>registration works!</p>
+
+
+
+Choose your events
+<div class='events'>
+
+
+<!-- <mat-button-toggle #button3 id='3' (click)='addEvent($event)'>
+    3x3x3
+</mat-button-toggle> -->
+<div>
+<mat-button-toggle 
+  [checked]="event_flags['3']" 
+  (change)="event_flags['3'] = $event.source.checked"
+  (click) ="addEvent('3')"
+  
+  >
+  <img [style.opacity]="buttonOpacity('3')" src="https://i.ibb.co/WxZD8Xq/1-3x3x3.png" alt="3x3x3" border="0">
+</mat-button-toggle>
+
+<mat-button-toggle 
+  [checked]="event_flags['2']" 
+  (change)="event_flags['2'] = $event.source.checked"
+  (click) ="addEvent('2')">
+  <img [style.opacity]="buttonOpacity('2')"  src="https://i.ibb.co/M8S3fWB/2-2x2x2.png" alt="2x2x2" border="0">
+</mat-button-toggle>
+
+<mat-button-toggle 
+  [checked]="event_flags['4']" 
+  (change)="event_flags['4'] = $event.source.checked"
+  (click) ="addEvent('4')">
+  <img [style.opacity]="buttonOpacity('4')" src="https://i.ibb.co/pj1wY2Z/3-4x4x4.png" alt="4x4x4" border="0">
+</mat-button-toggle>
+
+
+    <mat-button-toggle 
+      [checked]="event_flags['5']" 
+      (change)="event_flags['5'] = $event.source.checked"
+      (click) ="addEvent('5')">
+      <img [style.opacity]="buttonOpacity('5')" src="https://i.ibb.co/P6RxKQs/4-5x5x5.png" alt="5x5x5" border="0">
+    </mat-button-toggle>
+    
+    <mat-button-toggle 
+      [checked]="event_flags['6']" 
+      (change)="event_flags['6'] = $event.source.checked"
+      (click) ="addEvent('6')">
+      <img  [style.opacity]="buttonOpacity('6')" src="https://i.ibb.co/k80pHf0/5-6x6x6.png" alt="6x6x6" border="0">
+    </mat-button-toggle>
+    
+    <mat-button-toggle 
+      [checked]="event_flags['7']" 
+      (change)="event_flags['7'] = $event.source.checked"
+      (click) ="addEvent('7')">
+      <img [style.opacity]="buttonOpacity('7')" src="https://i.ibb.co/27jmpP0/6-7x7x7.png" alt="7x7x7" border="0">
+    </mat-button-toggle>
+    
+
+
+
+
+
+
+
+
+    <mat-button-toggle 
+      [checked]="event_flags['3b']" 
+      (change)="event_flags['3b'] = $event.source.checked"
+      (click) ="addEvent('3b')">
+      <img [style.opacity]="buttonOpacity('3b')" src="https://i.ibb.co/WPtpmn6/7-3x3x3-Blindfolded.png" alt="3bld" border="0">
+    </mat-button-toggle>
+    
+    <mat-button-toggle 
+      [checked]="event_flags['fmc']" 
+      (change)="event_flags['fmc'] = $event.source.checked"
+      (click) ="addEvent('fmc')">
+      <img  [style.opacity]="buttonOpacity('fmc')" src="https://i.ibb.co/HntJjH7/8-3x3x3-Fewest-Moves.png" alt="fmc" border="0">
+    </mat-button-toggle>
+    
+    <mat-button-toggle 
+      [checked]="event_flags['oh']" 
+      (change)="event_flags['oh'] = $event.source.checked"
+      (click) ="addEvent('oh')">
+      <img [style.opacity]="buttonOpacity('oh')" src="https://i.ibb.co/jTdn0MJ/9-3x3x3-One-Handed.png" alt="oh" border="0">
+    </mat-button-toggle>
+    
+    <mat-button-toggle 
+    [checked]="event_flags['cl']" 
+    (change)="event_flags['cl'] = $event.source.checked"
+    (click) ="addEvent('cl')">
+    <img [style.opacity]="buttonOpacity('cl')" src="https://i.ibb.co/prmXRVY/11-Clock.png" alt="11-Clock" border="0">
+  </mat-button-toggle>
+  
+  <mat-button-toggle 
+    [checked]="event_flags['me']" 
+    (change)="event_flags['me'] = $event.source.checked"
+    (click) ="addEvent('me')">
+    <img [style.opacity]="buttonOpacity('me')" src="https://i.ibb.co/0fkNWmm/12-Megaminx.png" alt="12-Megaminx" border="0">
+  </mat-button-toggle>
+  
+  <mat-button-toggle 
+    [checked]="event_flags['py']" 
+    (change)="event_flags['py'] = $event.source.checked"
+    (click) ="addEvent('py')">
+    <img [style.opacity]="buttonOpacity('py')" src="https://i.ibb.co/pW5V53T/13-Pyraminx.png" alt="13-Pyraminx" border="0">
+  </mat-button-toggle>
+
+
+
+
+
+
+  
+    <mat-button-toggle 
+      [checked]="event_flags['sk']" 
+      (change)="event_flags['sk'] = $event.source.checked"
+      (click) ="addEvent('sk')">
+      <img [style.opacity]="buttonOpacity('sk')" src="https://i.ibb.co/60tqYK8/14-Skewb.png" alt="14-Skewb" border="0">
+    </mat-button-toggle>
+    
+    <mat-button-toggle 
+      [checked]="event_flags['sq']" 
+      (change)="event_flags['sq'] = $event.source.checked"
+      (click) ="addEvent('sq')">
+      <img [style.opacity]="buttonOpacity('sq')" src="https://i.ibb.co/xznhKX5/15-Square-1.png" alt="15-Square-1" border="0">
+    </mat-button-toggle>
+    
+    <mat-button-toggle 
+      [checked]="event_flags['4b']" 
+      (change)="event_flags['4b'] = $event.source.checked"
+      (click) ="addEvent('4b')">
+      <img  [style.opacity]="buttonOpacity('4b')" src="https://i.ibb.co/6JHQzXX/16-4x4x4-Blindfolded.png" alt="4bld" border="0">
+    </mat-button-toggle>
+    
+    <mat-button-toggle 
+    [checked]="event_flags['5b']" 
+    (change)="event_flags['5b'] = $event.source.checked"
+    (click) ="addEvent('5b')">
+    <img [style.opacity]="buttonOpacity('5b')" src="https://i.ibb.co/7WZsGCk/17-5x5x5-BLindfolded.png" alt="5bld" border="0">
+  </mat-button-toggle>
+  
+  <mat-button-toggle 
+    [checked]="event_flags['mb']" 
+    (change)="event_flags['mb'] = $event.source.checked"
+    (click) ="addEvent('mb')">
+    <img [style.opacity]="buttonOpacity('mb')" src="https://i.ibb.co/P5cyF5G/18-3x3x3-Multi-Blind.png" alt="mbld" border="0">
+  </mat-button-toggle>
+  
+ 
+</div>
+
+
+
+
+</div>
+
+
+
+
+<p>{{ cost }}</p>
+
