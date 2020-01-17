@@ -14,14 +14,17 @@ import { HomeComponent } from './pages/home/home.component';
 import { TeamComponent } from './pages/team/team.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { CompetitorsComponent } from './pages/competitors/competitors.component';
-
+import { FaqComponent } from './pages/faq/faq.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatListModule} from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     TeamComponent,
     RegistrationComponent,
-    CompetitorsComponent
+    CompetitorsComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,9 @@ import { CompetitorsComponent } from './pages/competitors/competitors.component'
     MatSidenavModule,
     MatIconModule,
     MatButtonModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatExpansionModule,
+    MatListModule
   ],
 
   providers: [],
