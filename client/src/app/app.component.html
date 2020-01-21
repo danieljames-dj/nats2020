@@ -25,9 +25,15 @@
         </mat-sidenav>
         <mat-sidenav-content fxFlexFill>
             <app-home *ngIf="selectedPage === 'Home'"></app-home>
-            <app-team *ngIf="selectedPage === 'Our Team'"></app-team>
+            <app-team *ngIf="selectedPage === 'Team'"></app-team>
             <app-competitors *ngIf="selectedPage === 'Competitors'"></app-competitors>
             <app-registration *ngIf="selectedPage === 'Registration'"></app-registration>
+            <app-schedule *ngIf="selectedPage === 'Schedule'"></app-schedule>
+            <app-events *ngIf="selectedPage === 'Events'"></app-events>
+            <app-merchandise *ngIf="selectedPage === 'Merchandise'"></app-merchandise>
+            <app-accommodation *ngIf="selectedPage === 'Accommodation'"></app-accommodation>
+            <app-travel *ngIf="selectedPage === 'Travel'"></app-travel>
+            <app-faqs *ngIf="selectedPage === 'FAQs'"></app-faqs>
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>
