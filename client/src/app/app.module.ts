@@ -23,7 +23,7 @@ import {MatListModule} from '@angular/material/list';
     TeamComponent,
     RegistrationComponent,
     CompetitorsComponent,
-    FaqComponent
+
   ],
   imports: [
     BrowserModule,
