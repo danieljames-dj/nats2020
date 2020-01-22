@@ -16,6 +16,13 @@ import { RegistrationComponent } from './pages/registration/registration.compone
 import { CompetitorsComponent } from './pages/competitors/competitors.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatListModule} from '@angular/material/list';
+import { ScheduleComponent } from './pages/schedule/schedule.component';
+import { EventsComponent } from './pages/events/events.component';
+import { MerchandiseComponent } from './pages/merchandise/merchandise.component';
+import { AccommodationComponent } from './pages/accommodation/accommodation.component';
+import { TravelComponent } from './pages/travel/travel.component';
+import { FaqsComponent } from './pages/faqs/faqs.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +31,12 @@ import {MatListModule} from '@angular/material/list';
     RegistrationComponent,
     CompetitorsComponent,
 
+    ScheduleComponent,
+    EventsComponent,
+    MerchandiseComponent,
+    AccommodationComponent,
+    TravelComponent,
+    FaqsComponent
   ],
   imports: [
     BrowserModule,

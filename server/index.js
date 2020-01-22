@@ -1,41 +1,39 @@
 const express = require('express')
+const session = require('express-session');
 const path = require('path')
-const fetch = require('node-fetch');
-require('dotenv').config({ path: path.join(__dirname, '.env') })
+const {PORT, SESSION_SECRET, PRODUCTION, BUILD_PATH} = require('./config');
 
 const app = express()
 
-if (!process.env.PRODUCTION != 'true') {
+app.use(session({
+    secret: SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    rolling: true,
+    cookie: {
+        httpOnly: true,
+        secure: false,
+        sameSite: 'strict',
+        maxAge: 24 * 60 * 60 * 1000
+    },
+    proxy: true
+}));
+
+if (!PRODUCTION) {
 	const cors = require('cors')
 	app.use(cors({origin: '*'}))
 }
 
-const buildPath = path.join(__dirname, '../client/dist/client')
+const mongo = require('./mongo-connector')
+mongo.connect()
+require('./api-connector').connect(app, mongo)
+
+const buildPath = path.join(__dirname, BUILD_PATH)
 app.use(express.static(buildPath));
 app.get('/*', (req, res) => {
 	res.sendFile(path.join(buildPath, 'index.html'));
 });
 
-app.get('/api/getAccessToken', (req, res) => {
-	tokenResponseJson = getAccessToken(req.query.code, res)
-})
-
-async function getAccessToken(code, res) {
-	const params = new URLSearchParams({
-		client_id: process.env.client_id,
-		client_secret: process.env.client_secret,
-		redirect_uri: "http://localhost:4200",
-		code,
-		grant_type: 'authorization_code',
-	});
-	const tokenResponse = await fetch(
-		`https://www.worldcubeassociation.org/oauth/token?${params.toString()}`,
-		{ method: 'POST', multipart: true }
-	)
-	tokenResponseJson = await tokenResponse.json()
-	res.send(tokenResponseJson)
-}
-
-app.listen(process.env.PORT || 3000, () => {
-	console.log(`App listening to port %s`, process.env.PORT || 3000)
+app.listen(PORT, () => {
+	console.log(`App listening to port %s`, PORT)
 })

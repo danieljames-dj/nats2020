@@ -3,12 +3,12 @@
 }
 
 .example-icon {
-    padding: 0 14px;
+    padding: 14px 14px;
     cursor: pointer;
 }
 
 .selected {
-    background-color: blue;
+    background-color: #e7e7e7;
 }
 
 mat-card img{
@@ -17,7 +17,7 @@ mat-card img{
 }
 
 .mat-sidenav-container{
-  background-color: lightskyblue;
+  background-color: #ffffff;
   min-height: 93vh !important;
 }
 

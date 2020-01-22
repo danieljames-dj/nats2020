@@ -1,18 +1,18 @@
 <div>
-    <mat-toolbar color="primary">
+    <mat-toolbar color="#ebdcd7">
         <div fxShow="true" fxHide.gt-md="true">
             <button mat-icon-button (click)="sidenav.toggle()">
                 <mat-icon>menu</mat-icon>
             </button>
         </div>
-        <h1 style="font-size: 150%;">Indian Nationals 2020</h1>
+        <h1 style="font-size: 18px;" [ngClass]="{'example-icon': true}" (click)="openPage('Home')">Indian Nationals 2020</h1>
         <div fxShow="true" fxHide.lt-lg="true">
-            <span *ngFor="let page of pages" [ngClass]="{'example-icon': true, 'selected': selectedPage === page}" (click)="openPage(page)">{{page}}</span>
+            <span *ngFor="let page of pages" [ngClass]="{'example-icon': true, 'selected': selectedPage === page}" (click)="openPage(page)" style="font-size: 14px;">{{page}}</span>
         </div>
         <span class="example-spacer"></span>
         <div fxShow="true" fxHide.lt-lg="true">
-            <span class="example-icon" *ngIf="loggedIn===false" (click)="login()">Login</span>
-            <span class="example-icon" *ngIf="loggedIn===true" (click)="logout()">Logout</span>
+            <span class="example-icon" *ngIf="loggedIn===false" (click)="login()" style="font-size: 14px;">Login</span>
+            <span class="example-icon" *ngIf="loggedIn===true" (click)="logout()" style="font-size: 14px;">Logout</span>
         </div>
     </mat-toolbar>
     <mat-sidenav-container fxFlexFill class="example-container">
@@ -25,9 +25,15 @@
         </mat-sidenav>
         <mat-sidenav-content fxFlexFill>
             <app-home *ngIf="selectedPage === 'Home'"></app-home>
-            <app-team *ngIf="selectedPage === 'Our Team'"></app-team>
+            <app-team *ngIf="selectedPage === 'Team'"></app-team>
             <app-competitors *ngIf="selectedPage === 'Competitors'"></app-competitors>
             <app-registration *ngIf="selectedPage === 'Registration'"></app-registration>
+            <app-schedule *ngIf="selectedPage === 'Schedule'"></app-schedule>
+            <app-events *ngIf="selectedPage === 'Events'"></app-events>
+            <app-merchandise *ngIf="selectedPage === 'Merchandise'"></app-merchandise>
+            <app-accommodation *ngIf="selectedPage === 'Accommodation'"></app-accommodation>
+            <app-travel *ngIf="selectedPage === 'Travel'"></app-travel>
+            <app-faqs *ngIf="selectedPage === 'FAQs'"></app-faqs>
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>

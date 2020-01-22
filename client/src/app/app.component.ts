@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -8,47 +9,32 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class AppComponent {
     loggedIn = false;
-    pages = ["Our Team", "Registration", "Competitors", "Schedule", "Merchandise", "Accommodation", "Travel", "FAQ"];
+    pages = ["Team", "Registration", "Competitors", "Schedule", "Events", "Merchandise", "Accommodation", "Travel", "FAQs"];
     selectedPage = "Home";
     name = ""
     avatarUrl = ""
 
     constructor(private httpClient: HttpClient) {
-        var url = new URL(window.location.href)
-        var code = url.searchParams.get("code");
-        if (code != undefined) {
-            this.getAccessToken(code)
+        if (localStorage.getItem('loggedIn') != undefined) {
+            localStorage.setItem('loggedIn', this.loggedIn.toString())
+        } else {
+            this.loggedIn = localStorage.getItem('loggedIn') === 'true'
         }
+        this.getDetails()
     }
 
-    public getAccessToken(code) {
+    public getDetails() {
         const params = new HttpParams()
-            .set('code', code);
-        var headers = new HttpHeaders({
-            'Content-Type': 'application/x-www-form-urlencoded'
-        })
-        this.httpClient.get("http://localhost:3000/api/getAccessToken", {params: params, headers: headers}).subscribe((res: {access_token}) => {
-            this.getDetails(res.access_token)
-        })
-    }
-
-    public getDetails(accessToken) {
-        const params = new HttpParams()
-        var headers = new HttpHeaders({
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': 'Bearer ' + accessToken
-        })
-        this.httpClient.get("https://www.worldcubeassociation.org/api/v0/me", {params: params, headers: headers}).subscribe((res: {me}) => {
-            if(res.me != undefined) {
-                this.name = res.me.name
-                this.avatarUrl = res.me.avatar.url
+        this.httpClient.get(environment.baseApiUrl + "/api/auth/getLoginDetails", {params: params}).subscribe((res: {isLoggedIn}) => {
+            if (res.isLoggedIn === true) {
                 this.loggedIn = true
+                localStorage.setItem('loggedIn', this.loggedIn.toString())
             }
         })
     }
 
     login() {
-        window.location.replace("https://www.worldcubeassociation.org/oauth/authorize?client_id=cavDExYlzIT3bo_X6ZaYwJ55CJceHT4Yrmx1PVtYwxM&redirect_uri=http%3A%2F%2Flocalhost%3A4200&response_type=code&scope=public+dob+email")
+        window.location.href = environment.loginUrl
     }
 
     openPage(page) {
@@ -56,6 +42,11 @@ export class AppComponent {
     }
 
     logout() {
-        //
+        const params = new HttpParams()
+        this.httpClient.post(environment.baseApiUrl + "/api/auth/logout", {params: params}).subscribe((res: {}) => {
+            this.loggedIn = false
+            localStorage.setItem('loggedIn', this.loggedIn.toString())
+            window.location.reload()
+        })
     }
 }

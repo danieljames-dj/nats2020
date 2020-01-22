@@ -1,0 +1,23 @@
+{
+	"auth":
+		[{
+			"route": "/callback",
+			"path": "./routes/auth/callback.js",
+			"method": "GET"
+        },
+        {
+			"route": "/login",
+			"path": "./routes/auth/login.js",
+			"method": "GET"
+		},
+        {
+			"route": "/getLoginDetails",
+			"path": "./routes/auth/getLoginDetails.js",
+			"method": "GET"
+		},
+        {
+			"route": "/logout",
+			"path": "./routes/auth/logout.js",
+			"method": "POST"
+		}]
+}
