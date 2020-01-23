@@ -14,6 +14,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { TeamComponent } from './pages/team/team.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { CompetitorsComponent } from './pages/competitors/competitors.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatListModule} from '@angular/material/list';
 import { ScheduleComponent } from './pages/schedule/schedule.component';
 import { EventsComponent } from './pages/events/events.component';
 import { MerchandiseComponent } from './pages/merchandise/merchandise.component';
@@ -28,6 +30,7 @@ import { FaqsComponent } from './pages/faqs/faqs.component';
     TeamComponent,
     RegistrationComponent,
     CompetitorsComponent,
+
     ScheduleComponent,
     EventsComponent,
     MerchandiseComponent,
@@ -45,7 +48,9 @@ import { FaqsComponent } from './pages/faqs/faqs.component';
     MatSidenavModule,
     MatIconModule,
     MatButtonModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatExpansionModule,
+    MatListModule
   ],
 
   providers: [],
