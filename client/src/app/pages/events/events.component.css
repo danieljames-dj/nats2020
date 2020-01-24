@@ -1,0 +1,17 @@
+.table-container {
+    height: 550px;
+    overflow: auto;
+    text-align: left;
+    min-width: 800px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  .legend{
+      text-align: left;
+      font-size: 16px;
+  }
+  .full{
+    margin:20px 5% 5% 5%;;
+  }
