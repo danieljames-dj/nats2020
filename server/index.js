@@ -2,6 +2,7 @@ const express = require('express')
 const session = require('express-session');
 const path = require('path')
 const {PORT, SESSION_SECRET, PRODUCTION, BUILD_PATH} = require('./config');
+const bodyParser = require('body-parser');
 
 const app = express()
 
@@ -18,6 +19,8 @@ app.use(session({
     },
     proxy: true
 }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}) );
 
 if (!PRODUCTION) {
 	const cors = require('cors')

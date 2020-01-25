@@ -1,4 +1,8 @@
+declare var Razorpay: any;
+
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 //import { MatButtonToggleModule } from '@angular/material';
 //import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
@@ -9,6 +13,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
 
+    loggedIn = false;
+    loading = true;
+    registered = false;
+    res;
+
+    constructor(private httpClient: HttpClient) {
+        if (localStorage.getItem('loggedIn') != undefined) {
+            this.loggedIn = localStorage.getItem('loggedIn') === 'true'
+        }
+        const params = new HttpParams()
+        this.httpClient.get(environment.baseApiUrl + "/api/payment/getPaymentStatus", {params: params}).subscribe((res: {details, regPaid}) => {
+            this.res = res;
+            if (res.details != undefined) {
+                this.loggedIn = true;
+            } else {
+                this.loggedIn = false;
+            }
+            if (res.regPaid == true) {
+                this.registered = true;
+            }
+            this.loading = false;
+        })
+    }
 
   costUpdate(){
     var c=0;
@@ -58,7 +85,6 @@ export class RegistrationComponent implements OnInit {
   }
 
   public cost=0;
-  constructor() { }
   public event_flags={"2":false, "3":false, "4":false, "5":false, "6":false, "7":false, "oh":false, "fmc":false, "3b":false, "4b":false, "5b":false, "mb":false, "sk":false, "py":false, "me":false, "cl":false, "sq":false };
   //public event_obj={"2":false, "3":false, "4":false, "5":false, "6":false, "7":false, "oh":false, "fmc":false, "3b":false, "4b":false, "5b":false, "mb":false, "sk":false, "py":false, "me":false, "cl":false, "sq":false };
 
@@ -66,8 +92,54 @@ export class RegistrationComponent implements OnInit {
 
 
   //public event_array=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-  ngOnInit() {
+    ngOnInit() {
 
-  }
+    }
+
+    makeOrder() {
+        var events = new Array();
+        for (let i in this.event_flags) {
+            if (this.event_flags[i]) {
+                events.push(i)
+            }
+        }
+        var self = this
+        const params = new HttpParams().set('events', JSON.stringify(events))
+        this.httpClient.get(environment.baseApiUrl + "/api/payment/createOrder", {params: params}).subscribe((res: {id, amount_due}) => {
+            if (res.amount_due != undefined) {
+                var options = {
+                    "key": "rzp_test_VsKNWP6XxYrXm7",
+                    "amount": res.amount_due,
+                    "currency": "INR",
+                    "name": "Indian Nationals 2020",
+                    "image": "https://example.com/your_logo", // add the logo here
+                    "order_id": res.id,
+                    "handler": function(response) {
+                        self.paymentCompleted(response, self)
+                    },
+                    "notes": {
+                        "Events": "3x3x3 Blindfolded, 3x3x3 Cube"
+                    },
+                    "theme": {
+                        "color": "#F37254"
+                    }
+                };
+                var rzp1 = new Razorpay(options);
+                rzp1.open()
+            } else {
+                alert("Something went wrong...")
+            }
+        })
+    }
+
+    paymentCompleted(response, self){
+        self.httpClient.post(environment.baseApiUrl + "/api/payment/confirmPayment", JSON.stringify(response), {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json'
+            }
+        )}).subscribe((res: {success}) => {
+            alert(res.success)
+        })
+    }
 
 }

@@ -19,5 +19,19 @@
 			"route": "/logout",
 			"path": "./routes/auth/logout.js",
 			"method": "POST"
-		}]
+        }],
+    "payment":
+        [{
+            "route": "/createOrder",
+			"path": "./routes/payment/createOrder.js",
+			"method": "GET"
+        },{
+            "route": "/confirmPayment",
+			"path": "./routes/payment/confirmPayment.js",
+			"method": "POST"
+        },{
+            "route": "/getPaymentStatus",
+			"path": "./routes/payment/getPaymentStatus.js",
+			"method": "GET"
+        }]
 }

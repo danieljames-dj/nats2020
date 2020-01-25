@@ -40,21 +40,23 @@ async function setDetails(token, req, res, db) {
         }
     )
     userResponseJson = await userResponse.json()
+    console.log(userResponseJson)
     db.registrations.find({_id: userResponseJson.me.id}).toArray(function(err, result) {
         if (!err) {
             if (result.length == 0) {
-                createNewAccount(token, req, res, db)
+                createNewAccount(token, req, res, db, userResponseJson)
             } else {
-                loginWithNewAuth(token, req, res, db)
+                loginWithNewAuth(token, req, res, db, userResponseJson)
             }
         }
     })
 }
 
-function createNewAccount(token, req, res, db) {
+function createNewAccount(token, req, res, db, userResponseJson) {
     const natsToken = generateToken()
     db.registrations.insertOne({
         _id: userResponseJson.me.id,
+        details: userResponseJson.me,
         natsToken: md5(natsToken),
         wcaToken: token
     }, function(err, result) {
@@ -67,11 +69,12 @@ function createNewAccount(token, req, res, db) {
     })
 }
 
-async function loginWithNewAuth(token, req, res, db) {
+async function loginWithNewAuth(token, req, res, db, userResponseJson) {
     const natsToken = generateToken()
     const { value: user } = await db.registrations.findOneAndUpdate(
         { _id: userResponseJson.me.id },
         {$set: {
+            details: userResponseJson.me,
             natsToken: md5(natsToken),
             wcaToken: token
         }},

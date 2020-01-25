@@ -10,5 +10,7 @@ module.exports = {
     BETA_BUILD: process.env.BETA_BUILD === "true",
     WCA_OAUTH_REDIRECT_URI: process.env.WCA_OAUTH_REDIRECT_URI || "http://localhost:3000/api/auth/callback",
     MONGO_URI: process.env.MONGO_URI || "mongodb://localhost:27017/nats2020",
-    BUILD_PATH: process.env.BETA_BUILD === "true" ? "../client/dist/client_beta" : "../client/dist/client"
+    BUILD_PATH: process.env.BETA_BUILD === "true" ? "../client/dist/client_beta" : "../client/dist/client",
+    RAZOR_KEY_SECRET: process.env.RAZOR_KEY_SECRET || "test",
+    RAZOR_KEY_ID: process.env.RAZOR_KEY_ID || "test"
 }

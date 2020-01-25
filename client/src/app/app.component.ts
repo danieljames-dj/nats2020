@@ -15,7 +15,7 @@ export class AppComponent {
     avatarUrl = ""
 
     constructor(private httpClient: HttpClient) {
-        if (localStorage.getItem('loggedIn') != undefined) {
+        if (localStorage.getItem('loggedIn') == undefined) {
             localStorage.setItem('loggedIn', this.loggedIn.toString())
         } else {
             this.loggedIn = localStorage.getItem('loggedIn') === 'true'
@@ -29,6 +29,8 @@ export class AppComponent {
             if (res.isLoggedIn === true) {
                 this.loggedIn = true
                 localStorage.setItem('loggedIn', this.loggedIn.toString())
+            } else {
+                this.loggedIn = false
             }
         })
     }
