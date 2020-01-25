@@ -1,1 +1,70 @@
-<p>events works!</p>
+<div class="full">
+
+<div class="table-container mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="event">
+        <th mat-header-cell *matHeaderCellDef> Event </th>
+        <td mat-cell *matCellDef="let element"> {{element.event}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="round">
+        <th mat-header-cell *matHeaderCellDef> Round </th>
+        <td mat-cell *matCellDef="let element"> {{element.round}} </td>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="format">
+        <th mat-header-cell *matHeaderCellDef> Format </th>
+        <td mat-cell *matCellDef="let element"> {{element.format}} </td>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="timelimit">
+        <th mat-header-cell *matHeaderCellDef> Time Limit </th>
+        <td mat-cell *matCellDef="let element"> {{element.timelimit}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="cutoff">
+        <th mat-header-cell *matHeaderCellDef> Cut-Off </th>
+        <td mat-cell *matCellDef="let element"> {{element.cutoff}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="proceed">
+        <th mat-header-cell *matHeaderCellDef> Proceed </th>
+        <td mat-cell *matCellDef="let element"> {{element.proceed}} </td>
+      </ng-container>
+
+
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+  <div class='legend'>
+      <h4>Time Limit</h4> 
+      <p>If you reach the time limit during your solve, the judge will stop you and your result will be DNF (see target="_blank"<a href="https://www.worldcubeassociation.org/regulations#A1a4" target="_blank" >Regulation A1a4 </a>). <br>
+      A cumulative time limit may be enforced (see  <a href="https://www.worldcubeassociation.org/regulations#A1a2" target="_blank"> Regulation A1a2</a> ).
+      </p>
+      
+      <h4>Cutoff</h4> 
+      <p>
+        The result to beat to proceed to the second phase of a combined round (see <a href="https://www.worldcubeassociation.org/regulations#9g" target="_blank">Regulation 9g</a>).
+      </p>
+      
+      <h4>
+        Format
+      </h4>
+      <p>
+        The format describes how to determine the ranking of competitors based on their results. The list of allowed formats per event is
+         described in <a href="https://www.worldcubeassociation.org/regulations#9b" target="_blank">Regulation 9b</a>. 
+         See <a href="https://www.worldcubeassociation.org/regulations#9f" target="_blank">Regulation 9f</a> for a description of each format.
+      </p>
+  </div>
+
+</div>

@@ -22,6 +22,7 @@ import { MerchandiseComponent } from './pages/merchandise/merchandise.component'
 import { AccommodationComponent } from './pages/accommodation/accommodation.component';
 import { TravelComponent } from './pages/travel/travel.component';
 import { FaqsComponent } from './pages/faqs/faqs.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { FaqsComponent } from './pages/faqs/faqs.component';
     MatButtonModule,
     MatButtonToggleModule,
     MatExpansionModule,
-    MatListModule
+    MatListModule,
+    MatTableModule
   ],
 
   providers: [],
