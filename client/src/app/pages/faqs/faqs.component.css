@@ -1,5 +1,5 @@
 .container{
-    margin : auto 5% auto 5%; 
+    margin : 5% 5% auto 5%; 
  }
  
  mat-expansion-panel{
@@ -7,8 +7,6 @@
      height: 100%;
  }
  
- mat-expansion-panel-header{
-     expandedHeight: auto;
- }
+
  
  

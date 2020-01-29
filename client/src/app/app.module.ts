@@ -8,6 +8,8 @@ import {
     MatIconModule, MatButtonModule, MatSidenavModule, MatToolbarModule
   } from '@angular/material';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import {MatTabsModule} from '@angular/material/tabs';
+
 import {HttpClientModule} from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import { HomeComponent } from './pages/home/home.component';
@@ -52,7 +54,8 @@ import {MatTableModule} from '@angular/material/table';
     MatButtonToggleModule,
     MatExpansionModule,
     MatListModule,
-    MatTableModule
+    MatTableModule,
+    MatTabsModule
   ],
 
   providers: [],
