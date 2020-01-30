@@ -25,6 +25,10 @@ import { AccommodationComponent } from './pages/accommodation/accommodation.comp
 import { TravelComponent } from './pages/travel/travel.component';
 import { FaqsComponent } from './pages/faqs/faqs.component';
 import {MatTableModule} from '@angular/material/table';
+import { FooterComponent } from './pages/footer/footer.component';
+import { CountdownTimerModule } from 'ngx-countdown-timer';
+import { CountDownComponent } from './pages/count-down/count-down.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,9 @@ import {MatTableModule} from '@angular/material/table';
     MerchandiseComponent,
     AccommodationComponent,
     TravelComponent,
-    FaqsComponent
+    FaqsComponent,
+    FooterComponent,
+    CountDownComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +61,9 @@ import {MatTableModule} from '@angular/material/table';
     MatExpansionModule,
     MatListModule,
     MatTableModule,
-    MatTabsModule
+    MatTabsModule,
+    CountdownTimerModule.forRoot(),
+    MatGridListModule
   ],
 
   providers: [],

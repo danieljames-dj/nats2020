@@ -1,0 +1,31 @@
+.blocks{
+    min-width : 100 px;
+    display: inline-block;
+    height: 100%;
+    margin: 5px;
+    font-size: 110%;
+    
+    }
+mat-card{
+    min-width:20px;
+    min-height:30px;
+    width: 10vw;
+    height: 20vw;
+}
+
+.count-down-tag{
+    font-size:50%;
+}
+  /* mat-grid-list{
+      width:200px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+     
+  }
+  mat-grid-tile {
+    background: red;
+    color: yellow;
+    border-radius: 10px;
+    
+  } */

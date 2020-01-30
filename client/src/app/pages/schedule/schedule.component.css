@@ -4,3 +4,11 @@
 img{
         max-height:1000px;
 }
+
+.mat-tab-label{
+    font-size: 30px !important;
+ }
+
+ ::ng-deep .mat-tab-label .mat-tab-label-content {
+    font-size: x-large;
+}
