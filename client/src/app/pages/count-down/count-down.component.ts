@@ -16,11 +16,11 @@ import { map } from 'rxjs/operators';
 export class CountDownComponent implements OnInit {
   @Input() enddate: string;
 
-  private _diff: number;
-  private _days: number;
-  private _hours: number;
-  private _minutes: number;
-  private _seconds: number;
+public _diff: number;
+public _days: number;
+public _hours: number;
+public _minutes: number;
+public _seconds: number;
 
   constructor() { }
 
