@@ -9,8 +9,8 @@
 mat-card{
     min-width:20px;
     min-height:30px;
-    width: 10vw;
-    height: 20vw;
+    width: 20%;
+    height: 20%;
 }
 
 .count-down-tag{

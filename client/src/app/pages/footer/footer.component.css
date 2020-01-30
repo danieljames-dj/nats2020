@@ -1,0 +1,25 @@
+.sponsors h3 {
+    justify-content: center;
+  }
+  .sponsors img {
+    width: 30%;
+    margin: 10px;
+  }
+  .footer-social {
+    background-color: green;
+    justify-content: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+  }
+  .footer-social i {
+    margin: 10px;
+  }
+  
+  .footer-social .icons {
+    font-size: 50px;
+  }
+  
+  .footer-social p {
+    margin: 0px;
+  }

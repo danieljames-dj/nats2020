@@ -8,15 +8,21 @@
 .home-header{
     text-align: left;
     margin: 10px 5% 5px 5%;
+    font-size: calc(30px + (40 - 14) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+
 }
 .text-content{
-    font-size: 24px;
+    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+
+    
     text-align: justify;
     margin: 10px 5% 10px 5%;
 }
 
 .sub-banner{
-    margin : 10px 5% 10px 5%;
+    margin : 15px 5% 20px 5%;
     width : 90%;
     height: 100%
 }
@@ -27,11 +33,13 @@
     background-color: tomato;
 }
 .key-header{
-    width:40%;
+    font-size: calc(30px + (40 - 14) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
 }
 .key-content{
-    width:40vw;
-    justify-content: center;
+   text-align: left;
+   font-size: calc(20px + (35 - 14) * ((100vw - 300px) / (1600 - 300)));
+   line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
 }
 
 
