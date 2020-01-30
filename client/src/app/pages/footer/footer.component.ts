@@ -1,0 +1,1 @@
+  styleUrls: ['./footer.component.css']
