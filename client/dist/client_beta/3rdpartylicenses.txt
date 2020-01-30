@@ -116,15 +116,17 @@ THE SOFTWARE.
 
 @angular/material/card
 
+@angular/material/core
+
 @angular/material/expansion
 
 @angular/material/icon
 
+@angular/material/list
+
 @angular/material/sidenav
 
 @angular/material/table
-
-@angular/material/tabs
 
 @angular/material/toolbar
 
