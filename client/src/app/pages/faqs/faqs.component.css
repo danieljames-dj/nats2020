@@ -1,12 +1,15 @@
 .container{
-    margin : 5% 5% auto 5%; 
+    margin : 5% 10px auto 10px;
+    width : 100%; 
  }
  
  mat-expansion-panel{
      text-align: left;
      height: 100%;
  }
- 
+ .main{
+ color: violet;
+ }
 
  
  
