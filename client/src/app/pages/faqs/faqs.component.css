@@ -5,4 +5,7 @@ mat-expansion-panel {
   .main-container {
     justify-content: center;
   }
-  
+  .banner{
+    margin : opx;
+    width : 100%;
+}
