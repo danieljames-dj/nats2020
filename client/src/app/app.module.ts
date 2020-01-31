@@ -29,6 +29,7 @@ import { FooterComponent } from './pages/footer/footer.component';
 import { CountdownTimerModule } from 'ngx-countdown-timer';
 import { CountDownComponent } from './pages/count-down/count-down.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatTableModule,
     MatTabsModule,
     CountdownTimerModule.forRoot(),
-    MatGridListModule
+    MatGridListModule,
+    MatCheckboxModule
   ],
 
   providers: [],

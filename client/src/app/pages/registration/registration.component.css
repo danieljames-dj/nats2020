@@ -9,7 +9,7 @@
     border-radius:20px;
     font-size:25px;
     border-width:10px;
-    max-width: 470px;
+    max-width: 600px;
   }
 img{
     max-height: 50px;
@@ -17,3 +17,28 @@ img{
 mat-button-toggle{
     margin: 5px;
 }
+
+.text-content{
+    margin:20px auto auto auto;
+   text-align: justify; 
+   font-size: calc(15px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+.check{
+    margin:10px auto 10px auto;
+    text-align: center;
+    font-size: calc(20px + (25 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+.text-note{
+    margin:20px auto auto auto;
+    text-align: justify; 
+    font-size: calc(12px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+.mat-raised-button{
+    margin: 10px auto 30px auto;
+}
+
+.banner{
+    margin : 0 0 0 0;
+    width : 100%;
+}
+ 

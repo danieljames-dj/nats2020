@@ -9,6 +9,7 @@
     width: 100%;
   }
   .legend{
+    margin-top: 15px;
       text-align: left;
       font-size: 16px;
   }
@@ -20,3 +21,8 @@
   .mat-header-cell{
     font-size: calc(18px + (25 - 14) * ((100vw - 300px) / (1600 - 300)));
   }
+
+  .banner{
+    margin : 0 0 0 0;
+    width : 100%;
+}

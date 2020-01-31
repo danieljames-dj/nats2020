@@ -8,11 +8,13 @@
   .footer-social {
     background-color: green;
     justify-content: center;
-    color: #ffffff;
+    color:black;
     text-align: center;
     padding: 15px;
   }
-  .footer-social i {
+  .footer-social a {
+    color: #ffffff;
+    
     margin: 10px;
   }
   

@@ -1,11 +1,13 @@
 <div *ngIf="loading===false">
     <div *ngIf="loggedIn===false">
+        <img class="banner" src="https://i.ibb.co/ZJ7LQSF/Reg-Page.jpg" alt="Reg-Page" border="0">
         Login to register
     </div>
     <div *ngIf="loggedIn===true">
         <div *ngIf="registered===true"></div>
         <div *ngIf="registered===false">
-            Choose your events
+            <img class="banner" src="https://i.ibb.co/ZJ7LQSF/Reg-Page.jpg" alt="Reg-Page" border="0">
+            Choose your events!
             <div class='events'>
         
         
@@ -152,7 +154,18 @@
             
             </div>
         
-        
+        <div class="text-content">
+            The organising team is planning to organise Shuttle Bus service running from Madhya Kailash
+             till the Venue and back with multiple stops. This would be on a nominal charge basis. 
+            <div class="check">
+             <mat-checkbox>Check if interested</mat-checkbox>
+            </div>
+            <div class="text-note">
+                <b>Note:</b>The transport option is only for surveyance purposes. 
+                Official confirmation of the shuttle bus service along with all details will be sent by email once decided.
+            </div>
+
+        </div>
         
         
             </div>
@@ -161,7 +174,9 @@
         
         
             <p>{{ cost }}</p>
-            <button mat-button (click)=makeOrder()>Pay</button>
+            <div >
+            <button mat-raised-button (click)=makeOrder()>Proceed to Pay</button>
+            </div>
         </div>
     </div>
 </div>
