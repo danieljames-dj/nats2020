@@ -11,7 +11,7 @@
     border-width:10px;
     max-width: 600px;
   }
-img{
+.reg-icons{
     max-height: 50px;
 }
 mat-button-toggle{
@@ -38,7 +38,8 @@ mat-button-toggle{
 }
 
 .banner{
-    margin : 0 0 0 0;
+    margin : 0;
     width : 100%;
+    height: 100%;
 }
  

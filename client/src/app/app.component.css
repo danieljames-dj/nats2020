@@ -33,3 +33,20 @@ div {
     font-size: 200%;
     text-align: center;
 }
+/* 
+@font-face{
+    font-family: bebasNu;
+    src: url(https://fonts.google.com/specimen/Bebas+Neue?selection.family=Bebas+Neue);
+  }
+
+.top-tab{
+font-family: BebasNeueRegular;
+} */
+
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+
+
+.top-tab{
+    font-family: 'Bebas Neue';
+    font-size: 20px;
+    }

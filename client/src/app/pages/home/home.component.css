@@ -31,14 +31,16 @@
     margin : 0 0 0 0;
     width : 100%;
     background-color: tomato;
+    padding: 20px;
 }
 .key-header{
-    font-size: calc(30px + (40 - 14) * ((100vw - 300px) / (1600 - 300)));
+    text-align: center;
+    font-size: calc(25px + (30 - 14) * ((100vw - 300px) / (1600 - 300)));
     line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
 }
 .key-content{
    text-align: left;
-   font-size: calc(20px + (35 - 14) * ((100vw - 300px) / (1600 - 300)));
+   font-size: calc(20px + (30 - 14) * ((100vw - 300px) / (1600 - 300)));
    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
 }
 
