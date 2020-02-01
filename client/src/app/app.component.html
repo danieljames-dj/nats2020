@@ -6,14 +6,14 @@
                 <mat-icon>menu</mat-icon>
             </button>
         </div>
-        <h1 style="font-size: 22px; color:#a1282f ; margin-right: 20px;" [ngClass]="{'example-icon': true}" (click)="openPage('Home')">Indian Nationals 2020</h1>
+        <h1 style="font-family: 'Bebas Neue'; font-size: 22px; color:#a1282f ; margin-right: 20px;" [ngClass]="{'example-icon': true}" (click)="openPage('Home')">Indian Nationals 2020</h1>
         <div fxShow="true" fxHide.lt-lg="true">
             <span class="top-tab" *ngFor="let page of pages" [ngClass]="{'example-icon': true, 'selected': selectedPage === page}" (click)="openPage(page)" >{{page}}</span>
         </div>
         <span class="example-spacer"></span>
         <div fxShow="true" fxHide.lt-lg="true">
-            <span class="example-icon" *ngIf="loggedIn===false" (click)="login()" style="font-size: 14px;">Login</span>
-            <span class="example-icon" *ngIf="loggedIn===true" (click)="logout()" style="font-size: 14px;">Logout</span>
+            <span class="example-icon log" *ngIf="loggedIn===false" (click)="login()">Login</span>
+            <span class="example-icon log" *ngIf="loggedIn===true" (click)="logout()" >Logout</span>
         </div>
     </mat-toolbar>
     <mat-sidenav-container fxFlexFill class="example-container">
