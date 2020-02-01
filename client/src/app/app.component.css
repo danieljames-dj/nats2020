@@ -1,3 +1,6 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
 .example-spacer {
     flex: 1 1 auto;
 }
@@ -43,7 +46,6 @@ div {
 font-family: BebasNeueRegular;
 } */
 
-@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
 
 
 .top-tab{
