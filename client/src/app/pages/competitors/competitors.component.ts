@@ -35,9 +35,13 @@ export class CompetitorsComponent implements OnInit {
   }
   displayedColumns=['name','citizenOf','three','two','four','five','six','seven','bld3','fmc','oh','clock','mega','pyra','skewb','sq1','bld4','bld5','mbld','total'];
   public competitorsDataSource: CompetitorRegistrationData[] = [];
+  isDataAvailable:boolean = false;
 
   constructor(private httpClient: HttpClient) {
 
+   }
+
+  ngOnInit() {
     this.httpClient.get(environment.baseApiUrl + "/api/competitors/getCompetitors").subscribe((res: {competitors}) => {
       res.competitors.forEach(element => { 
         this.competitorsDataSource.push( <CompetitorRegistrationData> {
@@ -73,12 +77,8 @@ export class CompetitorsComponent implements OnInit {
       });
 
       console.log(this.competitorsDataSource);
+      this.isDataAvailable = true;
     });
-
-   }
-
-  ngOnInit() {
-  
   }
 
  
