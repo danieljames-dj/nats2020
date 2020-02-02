@@ -37,11 +37,11 @@ export class CompetitorsComponent implements OnInit {
   competitorsDataSource: CompetitorRegistrationData[] = [];
 
   constructor(private httpClient: HttpClient) {
-    
-    this.httpClient.get(environment.baseApiUrl + "/api/payment/getCompetitors").subscribe((res: {competitors}) => {
-      
-      res.competitors.array.forEach(element => {
+
+    this.httpClient.get(environment.baseApiUrl + "/api/competitors/getCompetitors").subscribe((res: {competitors}) => {
+      res.competitors.forEach(element => { 
         this.competitorsDataSource.push( <CompetitorRegistrationData> {
+
           name: element.name,
           citizenOf: element.country,
           total: element.events.length,
@@ -69,7 +69,6 @@ export class CompetitorsComponent implements OnInit {
 
         })  
       });
-
     });
 
    }

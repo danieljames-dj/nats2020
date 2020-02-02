@@ -33,5 +33,11 @@
             "route": "/getPaymentStatus",
 			"path": "./routes/payment/getPaymentStatus.js",
 			"method": "GET"
-        }]
+		}],
+	"competitors":
+		[{
+			"route": "/getCompetitors",
+			"path": "./routes/competitors/getCompetitors.js",
+			"method": "GET"
+		}]
 }
