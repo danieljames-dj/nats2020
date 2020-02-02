@@ -33,8 +33,8 @@ export class CompetitorsComponent implements OnInit {
 
 
   }
-
-  competitorsDataSource: CompetitorRegistrationData[] = [];
+  displayedColumns=['name','citizenOf','three','two','four','five','six','seven','bld3','fmc','oh','clock','mega','pyra','skewb','sq1','bld4','bld5','mbld','total'];
+  public competitorsDataSource: CompetitorRegistrationData[] = [];
 
   constructor(private httpClient: HttpClient) {
 
@@ -66,17 +66,22 @@ export class CompetitorsComponent implements OnInit {
           bld4: (element.events.includes('4b') ? this.eventIconUrls.bld4 : ''),
           bld5: (element.events.includes('5b') ? this.eventIconUrls.bld5 : ''),
           mbld: (element.events.includes('mb') ? this.eventIconUrls.mbld : ''),
-
+          
         })  
+        
+        
       });
+
+      console.log(this.competitorsDataSource);
     });
 
    }
 
   ngOnInit() {
+  
   }
 
-  
+ 
 
 }
 

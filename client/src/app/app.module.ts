@@ -30,6 +30,7 @@ import { CountdownTimerModule } from 'ngx-countdown-timer';
 import { CountDownComponent } from './pages/count-down/count-down.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { RouterModule, Routes } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatTabsModule,
     CountdownTimerModule.forRoot(),
     MatGridListModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    RouterModule.forRoot([])
   ],
 
   providers: [],
