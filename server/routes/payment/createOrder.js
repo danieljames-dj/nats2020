@@ -1,28 +1,51 @@
 const Razorpay = require('razorpay')
+const Insta = require('instamojo-nodejs')
 const {RAZOR_KEY_SECRET, RAZOR_KEY_ID} = require('../../config');
+const {INSTAMOJO_API_KEY, INSTAMOJO_AUTH_KEY} = require('../../config');
 
 module.exports = function(req, res, db) {
     if (req.query.events) {
         events = JSON.parse(req.query.events)
-        var instance = new Razorpay({
-            key_id: RAZOR_KEY_ID,
-            key_secret: RAZOR_KEY_SECRET
-        })
-        var options = {
-            amount: (events.length * 50 + getBaseFee()) * 100,
-            currency: "INR",
-            receipt: "order_receipt",
-            payment_capture: '0'
-        };
+
+        Insta.setKeys(INSTAMOJO_API_KEY,INSTAMOJO_AUTH_KEY);
+        Insta.isSandboxMode(true); //Used to test with test.instamojo.com. Remove in production
+
+        // var instance = new Razorpay({
+        //     key_id: RAZOR_KEY_ID,
+        //     key_secret: RAZOR_KEY_SECRET
+        // })
+        // var options = {
+        //     amount: (events.length * 50 + getBaseFee()) * 100,
+        //     currency: "INR",
+        //     receipt: "order_receipt",
+        //     payment_capture: '0'
+        // };
+
+        var instaPaymentData = new Insta.PaymentData();
+        instaPaymentData.purpose = 'CompetitorRegistration_' + req.session.userId;
+        instaPaymentData.amount = (events.length * 50 + getBaseFee()) * 100;
+        instaPaymentData.currency = 'INR';
+
+
+
         if (req.session.isLoggedIn == true) {
             console.log("JHI")
-            instance.orders.create(options, function(err, order) {
-                if (err) {
-                    res.status(err.statusCode).send(err)
+
+            Insta.createPayment(instaPaymentData, function(error, response) {
+                if (error) {
+                    res.status(error.statusCode).send(error);
                 } else {
-                    createOrder(req, res, db, events, order)
+                    createOrder(req, res, db, events, response)
                 }
             });
+
+            // instance.orders.create(options, function(err, order) {
+            //     if (err) {
+            //         res.status(err.statusCode).send(err)
+            //     } else {
+            //         createOrder(req, res, db, events, order)
+            //     }
+            // });
         } else {
             res.send({
                 error: "session timed out"
