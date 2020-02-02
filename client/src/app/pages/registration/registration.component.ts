@@ -3,8 +3,8 @@ declare var Instamojo: any;
 
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import (
 //import { MatButtonToggleModule } from '@angular/material';
 //import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
@@ -20,7 +20,7 @@ export class RegistrationComponent implements OnInit {
     registered = false;
     res;
 
-    constructor(private httpClient: HttpClient) {
+    constructor(private httpClient: HttpClient, private router: Router) {
         if (localStorage.getItem('loggedIn') != undefined) {
             this.loggedIn = localStorage.getItem('loggedIn') === 'true'
         }
@@ -95,7 +95,6 @@ export class RegistrationComponent implements OnInit {
 
   //public event_array=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
     ngOnInit() {
-
     }
 
     makeOrder() {
@@ -106,7 +105,7 @@ export class RegistrationComponent implements OnInit {
             }
         }
         var self = this
-        const params = new HttpParams().set('events', JSON.stringify(events))
+        const params = new HttpParams().set('events', JSON.stringify(events)).set('redirectUrl', this.router.url);
         this.httpClient.get(environment.baseApiUrl + "/api/payment/createOrder", {params: params}).subscribe((res: {payment_request}) => {
             if (res.payment_request != undefined) {
                 // var options = {
