@@ -106,29 +106,9 @@ export class RegistrationComponent implements OnInit {
             }
         }
         var self = this
-        const params = new HttpParams().set('events', JSON.stringify(events)).set('redirectUrl', window.location.href);
+        const params = new HttpParams().set('events', JSON.stringify(events)).set('webhook', environment.baseApiUrl + "/api/payment/confirmPayment");
         this.httpClient.get(environment.baseApiUrl + "/api/payment/createOrder", {params: params}).subscribe((res: {payment_request}) => {
             if (res.payment_request != undefined) {
-                // var options = {
-                //     "key": "rzp_test_VsKNWP6XxYrXm7",
-                //     "amount": res.,
-                //     "currency": "INR",
-                //     "name": "Indian Nationals 2020",
-                //     "image": "https://example.com/your_logo", // add the logo here
-                //     "order_id": res.id,
-                //     "handler": function(response) {
-                //         self.paymentCompleted(response, self)
-                //     },
-                //     "notes": {
-                //         "Events": "3x3x3 Blindfolded, 3x3x3 Cube"
-                //     },
-                //     "theme": {
-                //         "color": "#F37254"
-                //     }
-                // };
-                // var rzp1 = new Razorpay(options);
-                // rzp1.open()
-
                 Instamojo.configure({
                     handlers: {
                       onOpen: function() {
@@ -139,7 +119,6 @@ export class RegistrationComponent implements OnInit {
                       },
                       onSuccess: function(response) {
                         console.log("Payment successful");
-                          self.paymentCompleted(response,self);
                       },
                       onFailure: function(response) {
                         console.log("Payment failed");

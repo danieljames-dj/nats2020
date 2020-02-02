@@ -22,11 +22,11 @@ module.exports = function(req, res, db) {
         // };
 
         var instaPaymentData = new Insta.PaymentData();
-        instaPaymentData.purpose = 'CompetitorRegistration_' + req.session.userId;
+        instaPaymentData.purpose = 'Nats20 Competitor Registration';
         instaPaymentData.amount = (events.length * 50 + getBaseFee());
-        instaPaymentData.setRedirectUrl(req.query.redirectUrl)
+        instaPaymentData.webhook = req.query.webhook;
         instaPaymentData.currency = 'INR';
-        console.log(req.query.redirectUrl)
+        console.log(req.query.webhook)
 
 
 

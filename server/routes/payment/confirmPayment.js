@@ -10,7 +10,7 @@ module.exports = function(req, res, db) {
 
     instamojo_payment_id = req.body.payment_id
     instamojo_payment_request_id = req.body.payment_request_id
-    instamojo_payment_status = req.body.payment_status
+    instamojo_payment_status = req.body.status
 
     if (instamojo_payment_status != 'Credit') {
         res.status(503).send({
