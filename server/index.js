@@ -31,7 +31,7 @@ const mongo = require('./mongo-connector')
 mongo.connect()
 require('./api-connector').connect(app, mongo)
 
-const buildPath = path.join(__dirname, BUILD_PATH)
+const buildPath = path.join(__dirname, "../client/dist/client")
 app.use(express.static(buildPath));
 app.get('/*', (req, res) => {
 	res.sendFile(path.join(buildPath, 'index.html'));

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   baseApiUrl: "http://localhost:3000",
-  loginUrl: "http://localhost:3000/api/auth/login"
+  loginPath: "/api/auth/login"
 };
 
 /*

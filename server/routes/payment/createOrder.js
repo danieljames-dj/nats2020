@@ -23,14 +23,14 @@ module.exports = function(req, res, db) {
 
         var instaPaymentData = new Insta.PaymentData();
         instaPaymentData.purpose = 'CompetitorRegistration_' + req.session.userId;
-        instaPaymentData.amount = (events.length * 50 + getBaseFee()) * 100;
+        instaPaymentData.amount = (events.length * 50 + getBaseFee());
         instaPaymentData.setRedirectUrl(req.query.redirectUrl)
         instaPaymentData.currency = 'INR';
+        console.log(req.query.redirectUrl)
 
 
 
         if (req.session.isLoggedIn == true) {
-            console.log("JHI")
 
             Insta.createPayment(instaPaymentData, function(error, response) {
                 if (error) {

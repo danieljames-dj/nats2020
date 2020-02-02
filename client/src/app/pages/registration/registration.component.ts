@@ -36,6 +36,7 @@ export class RegistrationComponent implements OnInit {
                 this.registered = true;
             }
             this.loading = false;
+            console.log(this.loggedIn, this.registered)
         })
     }
 
@@ -105,7 +106,7 @@ export class RegistrationComponent implements OnInit {
             }
         }
         var self = this
-        const params = new HttpParams().set('events', JSON.stringify(events)).set('redirectUrl', this.router.url);
+        const params = new HttpParams().set('events', JSON.stringify(events)).set('redirectUrl', window.location.href);
         this.httpClient.get(environment.baseApiUrl + "/api/payment/createOrder", {params: params}).subscribe((res: {payment_request}) => {
             if (res.payment_request != undefined) {
                 // var options = {
