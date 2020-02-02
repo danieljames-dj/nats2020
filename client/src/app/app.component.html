@@ -16,8 +16,8 @@
             <span class="example-icon log" *ngIf="loggedIn===true" (click)="logout()" >Logout</span>
         </div>
     </mat-toolbar>
-    <mat-sidenav-container fxFlexFill class="example-container">
-        <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-md="true" (click)="sidenav.toggle()">
+    <mat-sidenav-container fxFlexFill class="example-container" >
+        <mat-sidenav  color="primary" #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-md="true" (click)="sidenav.toggle()">
             <div fxLayout="column">
                 <span *ngFor="let page of pages" [ngClass]="{'example-icon': true, 'selected': selectedPage === page}" (click)="openPage(page)">{{page}}</span>
                 <span class="example-icon" *ngIf="loggedIn===false" (click)="login()">Login</span>

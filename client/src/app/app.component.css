@@ -57,3 +57,8 @@ font-family: BebasNeueRegular;
     font-family: 'Bebas Neue';
     font-size: 22px;
 }    
+
+button:focus {
+    outline: none;
+    border: 0;
+ }

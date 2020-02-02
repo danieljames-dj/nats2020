@@ -30,8 +30,9 @@
 .key-banner{
     margin : 0 0 0 0;
     width : 100%;
-    background-color: tomato;
+    background-color:#56101b;
     padding: 20px;
+    color:#ebdcd7;
 }
 .key-header{
     text-align: center;
