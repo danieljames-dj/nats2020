@@ -5,10 +5,12 @@ module.exports = function(req, res, db) {
         if (err) throw err;
         for (let i in result) {
             participant = result[i]
+            name = (participant.details != undefined) ? participant.details.name : ""
+            events = (participant.regStatus != undefined) ? participant.regStatus.events : []
             finalList.push({
-                name: participant.details.name,
+                name: name,
                 country: participant.country_iso2,
-                events: participant.regStatus.events
+                events: events
             })
             console.log(finalList)
         }
