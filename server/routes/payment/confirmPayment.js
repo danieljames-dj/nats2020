@@ -42,7 +42,7 @@ module.exports = function(req, res, db) {
 
 async function updateReg(req, res, db) {
     await db.registrations.findOneAndUpdate(
-        { lastPaymentId: req.session.userId },
+        { lastPaymentId: req.body.payment_id },
         {$set: {
             regPaid: true
         }},
