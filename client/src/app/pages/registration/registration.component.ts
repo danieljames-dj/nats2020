@@ -106,7 +106,7 @@ export class RegistrationComponent implements OnInit {
             }
         }
         var self = this
-        const params = new HttpParams().set('events', JSON.stringify(events)).set('webhook', environment.baseApiUrl + "/api/payment/confirmPayment");
+        const params = new HttpParams().set('events', JSON.stringify(events)).set('webhook', window.location.origin + "/api/payment/confirmPayment");
         this.httpClient.get(environment.baseApiUrl + "/api/payment/createOrder", {params: params}).subscribe((res: {payment_request}) => {
             if (res.payment_request != undefined) {
                 Instamojo.configure({
