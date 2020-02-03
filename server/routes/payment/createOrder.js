@@ -63,7 +63,8 @@ function getBaseFee() {
 
 async function createOrder(req, res, db, events, order) {
     console.log(order)
-    console.log(order["payment_request"])
+    order = JSON.parse(order)
+    console.log(order.payment_request)
     await db.registrations.findOneAndUpdate(
         { _id: req.session.userId },
         {$set: {
@@ -71,7 +72,7 @@ async function createOrder(req, res, db, events, order) {
                 events: events,
                 regOrderId: order
             },
-            lastPaymentId: order["payment_request"].id
+            lastPaymentId: order.payment_request.id
         }},
         { upsert: true, returnOriginal: false }
     )
