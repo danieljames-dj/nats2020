@@ -68,7 +68,8 @@ async function createOrder(req, res, db, events, order) {
             regStatus: {
                 events: events,
                 regOrderId: order
-            }
+            },
+            lastPaymentId: order.paymentId
         }},
         { upsert: true, returnOriginal: false }
     )
