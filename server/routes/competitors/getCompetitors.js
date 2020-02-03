@@ -14,7 +14,7 @@ module.exports = function(req, res, db) {
             })
             console.log(finalList)
         }
-        res.send(finalList)
+        res.send({competitors: finalList})
     })
 
 //    res.send({ competitors : [
