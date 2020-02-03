@@ -118,6 +118,7 @@ export class RegistrationComponent implements OnInit {
                         console.log("Payment dialog closed");
                       },
                       onSuccess: function(response) {
+                          self.registered = true
                         console.log("Payment successful");
                       },
                       onFailure: function(response) {
