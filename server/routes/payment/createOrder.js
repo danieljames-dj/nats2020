@@ -8,7 +8,7 @@ module.exports = function(req, res, db) {
         events = JSON.parse(req.query.events)
 
         Insta.setKeys(INSTAMOJO_API_KEY,INSTAMOJO_AUTH_KEY);
-        Insta.isSandboxMode(true); //Used to test with test.instamojo.com. Remove in production
+        //Insta.isSandboxMode(true); //Used to test with test.instamojo.com. Remove in production
 
         // var instance = new Razorpay({
         //     key_id: RAZOR_KEY_ID,
@@ -26,8 +26,6 @@ module.exports = function(req, res, db) {
         instaPaymentData.amount = (events.length * 50 + getBaseFee());
         instaPaymentData.webhook = req.query.webhook;
         instaPaymentData.currency = 'INR';
-        console.log(req.query.webhook)
-
 
 
         if (req.session.isLoggedIn == true) {
