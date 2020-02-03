@@ -14,9 +14,7 @@ module.exports = function(req, res, db) {
     instamojo_payment_status = req.body.status
 
     if (instamojo_payment_status != 'Credit') {
-        res.status(503).send({
-            success: false
-        })
+        updateFailedReg(req, res, db)
     } else {
         updateReg(req, res, db)
         //Match the payment ID generated at the time of payment request that is there in the DB
@@ -38,6 +36,19 @@ module.exports = function(req, res, db) {
     //         })
     //     }
     // }
+}
+
+async function updateFailedReg(req, res, db) {
+    await db.registrations.findOneAndUpdate(
+        { lastPaymentId: req.body.payment_request_id },
+        {$set: {
+            failedStatus: req.body
+        }},
+        { upsert: true, returnOriginal: false }
+    )
+    res.send({
+        success: false
+    })
 }
 
 async function updateReg(req, res, db) {
