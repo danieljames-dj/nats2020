@@ -6,6 +6,7 @@ const {INSTAMOJO_API_KEY, INSTAMOJO_AUTH_KEY} = require('../../config');
 module.exports = function(req, res, db) {
     if (req.query.events) {
         events = JSON.parse(req.query.events)
+        regCheckbox = req.query.regCheckbox || false
 
         Insta.setKeys(INSTAMOJO_API_KEY,INSTAMOJO_AUTH_KEY);
         // Insta.isSandboxMode(true); //Used to test with test.instamojo.com. Remove in production
@@ -34,7 +35,7 @@ module.exports = function(req, res, db) {
                 if (error) {
                     res.status(error.statusCode).send(error);
                 } else {
-                    createOrder(req, res, db, events, response)
+                    createOrder(req, res, db, events, regCheckbox, response)
                 }
             });
 
@@ -59,7 +60,7 @@ function getBaseFee() {
     return 350;
 }
 
-async function createOrder(req, res, db, events, order) {
+async function createOrder(req, res, db, events, regCheckbox, order) {
     console.log(order)
     order = JSON.parse(order)
     console.log(order.payment_request)
@@ -68,6 +69,7 @@ async function createOrder(req, res, db, events, order) {
         {$set: {
             regStatus: {
                 events: events,
+                regCheckbox: regCheckbox,
                 regOrderId: order
             },
             lastPaymentId: order.payment_request.id
