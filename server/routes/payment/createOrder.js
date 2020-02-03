@@ -69,7 +69,7 @@ async function createOrder(req, res, db, events, order) {
                 events: events,
                 regOrderId: order
             },
-            lastPaymentId: order.paymentId
+            lastPaymentId: order.payment_request.id
         }},
         { upsert: true, returnOriginal: false }
     )
