@@ -58,3 +58,9 @@ mat-button-toggle{
     font-family: 'Bebas Neue';
     color: #ebdcd7 ;
 }
+.completed{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 90vw;
+
+}
