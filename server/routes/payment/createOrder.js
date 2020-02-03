@@ -62,6 +62,8 @@ function getBaseFee() {
 }
 
 async function createOrder(req, res, db, events, order) {
+    console.log(order)
+    console.log(order.payment_request)
     await db.registrations.findOneAndUpdate(
         { _id: req.session.userId },
         {$set: {
