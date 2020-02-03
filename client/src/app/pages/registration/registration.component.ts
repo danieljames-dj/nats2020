@@ -1,4 +1,4 @@
-declare var Razorpay: any;
+
 declare var Instamojo: any;
 
 import { Component, OnInit } from '@angular/core';

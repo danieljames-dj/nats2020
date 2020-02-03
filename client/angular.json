@@ -55,8 +55,6 @@
               "./node_modules/jquery/dist/jquery.js",
               "./node_modules/popper.js/dist/umd/popper.js",
               "./node_modules/bootstrap/dist/js/bootstrap.js",
-              "src/app/services/razorpay.js",
-              "src/app/services/checkout.js",
               "src/app/services/instamojo_checkout.js"]
           },
           "configurations": {
