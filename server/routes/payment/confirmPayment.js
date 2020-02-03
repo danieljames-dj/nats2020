@@ -4,6 +4,7 @@ const crypto = require('crypto');
 
 module.exports = function(req, res, db) {
     console.log(req.session)
+    console.log(req.body)
     razorpay_payment_id = req.body.razorpay_payment_id
     razorpay_order_id = req.body.razorpay_order_id
     razorpay_signature = req.body.razorpay_signature
@@ -12,7 +13,7 @@ module.exports = function(req, res, db) {
     instamojo_payment_request_id = req.body.payment_request_id
     instamojo_payment_status = req.body.status
 
-    if (instamojo_payment_status != 'success') {
+    if (instamojo_payment_status != 'Credit') {
         res.status(503).send({
             success: false
         })
