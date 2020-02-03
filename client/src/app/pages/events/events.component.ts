@@ -47,13 +47,13 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {event:"5x5x5 Cube" , round:" Combined First Round" , format:'Bo2/Ao5', timelimit:'5:45.00' , cutoff:'2 attempts to get < 2:15.00' , proceed:'Top 12 advance to next round' },
   {event:null , round:"Final" , format:'Ao5', timelimit:'10:00.00' , cutoff:null , proceed:null},
 
-  {event:"6x6x6 Cube" , round:" Combined First Round" , format:'Bo2/Mo3', timelimit:'10:00.00' , cutoff:'2 attempts to get < 4:30.00' , proceed:'Top 12 advance to next round' },
+  {event:"6x6x6 Cube" , round:" Combined First Round" , format:'Bo1/Mo3', timelimit:'10:00.00' , cutoff:'2 attempts to get < 4:30.00' , proceed:'Top 12 advance to next round' },
   {event:null , round:"Final" , format:'Mo3', timelimit:'10:00.00' , cutoff:null , proceed:null},
 
   {event:"7x7x7 Cube" , round:" Combined First Round" , format:'Bo1/Mo3', timelimit:'10:00.00' , cutoff:'2 attempts to get < 6:15.00' , proceed:'Top 12 advance to next round' },
   {event:null , round:"Final" , format:'Mo3', timelimit:'10:00.00' , cutoff:null , proceed:null},
 
-  {event:"3x3x3 Blindfolded" , round:" Combined First Round" , format:'Bo3', timelimit:'15:00.00 cumulative*' , cutoff:null , proceed:'Top 12 advance to next round' },
+  {event:"3x3x3 Blindfolded" , round:" First Round" , format:'Bo3', timelimit:'15:00.00 cumulative*' , cutoff:null , proceed:'Top 12 advance to next round' },
   {event:null , round:"Final" , format:'Bo3', timelimit:'10:00.00' , cutoff:null , proceed:null},
 
   {event:'3x3x3 Fewest Moves' , round:"Final" , format:'Mo3', timelimit:'1 Hour' , cutoff:null , proceed:null},

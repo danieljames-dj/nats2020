@@ -9,3 +9,8 @@ mat-expansion-panel {
     margin : opx;
     width : 100%;
 }
+
+.main{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}

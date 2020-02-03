@@ -3,7 +3,8 @@
     display: inline-block;
     height: 100%;
     margin: 5px;
-    font-size: 100%;
+    font-family: 'Bebas Neue';
+    font-size:   calc(20px + (50 - 14) * ((100vw - 300px) / (1600 - 300)));
     
     }
 mat-card{
@@ -11,11 +12,12 @@ mat-card{
     min-height:30px;
     width: 20%;
     height: 20%;
-    background-color: blueviolet;
+    background-color: #F3EED9;
+    color:#a1282f;
 }
 
 .count-down-tag{
-    font-size:50%;
+    font-size: calc(8px + (23 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
   /* mat-grid-list{
       width:200px;
