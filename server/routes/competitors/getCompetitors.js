@@ -12,9 +12,22 @@ module.exports = function(req, res, db) {
                 country: participant.country_iso2,
                 events: events
             })
+
+            function GetSortOrder(prop) {  
+                return function(a, b) {  
+                    if (a[prop] > b[prop]) {  
+                        return 1;  
+                    } else if (a[prop] < b[prop]) {  
+                        return -1;  
+                    }  
+                    return 0;  
+                }  
+            }  
+
+            finalList.sort(GetSortOrder("name"))
             console.log(finalList)
         }
-        res.send(finalList)
+        res.send({competitors: finalList})
     })
 
 //    res.send({ competitors : [
