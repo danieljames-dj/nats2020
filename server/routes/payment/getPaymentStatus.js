@@ -2,7 +2,7 @@ module.exports = function(req, res, db) {
     result = {}
     if (req.session.isLoggedIn) {
         db.registrations.findOne({
-            _id: userResponseJson.me.id
+            _id: req.session.userId
         }).then(user => {
             res.send({
                 details: user.details,
