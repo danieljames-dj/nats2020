@@ -12,11 +12,12 @@ module.exports = function(req, res, db) {
     instamojo_payment_request_id = req.body.payment_request_id
     instamojo_payment_status = req.body.status
 
-    if (instamojo_payment_status != 'Credit') {
+    if (instamojo_payment_status != 'success') {
         res.status(503).send({
             success: false
         })
     } else {
+        updateReg(req, res, db)
         //Match the payment ID generated at the time of payment request that is there in the DB
         //to instamojo_payment_id to validate the payment
     }
