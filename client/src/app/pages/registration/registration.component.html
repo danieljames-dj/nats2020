@@ -16,6 +16,9 @@
             </mat-button-toggle> -->
             <div>
             <mat-button-toggle 
+            matTooltip="3x3x3"
+            matTooltipPosition="above"
+            matTooltipShowDelay=1000
             [checked]="event_flags['3']" 
             (change)="event_flags['3'] = $event.source.checked"
             (click) ="addEvent('3')"
@@ -24,14 +27,21 @@
             <img [style.opacity]="buttonOpacity('3')" src="https://i.ibb.co/WxZD8Xq/1-3x3x3.png" class="reg-icons">
             </mat-button-toggle>
         
-            <mat-button-toggle 
+            <mat-button-toggle
+            matTooltip="2x2x2"
+            matTooltipPosition="above"
+            matTooltipShowDelay=1000 
             [checked]="event_flags['2']" 
             (change)="event_flags['2'] = $event.source.checked"
             (click) ="addEvent('2')">
             <img [style.opacity]="buttonOpacity('2')"  src="https://i.ibb.co/M8S3fWB/2-2x2x2.png" class="reg-icons">
-            </mat-button-toggle>
+            </mat-button-toggle
+            >
         
             <mat-button-toggle 
+            matTooltip="4x4x4"
+            matTooltipPosition="above"
+            matTooltipShowDelay=1000
             [checked]="event_flags['4']" 
             (change)="event_flags['4'] = $event.source.checked"
             (click) ="addEvent('4')">
@@ -40,6 +50,9 @@
         
         
                 <mat-button-toggle 
+                matTooltip="5x5x5"
+                matTooltipPosition="above"
+                matTooltipShowDelay=1000
                 [checked]="event_flags['5']" 
                 (change)="event_flags['5'] = $event.source.checked"
                 (click) ="addEvent('5')">
@@ -47,6 +60,9 @@
                 </mat-button-toggle>
                 
                 <mat-button-toggle 
+                matTooltip="6x6x6"
+                matTooltipPosition="above"
+                matTooltipShowDelay=1000
                 [checked]="event_flags['6']" 
                 (change)="event_flags['6'] = $event.source.checked"
                 (click) ="addEvent('6')">
@@ -54,6 +70,9 @@
                 </mat-button-toggle>
                 
                 <mat-button-toggle 
+                matTooltip="7x7x7"
+                matTooltipPosition="above"
+                matTooltipShowDelay=1000
                 [checked]="event_flags['7']" 
                 (change)="event_flags['7'] = $event.source.checked"
                 (click) ="addEvent('7')">
@@ -69,6 +88,9 @@
         
         
                 <mat-button-toggle 
+                matTooltip="3x3x3 blindfolded"
+                matTooltipPosition="above"
+                matTooltipShowDelay=1000
                 [checked]="event_flags['3b']" 
                 (change)="event_flags['3b'] = $event.source.checked"
                 (click) ="addEvent('3b')">
@@ -76,6 +98,9 @@
                 </mat-button-toggle>
                 
                 <mat-button-toggle 
+                matTooltip="3x3x3 Fewest Moves"
+                matTooltipPosition="above"
+                matTooltipShowDelay=1000
                 [checked]="event_flags['fmc']" 
                 (change)="event_flags['fmc'] = $event.source.checked"
                 (click) ="addEvent('fmc')">
@@ -83,6 +108,9 @@
                 </mat-button-toggle>
                 
                 <mat-button-toggle 
+                matTooltip="3x3x3 One-handed"
+                matTooltipPosition="above"
+                matTooltipShowDelay=1000
                 [checked]="event_flags['oh']" 
                 (change)="event_flags['oh'] = $event.source.checked"
                 (click) ="addEvent('oh')">
@@ -90,6 +118,9 @@
                 </mat-button-toggle>
                 
                 <mat-button-toggle 
+                matTooltip="clock"
+                matTooltipPosition="above"
+                matTooltipShowDelay=1000
                 [checked]="event_flags['cl']" 
                 (change)="event_flags['cl'] = $event.source.checked"
                 (click) ="addEvent('cl')">
@@ -97,6 +128,9 @@
             </mat-button-toggle>
             
             <mat-button-toggle 
+            matTooltip="Megaminx"
+            matTooltipPosition="above"
+            matTooltipShowDelay=1000
                 [checked]="event_flags['me']" 
                 (change)="event_flags['me'] = $event.source.checked"
                 (click) ="addEvent('me')">
@@ -104,6 +138,9 @@
             </mat-button-toggle>
             
             <mat-button-toggle 
+            matTooltip="Pyraminx"
+            matTooltipPosition="above"
+            matTooltipShowDelay=1000
                 [checked]="event_flags['py']" 
                 (change)="event_flags['py'] = $event.source.checked"
                 (click) ="addEvent('py')">
@@ -117,6 +154,9 @@
         
             
                 <mat-button-toggle 
+                matTooltip="Skewb"
+                matTooltipPosition="above"
+                matTooltipShowDelay=1000
                 [checked]="event_flags['sk']" 
                 (change)="event_flags['sk'] = $event.source.checked"
                 (click) ="addEvent('sk')">
@@ -124,6 +164,9 @@
                 </mat-button-toggle>
                 
                 <mat-button-toggle 
+                matTooltip="Square-1"
+                matTooltipPosition="above"
+                matTooltipShowDelay=1000
                 [checked]="event_flags['sq']" 
                 (change)="event_flags['sq'] = $event.source.checked"
                 (click) ="addEvent('sq')">
@@ -131,6 +174,9 @@
                 </mat-button-toggle>
                 
                 <mat-button-toggle 
+                matTooltip="4x4x4 Blindfolded"
+                matTooltipPosition="above"
+                matTooltipShowDelay=1000
                 [checked]="event_flags['4b']" 
                 (change)="event_flags['4b'] = $event.source.checked"
                 (click) ="addEvent('4b')">
@@ -138,6 +184,9 @@
                 </mat-button-toggle>
                 
                 <mat-button-toggle 
+                matTooltip="5x5x5 Blindfolded"
+                matTooltipPosition="above"
+                matTooltipShowDelay=1000
                 [checked]="event_flags['5b']" 
                 (change)="event_flags['5b'] = $event.source.checked"
                 (click) ="addEvent('5b')">
@@ -145,6 +194,9 @@
             </mat-button-toggle>
             
             <mat-button-toggle 
+            matTooltip="3x3x3 Multi Blind"
+            matTooltipPosition="above"
+            matTooltipShowDelay=1000
                 [checked]="event_flags['mb']" 
                 (change)="event_flags['mb'] = $event.source.checked"
                 (click) ="addEvent('mb')">
