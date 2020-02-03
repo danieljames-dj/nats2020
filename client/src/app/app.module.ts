@@ -32,6 +32,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { RouterModule, Routes } from '@angular/router';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { TempRegsComponent } from './pages/temp-regs/temp-regs.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     TravelComponent,
     FaqsComponent,
     FooterComponent,
-    CountDownComponent
+    CountDownComponent,
+    TempRegsComponent
   ],
   imports: [
     BrowserModule,

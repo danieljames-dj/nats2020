@@ -7,7 +7,13 @@
         <div *ngIf="registered===true"></div>
         <div *ngIf="registered===false">
             <img class="banner" src="https://i.ibb.co/1ZHmCvZ/Registration.jpg" alt="Reg-Page" class="banner">
-            Choose your events!
+            <br>
+            <br>
+
+            <div class="sub-header">
+                Choose your events!
+            </div>
+            
             <div class='events'>
         
         
@@ -148,10 +154,7 @@
             </mat-button-toggle>
         
         
-        
-        
-        
-        
+    
             
                 <mat-button-toggle 
                 matTooltip="Skewb"
@@ -205,7 +208,9 @@
             
             
             </div>
-        
+        <div class="sub-header">
+            Help us facilitate you better...
+        </div>
         <div class="text-content">
             The organising team is planning to organise Shuttle Bus service running from Madhya Kailash
              till the Venue and back with multiple stops. This would be on a nominal charge basis. 
@@ -213,7 +218,7 @@
              <mat-checkbox>Check if interested</mat-checkbox>
             </div>
             <div class="text-note">
-                <b>Note:</b>The transport option is only for surveyance purposes. 
+                <b>Note: </b>The transport option is only for surveyance purposes. 
                 Official confirmation of the shuttle bus service along with all details will be sent by email once decided.
             </div>
 
@@ -223,11 +228,10 @@
             </div>
         
         
-        
-        
-            <p>{{ cost }}</p>
-            <div >
-            <button mat-raised-button (click)=makeOrder()>Proceed to Pay</button>
+            
+            <div>
+                <div style="font-family:'Times New Roman', Times, serif">₹ {{ cost }}</div>
+            <button class="pay-btn" mat-raised-button (click)=makeOrder() *ngIf="cost>0">Proceed to Pay</button>
             </div>
         </div>
     </div>

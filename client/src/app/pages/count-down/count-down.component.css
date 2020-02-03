@@ -3,6 +3,7 @@
     display: inline-block;
     height: 100%;
     margin: 5px;
+    margin-top: 40px;
     font-family: 'Bebas Neue';
     font-size:   calc(20px + (50 - 14) * ((100vw - 300px) / (1600 - 300)));
     
