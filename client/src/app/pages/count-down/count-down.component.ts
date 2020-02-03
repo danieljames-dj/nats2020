@@ -4,7 +4,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { interval } from 'rxjs';
 import { map } from 'rxjs/operators';
-
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-count-down',
@@ -15,7 +15,7 @@ import { map } from 'rxjs/operators';
 
 export class CountDownComponent implements OnInit {
   @Input() enddate: string;
-
+  public end = moment();
 public _diff: number;
 public _days: number;
 public _hours: number;
@@ -28,7 +28,10 @@ public _seconds: number;
 
     interval(1000).pipe(
       map((x) => {
-        this._diff = Date.parse(this.enddate) - Date.parse(new Date().toString());
+        this.end = moment(this.enddate,"YYYY-MM-DD");
+        //this._diff = Date.parse(this.enddate) - Date.parse(new Date().toString());
+        this._diff=this.end.diff(moment());
+ 
       })).subscribe((x) => {
         this._days = this.getDays(this._diff);
         this._hours = this.getHours(this._diff);
