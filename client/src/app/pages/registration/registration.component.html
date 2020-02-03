@@ -218,7 +218,8 @@
             The organising team is planning to organise Shuttle Bus service running from Madhya Kailash
              till the Venue and back with multiple stops. This would be on a nominal charge basis. 
             <div class="check">
-             <mat-checkbox>Check if interested</mat-checkbox>
+             <mat-checkbox (change)="toggle($event)" >Check if interested</mat-checkbox>
+ 
             </div>
             <div class="text-note">
                 <b>Note: </b>The transport option is only for surveyance purposes. 
