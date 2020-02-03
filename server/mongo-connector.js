@@ -5,7 +5,7 @@ module.exports.db = {}
 
 module.exports.connect = async() => {
 	const client = await MongoClient.connect(MONGO_URI, {
-		useUnifiedTopology: true
+        useUnifiedTopology: true
     });
     console.log("MongoDB Connected")
 	const db = client.db();
