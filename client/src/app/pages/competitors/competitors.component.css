@@ -30,3 +30,7 @@
 .mat-cell {
   padding: 0 8px 0 0px;
 }
+.mat-footer-cell{
+  font-size: calc(15px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+  color: black;
+}

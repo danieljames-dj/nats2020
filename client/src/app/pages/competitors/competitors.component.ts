@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { parse } from 'querystring';
 
 @Component({
   selector: 'app-competitors',
@@ -33,10 +34,12 @@ export class CompetitorsComponent implements OnInit {
 
 
   }
+  displayedFooter=[];
   displayedColumns=['name','citizenOf','three','two','four','five','six','seven','bld3','fmc','oh','clock','mega','pyra','skewb','sq1','bld4','bld5','mbld','total'];
   public competitorsDataSource: CompetitorRegistrationData[] = [];
   isDataAvailable:boolean = false;
-
+  public aggregate_data =<CompetitorRegistrationData>{};
+  
   constructor(private httpClient: HttpClient) {
 
    }
@@ -75,15 +78,49 @@ export class CompetitorsComponent implements OnInit {
         
         
       });
-
+      
       console.log(this.competitorsDataSource);
+ 
+      for(let i in this.competitorsDataSource[0]){
+        this.aggregate_data[i]="0"
+      }
+      
+      this.aggregation();
+      //this.competitorsDataSource.forEach(this.aggregate(this.competitorsDataSource));
+      console.log(this.aggregate_data);
+
+
       this.isDataAvailable = true;
     });
   }
+  aggregation()
+  {
+    
+    for(let item in this.competitorsDataSource){
 
- 
+      for(let i in this.competitorsDataSource[item]){
+        if(Number.isInteger(this.competitorsDataSource[item][i])){
+          this.aggregate_data[i]=(this.competitorsDataSource[item][i]+parseInt(this.aggregate_data[i])).toString();
+          
+        }
+        else if( this.competitorsDataSource[item][i] != null  && this.competitorsDataSource[item][i].length > 0 ){
+          this.aggregate_data[i]=(parseInt(this.aggregate_data[i]) +1 ).toString();
+        }
+        
+        
+     
+      }
+
+    }
+    
+
+
+
+  } 
+
 
 }
+
 
 export interface CompetitorRegistrationData {
   
