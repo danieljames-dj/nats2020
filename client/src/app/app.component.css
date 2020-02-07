@@ -1,40 +1,38 @@
-
-
-@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap");
 .example-spacer {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .example-icon {
-    padding: 14px 14px;
-    cursor: pointer;
+  padding: 14px 14px;
+  cursor: pointer;
 }
 
 .selected {
-    background-color: #e7e7e7;
+  background-color: #e7e7e7;
 }
 
-mat-card img{
-    width: 20%;
-    height: 20%;
+mat-card img {
+  width: 20%;
+  height: 20%;
 }
 
-.mat-sidenav-container{
+.mat-sidenav-container {
   background-color: #ffffff;
   min-height: 93vh !important;
 }
 
 div {
-    overflow: inherit;
+  overflow: inherit;
 }
 
-.mat-toolbar{
+.mat-toolbar {
   height: 7vh;
 }
 
-.mat-sidenav-content{
-    font-size: 200%;
-    text-align: center;
+.mat-sidenav-content {
+  font-size: 200%;
+  text-align: center;
 }
 /* 
 @font-face{
@@ -46,19 +44,25 @@ div {
 font-family: BebasNeueRegular;
 } */
 
+.top-tab {
+  font-family: "Bebas Neue";
+  font-size: 20px;
+}
 
-
-.top-tab{
-    font-family: 'Bebas Neue';
-    font-size: 20px;
-    }
-
-.log{
-    font-family: 'Bebas Neue';
-    font-size: 22px;
-}    
+.log {
+  font-family: "Bebas Neue";
+  font-size: 22px;
+}
 
 button:focus {
-    outline: none;
-    border: 0;
- }
+  outline: none;
+  border: 0;
+}
+
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
+  padding: 0px !important;
+}

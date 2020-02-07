@@ -1,42 +1,137 @@
+<!-- <div>
+  <mat-toolbar color="#ebdcd7">
+    <div fxShow="true" fxHide.gt-md="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <h1
+      style="font-family: 'Bebas Neue'; font-size: 27px; color:#a1282f ; margin-right: 20px;"
+      [ngClass]="{ 'example-icon': true }"
+      (click)="openPage('Home')"
+    >
+      Indian Nationals 2020
+    </h1>
+    <div fxShow="true" fxHide.lt-lg="true">
+      <span
+        class="top-tab"
+        *ngFor="let page of pages"
+        [ngClass]="{ 'example-icon': true, selected: selectedPage === page }"
+        (click)="openPage(page)"
+        >{{ page }}</span
+      >
+    </div>
+    <span class="example-spacer"></span>
+    <div fxShow="true" fxHide.lt-lg="true">
+      <span
+        class="example-icon log"
+        *ngIf="loggedIn === false"
+        (click)="login()"
+        >Login</span
+      >
+      <span
+        class="example-icon log"
+        *ngIf="loggedIn === true"
+        (click)="logout()"
+        >Logout</span
+      >
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill class="example-container">
+    <mat-sidenav
+      color="primary"
+      #sidenav
+      fxLayout="column"
+      mode="over"
+      opened="false"
+      fxHide.gt-md="true"
+      (click)="sidenav.toggle()"
+    >
+      <div fxLayout="column">
+        <span
+          *ngFor="let page of pages"
+          [ngClass]="{ 'example-icon': true, selected: selectedPage === page }"
+          (click)="openPage(page)"
+          >{{ page }}</span
+        >
+        <span class="example-icon" *ngIf="loggedIn === false" (click)="login()"
+          >Login</span
+        >
+        <span class="example-icon" *ngIf="loggedIn === true" (click)="logout()"
+          >Logout</span
+        >
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <app-home *ngIf="selectedPage === 'Home'"></app-home>
+      <app-team *ngIf="selectedPage === 'Team'"></app-team>
+      <app-competitors *ngIf="selectedPage === 'Competitors'"></app-competitors>
+      <app-temp-regs *ngIf="selectedPage === 'Registration'"></app-temp-regs>
+      <app-registration
+        *ngIf="selectedPage === 'Registration'"
+      ></app-registration>
+      <app-schedule *ngIf="selectedPage === 'Schedule'"></app-schedule>
+      <app-events *ngIf="selectedPage === 'Events'"></app-events>
+      <app-merchandise *ngIf="selectedPage === 'Merchandise'"></app-merchandise>
+      <app-accommodation
+        *ngIf="selectedPage === 'Accommodation'"
+      ></app-accommodation>
+      <app-travel *ngIf="selectedPage === 'Travel'"></app-travel>
+      <app-faqs *ngIf="selectedPage === 'FAQs'"></app-faqs>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <app-footer></app-footer>
+</div> -->
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-md bg-light navbar-light">
+    <a class="navbar-brand" href="#">Indian Nationals 2020</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#collapsibleNavbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="home">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="team">TEAM</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="registration">REGISTRATION</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="competitors">COMPETITORS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="schedule">SCHEDULE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="events">EVENTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="merchandise">MERCHANDISE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="accommodation">ACCOMMODATION</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="travel">TRAVEL</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="faq">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="login()">Login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-<div>
-    <mat-toolbar color="#ebdcd7">
-        <div fxShow="true" fxHide.gt-md="true">
-            <button mat-icon-button (click)="sidenav.toggle()">
-                <mat-icon>menu</mat-icon>
-            </button>
-        </div>
-        <h1 style="font-family: 'Bebas Neue'; font-size: 27px; color:#a1282f ; margin-right: 20px;" [ngClass]="{'example-icon': true}" (click)="openPage('Home')">Indian Nationals 2020</h1>
-        <div fxShow="true" fxHide.lt-lg="true">
-            <span class="top-tab" *ngFor="let page of pages" [ngClass]="{'example-icon': true, 'selected': selectedPage === page}" (click)="openPage(page)" >{{page}}</span>
-        </div>
-        <span class="example-spacer"></span>
-        <div fxShow="true" fxHide.lt-lg="true">
-            <span class="example-icon log" *ngIf="loggedIn===false" (click)="login()">Login</span>
-            <span class="example-icon log" *ngIf="loggedIn===true" (click)="logout()" >Logout</span>
-        </div>
-    </mat-toolbar>
-    <mat-sidenav-container fxFlexFill class="example-container" >
-        <mat-sidenav  color="primary" #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-md="true" (click)="sidenav.toggle()">
-            <div fxLayout="column">
-                <span *ngFor="let page of pages" [ngClass]="{'example-icon': true, 'selected': selectedPage === page}" (click)="openPage(page)">{{page}}</span>
-                <span class="example-icon" *ngIf="loggedIn===false" (click)="login()">Login</span>
-                <span class="example-icon" *ngIf="loggedIn===true" (click)="logout()">Logout</span>
-            </div>
-        </mat-sidenav>
-        <mat-sidenav-content fxFlexFill>
-            <app-home *ngIf="selectedPage === 'Home'"></app-home>
-            <app-team *ngIf="selectedPage === 'Team'"></app-team>
-            <app-competitors *ngIf="selectedPage === 'Competitors'"></app-competitors>
-            <!-- <app-temp-regs *ngIf="selectedPage === 'Registration'"></app-temp-regs> -->
-            <app-registration *ngIf="selectedPage === 'Registration'"></app-registration>
-            <app-schedule *ngIf="selectedPage === 'Schedule'"></app-schedule>
-            <app-events *ngIf="selectedPage === 'Events'"></app-events>
-            <app-merchandise *ngIf="selectedPage === 'Merchandise'"></app-merchandise>
-            <app-accommodation *ngIf="selectedPage === 'Accommodation'"></app-accommodation>
-            <app-travel *ngIf="selectedPage === 'Travel'"></app-travel>
-            <app-faqs *ngIf="selectedPage === 'FAQs'"></app-faqs>
-        </mat-sidenav-content>
-    </mat-sidenav-container>
-    <app-footer></app-footer>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
 </div>
