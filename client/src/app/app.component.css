@@ -3,13 +3,39 @@
   flex: 1 1 auto;
 }
 
-.example-icon {
-  padding: 14px 14px;
-  cursor: pointer;
+.heading {
+    padding: 7px 14px;
+    cursor: pointer;
+    font-family: 'Bebas Neue';
+    font-size: 27px;
+    color:#a1282f;
+    margin-right: 20px;
+}
+
+.top-tab {
+    font-family: "Bebas Neue";
+    font-size: 20px;
+    padding: 7px 14px;
+    cursor: pointer;
+}
+
+.top-tab-right {
+    font-family: "Bebas Neue";
+    font-size: 22px;
+    padding: 7px 14px;
+    cursor: pointer;
+}
+
+.top-tab:focus {
+    outline: none;
 }
 
 .selected {
-  background-color: #e7e7e7;
+    background-color: #e7e7e7;
+}
+
+div {
+    overflow: inherit;
 }
 
 mat-card img {
@@ -22,10 +48,6 @@ mat-card img {
   min-height: 93vh !important;
 }
 
-div {
-  overflow: inherit;
-}
-
 .mat-toolbar {
   height: 7vh;
 }
@@ -33,25 +55,6 @@ div {
 .mat-sidenav-content {
   font-size: 200%;
   text-align: center;
-}
-/* 
-@font-face{
-    font-family: bebasNu;
-    src: url(https://fonts.google.com/specimen/Bebas+Neue?selection.family=Bebas+Neue);
-  }
-
-.top-tab{
-font-family: BebasNeueRegular;
-} */
-
-.top-tab {
-  font-family: "Bebas Neue";
-  font-size: 20px;
-}
-
-.log {
-  font-family: "Bebas Neue";
-  font-size: 22px;
 }
 
 button:focus {
