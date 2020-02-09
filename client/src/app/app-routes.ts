@@ -17,7 +17,7 @@ export const AppRoutes = [
     },{
         path: "team",
         component: TeamComponent,
-        title: "TEAM"
+        title: "THE TEAM"
     },{
         path: "registration",
         component: RegistrationComponent,

@@ -20,6 +20,7 @@
 
   .mat-header-cell{
     font-size: calc(18px + (25 - 14) * ((100vw - 300px) / (1600 - 300)));
+    padding: 0 8px 0 0px;
     color: black;
   }
 
