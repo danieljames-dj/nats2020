@@ -48,7 +48,7 @@ export class AppComponent {
     }
 
     login() {
-        window.location.href = window.location.origin + environment.loginPath + "?redirect=" + window.location.href + "&origin=" + window.location.origin
+        window.location.href = window.location.origin + environment.loginPath + "?redirect=" + window.location.origin + "&origin=" + window.location.origin
     }
 
     openPage(page) {
