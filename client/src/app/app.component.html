@@ -5,7 +5,7 @@
         <mat-icon>menu</mat-icon>
       </button>
     </div>
-    <h1 class="heading" (click)="open(homeRoute)">Indian Nationals 2020</h1>
+    <h1 fxShow="true" fxHide.lt-lg="true" class="heading" (click)="open(homeRoute)">Indian Nationals 2020</h1>
     <div fxShow="true" fxHide.lt-lg="true">
       <span
         *ngFor="let page of appRoutes"
@@ -54,6 +54,7 @@
     </mat-sidenav>
     <mat-sidenav-content fxFlexFill>
         <div style="height: 88vh;">
+            <h1 fxShow="true" fxHide.gt-md="true" class="heading" (click)="open(homeRoute)">Indian Nationals 2020</h1>
             <router-outlet></router-outlet>
             <app-footer></app-footer>
         </div>
