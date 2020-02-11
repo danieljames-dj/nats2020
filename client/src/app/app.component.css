@@ -4,6 +4,7 @@
 }
 
 .heading {
+    padding: 7px 32px 7px 14px;
     cursor: pointer;
     font-family: 'Bebas Neue';
     font-size: 27px;
