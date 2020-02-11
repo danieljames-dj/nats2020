@@ -4,12 +4,16 @@
 }
 
 .heading {
-    padding: 7px 14px;
     cursor: pointer;
     font-family: 'Bebas Neue';
     font-size: 27px;
     color:#a1282f;
-    margin-right: 20px;
+}
+
+.heading-sidenav {
+    width: 100%;
+    margin: auto;
+    text-align: center;
 }
 
 .top-tab {
@@ -54,7 +58,7 @@ mat-card img {
 
 .mat-sidenav-content {
   font-size: 200%;
-  text-align: center;
+  /* text-align: center; */
 }
 
 button:focus {

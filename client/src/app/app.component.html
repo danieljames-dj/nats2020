@@ -1,12 +1,7 @@
 <div>
-  <mat-toolbar color="#ebdcd7">
-    <div fxShow="true" fxHide.gt-md="true">
-      <button mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
-    </div>
-    <h1 fxShow="true" fxHide.lt-lg="true" class="heading" (click)="open(homeRoute)">Indian Nationals 2020</h1>
-    <div fxShow="true" fxHide.lt-lg="true">
+  <mat-toolbar fxShow="true" fxHide.lt-lg="true" color="#ebdcd7">
+    <h1 class="heading" (click)="open(homeRoute)">Indian Nationals 2020</h1>
+    <div>
       <span
         *ngFor="let page of appRoutes"
         [ngClass]="{ 'top-tab': true, selected: isCurrentRouter(page) }"
@@ -14,7 +9,7 @@
           {{ page.title }}</span>
     </div>
     <span class="example-spacer"></span>
-    <div fxShow="true" fxHide.lt-lg="true">
+    <div>
       <span
         class="top-tab-right"
         *ngIf="loggedIn === false"
@@ -53,11 +48,22 @@
       </div>
     </mat-sidenav>
     <mat-sidenav-content fxFlexFill>
-        <div style="height: 88vh;">
-            <h1 fxShow="true" fxHide.gt-md="true" class="heading" (click)="open(homeRoute)">Indian Nationals 2020</h1>
-            <router-outlet></router-outlet>
-            <app-footer></app-footer>
-        </div>
+      <table fxShow="true" fxHide.gt-md="true" style="width:100%; vertical-align: middle;">
+        <tr>
+          <th style="display: flex;">
+            <button mat-icon-button (click)="sidenav.toggle()">
+              <mat-icon>menu</mat-icon>
+            </button>
+          </th>
+          <th style="width: 100%;">
+            <h1 class="heading heading-sidenav" (click)="open(homeRoute)">Indian Nationals 2020</h1>
+          </th>
+        </tr>
+      </table>
+      <div style="height: 88vh;">
+        <router-outlet></router-outlet>
+        <app-footer></app-footer>
+      </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
