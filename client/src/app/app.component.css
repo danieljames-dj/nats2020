@@ -58,7 +58,7 @@ mat-card img {
 
 .mat-sidenav-content {
   font-size: 200%;
-  /* text-align: center; */
+  text-align: center;
 }
 
 button:focus {
