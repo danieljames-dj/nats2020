@@ -1,36 +1,49 @@
-.banner{
-    margin : 0 0 0 0;
-    width : 100%;
+.banner {
+  margin: 0 0 0 0;
+  width: 100%;
 }
 
 .mat-stepper-vertical {
-    margin-top: 8px;
-    
-  }
-  
-  .mat-form-field {
-    margin-top: 16px;
-    font-size: 20px;
-    width: 70%;
-  }
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+  font-size: 20px;
+  width: 70%;
+}
 /* 
   .mat-form-field{
      
   } */
 
- /* ::ng-deep .mat-select-panel mat-option.mat-option {
+/* ::ng-deep .mat-select-panel mat-option.mat-option {
     height: unset;
   }
 ::ng-deep .mat-option-text{
       font-size: 100%;
       
   } */
-  
-  .text-content{
-    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
-    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
 
-    
-    text-align: justify;
-    margin: 40px 5% 10px 5%;
+.text-content {
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300)));
+
+  text-align: justify;
+  margin: 40px 5% 10px 5%;
+}
+@media only screen and (min-width: 992px) {
+  .space {
+    margin-left: 10% !important;
+    margin-right: 10% !important;
+  }
+}
+
+.space {
+  margin-top: 5% !important;
+  margin-bottom: 5% !important;
+}
+
+.fa-bed {
+  font-size: 100px;
 }
