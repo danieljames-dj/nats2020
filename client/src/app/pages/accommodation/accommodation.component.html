@@ -41,7 +41,7 @@
 
      <mat-form-field>
         <mat-label>check-in</mat-label >
-        <mat-select [(value)]="dormin" (openedChange)="payshare($event)">
+        <mat-select [(value)]="dormin" (openedChange)="payshare()">
 
           <mat-option value=1>22rd Feb</mat-option>
           <mat-option value=2>23rd Feb</mat-option>
@@ -53,7 +53,7 @@
 
     <mat-form-field>
         <mat-label>check-out</mat-label >
-        <mat-select [(value)]="dormout" (openedChange)="payshare($event)">
+        <mat-select [(value)]="dormout" (openedChange)="payshare()">
 
             <mat-option value=1>22rd Feb</mat-option>
             <mat-option value=2>23rd Feb</mat-option>
@@ -91,7 +91,7 @@
         
         <mat-form-field>
             <mat-label>Select an option</mat-label >
-            <mat-select [(value)]="accomodationChoice" (openedChange)="payshare($event)">
+            <mat-select [(value)]="accomodationChoice" (openedChange)="payshare()">
               <mat-option value="t1">23rd to 26th Feb</mat-option>
               <mat-option value="t2">23rd to 27th Feb</mat-option>
               <mat-option value="t3">22rd to 26th Feb</mat-option>
@@ -124,7 +124,7 @@
 <div  *ngIf="selected==='entire'" >
     <mat-form-field>
         <mat-label>Select an option</mat-label >
-        <mat-select [(value)]="fulltype" (openedChange)="payshare($event)">
+        <mat-select [(value)]="fulltype" (openedChange)="payshare()">
             <mat-option value=2>Double Occupancy</mat-option>
             <mat-option value=3>Triple Occupancy</mat-option>
         </mat-select>
@@ -155,7 +155,7 @@
     <div style="font-family:'Times New Roman', Times, serif">
         ₹ {{ amount }}
     </div>
-    <button class="pay-btn" mat-raised-button (click)=makeOrder() *ngIf="amount>0">Proceed to Pay</button>
+    <button class="pay-btn" mat-raised-button *ngIf="amount>0">Proceed to Pay</button>
 </div>
 
 
