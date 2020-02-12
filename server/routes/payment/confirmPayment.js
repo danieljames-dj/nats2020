@@ -1,25 +1,34 @@
-const Razorpay = require('razorpay')
-const {RAZOR_KEY_SECRET, RAZOR_KEY_ID} = require('../../config');
-const crypto = require('crypto');
+const Insta = require('instamojo-nodejs');
+const {INSTAMOJO_API_KEY, INSTAMOJO_AUTH_KEY} = require('../../config');
 
 module.exports = function(req, res, db) {
-    console.log(req.session)
-    console.log(req.body)
-    razorpay_payment_id = req.body.razorpay_payment_id
-    razorpay_order_id = req.body.razorpay_order_id
-    razorpay_signature = req.body.razorpay_signature
 
     instamojo_payment_id = req.body.payment_id
     instamojo_payment_request_id = req.body.payment_request_id
     instamojo_payment_status = req.body.status
 
-    if (instamojo_payment_status != 'Credit') {
-        updateFailedReg(req, res, db)
-    } else {
-        updateReg(req, res, db)
-        //Match the payment ID generated at the time of payment request that is there in the DB
-        //to instamojo_payment_id to validate the payment
-    }
+    Insta.setKeys(INSTAMOJO_API_KEY, INSTAMOJO_AUTH_KEY);
+    // Insta.isSandboxMode(true);
+
+    Insta.getPaymentDetails(instamojo_payment_request_id, instamojo_payment_id, function(error, response) {
+        if (error) {
+          updateFailedReg(req,res,db);
+        } else {
+            if (response.success == true && response.payment_request.payment.failure == null) {
+                updateReg(req,res,db);
+            } else {
+                updateFailedReg(req,res,db); 
+            }
+        }
+      });
+
+    // if (instamojo_payment_status != 'Credit') {
+    //     updateFailedReg(req, res, db)
+    // } else {
+    //     updateReg(req, res, db)
+    //     //Match the payment ID generated at the time of payment request that is there in the DB
+    //     //to instamojo_payment_id to validate the payment
+    // }
 
 
     // if (razorpay_payment_id == undefined || razorpay_order_id == undefined || razorpay_signature == undefined) {
