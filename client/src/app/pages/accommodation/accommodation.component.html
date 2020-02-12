@@ -5,7 +5,19 @@
     <i class="em em-wink" aria-role="presentation" aria-label="BIRD"></i>
 </div> -->
 
+<div class="text-content">
 
+<p>Dear Participant,
+    <br> The Travel & Accomodation brings to you this year a comfortable yet affordable stay through our travel partner, Raju’s Residency Park Hotel. Located just 1.5 Km Away from the venue, Raju’s residency offers a room featuring modern architecture and a comfortable bed with an attached bathroom and air-conditioning. 
+    What’s special this year is that if you are a competitor travelling alone, instead of paying for an entire room, you can still enjoy a comfortable stay at the hotel on a sharing basis and the accommodation team will put you together will fellow competitors who are looking for a sharer as well.
+</p>
+    <br>
+
+  <p>  On the other hand, if you are looking for an accommodation that is soft on your pocket but lighter on the amenities as well, we also offer a no-frills stay at the dormitories on campus itself. The dormitories are on a sharing basis with a common bathroom and toilet. Only a mattress and a pillow will be provided. 
+    Kindly fill up the following details to enjoy a comfortable stay during Indian Nationals 2020
+</p>
+
+</div>
 
 <div class="form-container">
 
@@ -43,11 +55,11 @@
         <mat-label>check-in</mat-label >
         <mat-select [(value)]="dormin" (openedChange)="payshare()">
 
-          <mat-option value=1>22rd Feb</mat-option>
-          <mat-option value=2>23rd Feb</mat-option>
-          <mat-option value=3>24th Feb</mat-option>
-          <mat-option value=4>25th Feb</mat-option>
-          <mat-option value=5>26th Feb</mat-option>
+          <mat-option value=1>22rd April</mat-option>
+          <mat-option value=2>23rd April</mat-option>
+          <mat-option value=3>24th April</mat-option>
+          <mat-option value=4>25th April</mat-option>
+          <mat-option value=5>26th April</mat-option>
         </mat-select>
     </mat-form-field>
 
@@ -55,11 +67,11 @@
         <mat-label>check-out</mat-label >
         <mat-select [(value)]="dormout" (openedChange)="payshare()">
 
-            <mat-option value=1>22rd Feb</mat-option>
-            <mat-option value=2>23rd Feb</mat-option>
-            <mat-option value=3>24th Feb</mat-option>
-            <mat-option value=4>25th Feb</mat-option>
-            <mat-option value=5>26th Feb</mat-option>
+            <mat-option value=1>22rd April</mat-option>
+            <mat-option value=2>23rd April</mat-option>
+            <mat-option value=3>24th April</mat-option>
+            <mat-option value=4>25th April</mat-option>
+            <mat-option value=5>26th April</mat-option>
         </mat-select>
     </mat-form-field>
 
@@ -74,7 +86,7 @@
 
     <mat-form-field>
     <mat-label>Select an option</mat-label>
-    <mat-select [(value)]="selected">
+    <mat-select [(value)]="selected"  (openedChange)="payshare()">
       <mat-option value="shared3">Triple Sharing</mat-option>
       <mat-option value="shared2">Double Sharing</mat-option>
       <mat-option value="entire">Entire Room</mat-option>
@@ -89,15 +101,36 @@
 
     <form>
         
-        <mat-form-field>
+        <!-- <mat-form-field>
             <mat-label>Select an option</mat-label >
             <mat-select [(value)]="accomodationChoice" (openedChange)="payshare()">
-              <mat-option value="t1">23rd to 26th Feb</mat-option>
-              <mat-option value="t2">23rd to 27th Feb</mat-option>
-              <mat-option value="t3">22rd to 26th Feb</mat-option>
-              <mat-option value="t4">22rd to 27th Feb</mat-option>
+              <mat-option value="t1">23rd to 26th April</mat-option>
+              <mat-option value="t2">23rd to 27th April</mat-option>
+              <mat-option value="t3">22rd to 26th April</mat-option>
+              <mat-option value="t4">22rd to 27th April</mat-option>
             </mat-select>
             <mat-hint>checkin in after 1:00pm, checkout before 11:00 am </mat-hint>
+        </mat-form-field> -->
+
+
+        <mat-form-field>
+            <mat-label>check-in</mat-label >
+            <mat-select [(value)]="sharein" (openedChange)="payshare()">
+    
+              <mat-option value=1>22rd April</mat-option>
+              <mat-option value=2>23rd April</mat-option>
+              <mat-option value=3>24th April</mat-option>
+
+            </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field>
+            <mat-label>check-out</mat-label >
+            <mat-select [(value)]="shareout" (openedChange)="payshare()">
+  
+                <mat-option value=5>26th April</mat-option>
+                <mat-option value=6>27th April</mat-option>
+            </mat-select>
         </mat-form-field>
 <br>
 
