@@ -9,7 +9,7 @@ import {
   } from '@angular/material';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import {MatTabsModule} from '@angular/material/tabs';
-
+import * as moment from 'moment';
 import {HttpClientModule} from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import { HomeComponent } from './pages/home/home.component';
@@ -33,6 +33,18 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { TempRegsComponent } from './pages/temp-regs/temp-regs.component';
 import { AppRoutingModule } from './app-routing.module';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatNativeDateModule} from '@angular/material';
+import { MatMomentDateModule } from "@angular/material-moment-adapter";
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -41,7 +53,6 @@ import { AppRoutingModule } from './app-routing.module';
     TeamComponent,
     RegistrationComponent,
     CompetitorsComponent,
-
     ScheduleComponent,
     EventsComponent,
     MerchandiseComponent,
@@ -51,6 +62,7 @@ import { AppRoutingModule } from './app-routing.module';
     FooterComponent,
     CountDownComponent,
     TempRegsComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -71,7 +83,15 @@ import { AppRoutingModule } from './app-routing.module';
     MatGridListModule,
     MatCheckboxModule,
     MatTooltipModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatStepperModule,
+    MatNativeDateModule,
+    MatMomentDateModule
   ],
 
   providers: [],

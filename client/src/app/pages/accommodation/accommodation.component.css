@@ -2,3 +2,27 @@
     margin : 0 0 0 0;
     width : 100%;
 }
+
+.mat-stepper-vertical {
+    margin-top: 8px;
+    
+  }
+  
+  .mat-form-field {
+    margin-top: 16px;
+    font-size: 20px;
+    width: 70%;
+  }
+/* 
+  .mat-form-field{
+     
+  } */
+
+ /* ::ng-deep .mat-select-panel mat-option.mat-option {
+    height: unset;
+  }
+::ng-deep .mat-option-text{
+      font-size: 100%;
+      
+  } */
+  
