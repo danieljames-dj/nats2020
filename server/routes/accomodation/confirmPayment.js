@@ -48,26 +48,26 @@ module.exports = function(req, res, db) {
 }
 
 async function updateFailedReg(req, res, db) {
-    await db.registrations.findOneAndUpdate(
-        { lastPaymentId: req.body.payment_request_id },
-        {$set: {
-            failedStatus: req.body
-        }},
-        { upsert: true, returnOriginal: false }
-    )
+    // await db.registrations.findOneAndUpdate(
+    //     { lastPaymentId: req.body.payment_request_id },
+    //     {$set: {
+    //         failedStatus: req.body
+    //     }},
+    //     { upsert: true, returnOriginal: false }
+    // )
     res.send({
         success: false
     })
 }
 
 async function updateReg(req, res, db) {
-    await db.registrations.findOneAndUpdate(
-        { lastPaymentId: req.body.payment_request_id },
-        {$set: {
-            regPaid: true
-        }},
-        { upsert: true, returnOriginal: false }
-    )
+    // await db.registrations.findOneAndUpdate(
+    //     { lastPaymentId: req.body.payment_request_id },
+    //     {$set: {
+    //         regPaid: true
+    //     }},
+    //     { upsert: true, returnOriginal: false }
+    // )
     res.send({
         success: true
     })
