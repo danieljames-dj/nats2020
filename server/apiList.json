@@ -39,5 +39,19 @@
 			"route": "/getCompetitors",
 			"path": "./routes/competitors/getCompetitors.js",
 			"method": "GET"
+		}],
+	"accomodation":
+		[{
+			"route": "/createOrder",
+			"path": "./routes/accomodation/createOrder.js",
+			"method": "GET"
+		},{
+			"route": "/confirmPayment",
+			"path": "./routes/accomodation/confirmPayment.js",
+			"method": "POST"
+		},{
+			"route": "/getPaymentStatus",
+			"path": "./routes/accomodation/getPaymentStatus.js",
+			"method": "GET"
 		}]
 }

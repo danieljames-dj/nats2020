@@ -200,7 +200,7 @@
 
                 <mat-form-field>
                   <mat-label>Preferred Room mate</mat-label>
-                  <textarea matInput></textarea>
+                  <textarea matInput (input)="preferredRoommate = $event.target.value"></textarea>
                   <mat-hint>Alotted based on availability</mat-hint>
                 </mat-form-field>
               </form>
@@ -266,7 +266,7 @@
             <div style="font-family:'Times New Roman', Times, serif">
               ₹ {{ amount }}
             </div>
-            <button class="pay-btn" mat-raised-button *ngIf="amount > 0">
+            <button class="pay-btn" mat-raised-button (click)=makeAccomodationOrder() *ngIf="amount > 0">
               Proceed to Pay
             </button>
           </div>
