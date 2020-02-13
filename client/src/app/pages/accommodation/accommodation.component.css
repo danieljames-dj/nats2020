@@ -47,3 +47,25 @@
 .fa-bed {
   font-size: 100px;
 }
+
+.container {
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.main{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+mat-expansion-panel {
+  text-align: left;
+  height: 100%;
+}
+
+.text-header{
+  font-size: calc(23px + (27 - 14) * ((100vw - 300px) / (1600 - 300)));
+  line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+  margin-bottom: 20px;
+
+}

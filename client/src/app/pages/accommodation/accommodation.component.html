@@ -7,27 +7,74 @@
 
 <div class="text-content">
   <p>
-    Dear Participant, <br />
-    The Travel & Accomodation brings to you this year a comfortable yet
-    affordable stay through our travel partner, Raju’s Residency Park Hotel.
-    Located just 1.5 Km Away from the venue, Raju’s residency offers a room
-    featuring modern architecture and a comfortable bed with an attached
-    bathroom and air-conditioning. What’s special this year is that if you are a
-    competitor travelling alone, instead of paying for an entire room, you can
-    still enjoy a comfortable stay at the hotel on a sharing basis and the
-    accommodation team will put you together will fellow competitors who are
-    looking for a sharer as well.
+   <b>Dear Participant,</b>  <br />
+
+    The Travel & Accommodation brings to you this year a comfortable yet affordable stay through our travel partner, 
+    Raju’s Residency Park Hotel. Located just 1.5 Km away from the venue, Raju’s residency offers a room featuring
+     modern architecture and a comfortable bed with an attached bathroom and air-conditioning. What’s special this year 
+     is that if you are a competitor traveling alone, instead of paying for an entire room, you can still enjoy a comfortable 
+     stay at the hotel on a sharing basis and the accommodation team will put you together with fellow competitors who are 
+     looking for a sharer as well.
   </p>
   <br />
 
   <p>
-    On the other hand, if you are looking for an accommodation that is soft on
-    your pocket but lighter on the amenities as well, we also offer a no-frills
-    stay at the dormitories on campus itself. The dormitories are on a sharing
-    basis with a common bathroom and toilet. Only a mattress and a pillow will
-    be provided. Kindly fill up the following details to enjoy a comfortable
-    stay during Indian Nationals 2020
+    On the other hand, if you are looking for accommodation that is soft on your pocket but lighter on the amenities as well,
+     we also offer a no-frills stay at the dormitories on the campus itself. 
   </p>
+  <p>
+    The dormitories are on a sharing basis with a common bathroom and toilet. Please note that only a mattress and a pillow will be provided. 
+    Kindly fill up the following details to enjoy a comfortable stay during Indian Nationals 2020.
+  </p>
+</div>
+
+<div  class='container'>
+<div class="text-header"> FAQs</div>
+  <mat-accordion>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            1. What is the difference between Raju Residency and SRM Dormitories
+        </mat-expansion-panel-header>
+        Raju Residency is the accommodation partner of Indian Nationals 2020. Located 1.7 Km away from the venue,
+         it offers a hotel room with complete amenities including Air Conditioning, bedding and toiletries. 
+SRM Dormitories are provided on campus itself and offers a stay on a sharing basis without the additional amenties.
+ Only a mattress and a pillow will be provided, 
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+2. What is Sharing Basis in Raju Residency?
+      </mat-expansion-panel-header>
+      This year, if you are a competitor travelling alone and looking for a comfortable stay but yet,
+       do not want to take an entire room for yourself, you can opt for a room on sharing basis where the 
+       accommodation team will accomodate you with fellow competitors who are travelling alone as well.
+
+  </mat-expansion-panel>
+
+  
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+3. Can parents avail a room on a sharing basis?
+    </mat-expansion-panel-header>
+    No. The sharing option is exclusively for participants only. If you are a parent travelling with your Son/Daughter for the competition,
+    you are more than welcome to stay at Raju Residency by booking an entire room for yourself
+ 
+
+</mat-expansion-panel>
+
+
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+2.Can parents stay in the SRM Dormitories?
+  </mat-expansion-panel-header>
+  No, The dormitories on campus are exclusively for participants only. If you are a parent travelling with your Son/Daughter
+   for the competition,
+   you are more than welcome to stay at Raju Residency by booking an entire room for yourself.
+</mat-expansion-panel>
+
+  </mat-accordion>
+
 </div>
 <div
   class="row space flex-column-reverse flex-md-row card"
@@ -76,7 +123,7 @@
 
         <div *ngIf="mainselect === 'main2'">
           <mat-form-field>
-            <mat-label>check-in</mat-label>
+            <mat-label>Check-in</mat-label>
             <mat-select [(value)]="dormin" (openedChange)="payshare()">
               <mat-option value="1">22rd April</mat-option>
               <mat-option value="2">23rd April</mat-option>
@@ -87,7 +134,7 @@
           </mat-form-field>
 
           <mat-form-field>
-            <mat-label>check-out</mat-label>
+            <mat-label>Check-out</mat-label>
             <mat-select [(value)]="dormout" (openedChange)="payshare()">
               <mat-option value="1">22rd April</mat-option>
               <mat-option value="2">23rd April</mat-option>
@@ -124,7 +171,7 @@
         </mat-form-field> -->
 
               <mat-form-field>
-                <mat-label>check-in</mat-label>
+                <mat-label>Check-in</mat-label>
                 <mat-select [(value)]="sharein" (openedChange)="payshare()">
                   <mat-option value="1">22rd April</mat-option>
                   <mat-option value="2">23rd April</mat-option>
@@ -133,7 +180,7 @@
               </mat-form-field>
 
               <mat-form-field>
-                <mat-label>check-out</mat-label>
+                <mat-label>Check-out</mat-label>
                 <mat-select [(value)]="shareout" (openedChange)="payshare()">
                   <mat-option value="5">26th April</mat-option>
                   <mat-option value="6">27th April</mat-option>
@@ -161,7 +208,7 @@
             </mat-form-field>
 
             <mat-form-field>
-              <mat-label>check-in</mat-label>
+              <mat-label>Check-in</mat-label>
               <input
                 matInput
                 [matDatepicker]="picker1"
@@ -182,7 +229,7 @@
               <mat-hint>Checkin only after 1:00pm</mat-hint>
             </mat-form-field>
             <mat-form-field>
-              <mat-label>check-out</mat-label>
+              <mat-label>Check-out</mat-label>
               <input
                 matInput
                 [matDatepicker]="picker2"

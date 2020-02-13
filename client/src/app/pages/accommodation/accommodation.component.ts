@@ -9,7 +9,7 @@ import * as moment from "moment";
 export class AccommodationComponent implements OnInit {
   dormin = 0;
   dormout = 0;
-  startDate = new Date(2020, 4, 21);
+  startDate = new Date(2020, 3, 21);
   dobstart = new Date(1992, 1, 1);
   largeScreen = false;
   iconClass = "";
