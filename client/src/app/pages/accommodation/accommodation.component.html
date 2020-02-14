@@ -1,7 +1,291 @@
 <img src="https://i.ibb.co/mh8brFb/Accomm.jpg" alt="Accomm" class="banner" />
 <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
-  <div style="margin-top: 30px;">
+  <!-- <div style="margin-top: 30px;">
       Bookings open on February 16, 2020. 
       
-  </div>
+  </div> -->
 
+
+  <div class="container-fluid">
+    <div class="text-content">
+      
+        <div class="travel-header">
+          What we have to offer
+      </div><br />
+      <p>
+        The Travel & Accommodation brings to you this year a comfortable yet
+        affordable stay through our travel partner, Raju’s Residency Park Hotel.
+        Located just 1.5 Km away from the venue, Raju’s Residency Park offers a
+        room featuring modern architecture and a comfortable bed with an attached
+        bathroom and air-conditioning. This would be the right fit if you are
+        traveling as a family or coming to the competition as a group of friends.
+        What’s special this year is that if you are a competitor traveling alone,
+        instead of paying for an entire room, you can still enjoy a comfortable
+        stay at the hotel on a sharing basis and the accommodation team will put
+        you together with fellow competitors who are looking for a sharer as well
+      </p>
+      <br />
+  
+      <p>
+        On the other hand, if you are looking for accommodation that is soft on
+        your pocket but lighter on the amenities as well, we also offer a
+        no-frills stay at the dormitories on the campus itself.
+      </p>
+      <p>
+        The dormitories are on a sharing basis with common bathrooms and toilets.
+        Please note that only a mattress and a pillow will be provided for each.
+        Kindly fill up the following details to enjoy a comfortable stay during
+        Indian Nationals 2020.
+      </p>
+    </div>
+  
+    <div class="container">
+      <div class="text-header">FAQs</div>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            1. What is the difference between Raju Residency and SRM Dormitories
+          </mat-expansion-panel-header>
+          Raju Residency is the accommodation partner of Indian Nationals 2020.
+          Located 1.7 Km away from the venue, it offers a hotel room with complete
+          amenities including Air Conditioning, bedding, and toiletries. SRM
+          Dormitories are provided on-campus itself and offer a stay on a sharing
+          basis without the additional amenities. Only a mattress and a pillow
+          will be provided.
+        </mat-expansion-panel>
+  
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            2. What is Sharing Basis in Raju Residency?
+          </mat-expansion-panel-header>
+          This year, if you are a competitor traveling alone and looking for a
+          comfortable stay but yet, do not want to take an entire room for
+          yourself, you can opt for a room on sharing basis where the
+          accommodation team will accommodate you with fellow competitors who are
+          traveling alone as well.
+        </mat-expansion-panel>
+  
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            3. Can parents avail a room on a sharing basis?
+          </mat-expansion-panel-header>
+          No. The sharing option is exclusively for participants only. If you are
+          a parent traveling with your Son/Daughter for the competition, you are
+          more than welcome to stay at Raju Residency by booking an entire room
+          for yourself.No. The sharing option is exclusively for participants
+          only. If you are a parent traveling with your Son/Daughter for the
+          competition, you are more than welcome to stay at Raju Residency by
+          booking an entire room for yourself.
+        </mat-expansion-panel>
+  
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            4. Can parents stay in the SRM Dormitories?
+          </mat-expansion-panel-header>
+          No, The dormitories on campus are exclusively for participants only. If
+          you are a parent traveling with your Son/Daughter for the competition,
+          you are more than welcome to stay at Raju Residency by booking an entire
+          room for yourself.
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div
+      class="row space flex-column-reverse flex-md-row card"
+      style="margin-top: 50px;"
+    >
+      <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+        <div class="card-body">
+          <div class="form-container">
+            <mat-form-field>
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Last name, First name" required />
+            </mat-form-field>
+            <br />
+  
+            <mat-form-field>
+              <mat-label>Date of Birth</mat-label>
+              <input
+                matInput
+                [matDatepicker]="picker"
+                (dateInput)="addEvent('input', $event)"
+                (dateChange)="addEvent('change', $event)"
+                disabled
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker
+                touchUi
+                #picker
+                [startView]="'multi-year'"
+                [startAt]="dobstart"
+                disabled="false"
+              >
+              </mat-datepicker>
+            </mat-form-field>
+  
+            <div>
+              <mat-form-field>
+                <mat-label>Select an option</mat-label>
+                <mat-select [(value)]="mainselect">
+                  <mat-option value="main1">Raju's Residency Park</mat-option>
+                  <mat-option value="main2">SRM Hostel Dormitory</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+  
+            <div *ngIf="mainselect === 'main2'">
+              <mat-form-field>
+                <mat-label>Check-in</mat-label>
+                <mat-select [(value)]="dormin" (openedChange)="payshare()">
+                  <mat-option value="1">22nd April</mat-option>
+                  <mat-option value="2">23rd April</mat-option>
+                  <mat-option value="3">24th April</mat-option>
+                  <mat-option value="4">25th April</mat-option>
+                  <mat-option value="5">26th April</mat-option>
+                </mat-select>
+              </mat-form-field>
+  
+              <mat-form-field>
+                <mat-label>Check-out</mat-label>
+                <mat-select [(value)]="dormout" (openedChange)="payshare()">
+                  <mat-option value="1">22nd April</mat-option>
+                  <mat-option value="2">23rd April</mat-option>
+                  <mat-option value="3">24th April</mat-option>
+                  <mat-option value="4">25th April</mat-option>
+                  <mat-option value="5">26th April</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+  
+            <div *ngIf="mainselect === 'main1'">
+              <mat-form-field>
+                <mat-label>Select an option</mat-label>
+                <mat-select [(value)]="selected" (openedChange)="payshare()">
+                  <mat-option value="shared3">Triple Sharing</mat-option>
+                  <mat-option value="shared2">Double Sharing</mat-option>
+                  <mat-option value="entire">Entire Room</mat-option>
+                </mat-select>
+              </mat-form-field>
+  
+              <!-- double/triple sharing #######################-->
+  
+              <div *ngIf="selected === 'shared2' || selected === 'shared3'">
+                <form>
+                  <!-- <mat-form-field>
+                <mat-label>Select an option</mat-label >
+                <mat-select [(value)]="accomodationChoice" (openedChange)="payshare()">
+                  <mat-option value="t1">23rd to 26th April</mat-option>
+                  <mat-option value="t2">23rd to 27th April</mat-option>
+                  <mat-option value="t3">22nd to 26th April</mat-option>
+                  <mat-option value="t4">22nd to 27th April</mat-option>
+                </mat-select>
+                <mat-hint>checkin in after 1:00pm, checkout before 11:00 am </mat-hint>
+            </mat-form-field> -->
+  
+                  <mat-form-field>
+                    <mat-label>Check-in</mat-label>
+                    <mat-select [(value)]="sharein" (openedChange)="payshare()">
+                      <mat-option value="1">22nd April</mat-option>
+                      <mat-option value="2">23rd April</mat-option>
+                      <mat-option value="3">24th April</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+  
+                  <mat-form-field>
+                    <mat-label>Check-out</mat-label>
+                    <mat-select [(value)]="shareout" (openedChange)="payshare()">
+                      <mat-option value="5">26th April</mat-option>
+                      <mat-option value="6">27th April</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <br />
+  
+                  <mat-form-field>
+                    <mat-label>Preferred Room mate</mat-label>
+                    <textarea matInput (input)="preferredRoommate = $event.target.value"></textarea>
+                    <mat-hint>Alotted based on availability</mat-hint>
+                  </mat-form-field>
+                </form>
+              </div>
+  
+              <!-- Entire room #######################################-->
+  
+              <div *ngIf="selected === 'entire'">
+                <mat-form-field>
+                  <mat-label>Select an option</mat-label>
+                  <mat-select [(value)]="fulltype" (openedChange)="payshare()">
+                    <mat-option value="2">Double Occupancy</mat-option>
+                    <mat-option value="3">Triple Occupancy</mat-option>
+                  </mat-select>
+                </mat-form-field>
+  
+                <mat-form-field>
+                  <mat-label>Check-in</mat-label>
+                  <input
+                    matInput
+                    [matDatepicker]="picker1"
+                    (dateInput)="entirecheckin('input', $event)"
+                    (dateChange)="entirecheckin('change', $event)"
+                    disabled
+                  />
+                  <mat-datepicker-toggle
+                    matSuffix
+                    [for]="picker1"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker
+                    touchUi
+                    #picker1
+                    [startAt]="startDate"
+                    disabled="false"
+                  ></mat-datepicker>
+                  <mat-hint>Checkin only after 1:00pm</mat-hint>
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Check-out</mat-label>
+                  <input
+                    matInput
+                    [matDatepicker]="picker2"
+                    (dateInput)="entirecheckout('input', $event)"
+                    (dateChange)="entirecheckout('change', $event)"
+                    disabled
+                  />
+                  <mat-datepicker-toggle
+                    matSuffix
+                    [for]="picker2"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker
+                    touchUi
+                    #picker2
+                    [startAt]="startDate"
+                    disabled="false"
+                  ></mat-datepicker>
+                  <mat-hint>Checkout only before 11:00am</mat-hint>
+                </mat-form-field>
+              </div>
+            </div>
+  
+            <div>
+              <div style="font-family:'Times New Roman', Times, serif">
+                ₹ {{ amount }}
+              </div>
+              <button class="pay-btn" mat-raised-button (click)=makeAccomodationOrder() *ngIf="amount > 0">
+                Proceed to Pay
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-lg-6 col-md-6  col-xs-12 col-sm-12 bg-primary card-body text-white centered"
+      >
+        <div style="padding: 30%;">
+          <span class="fa fa-bed" aria-hidden="true"></span>
+          <h1>Book your stay Now..!</h1>
+          <span [ngClass]="iconClass" style="font-size: 100px;"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
