@@ -4,14 +4,14 @@ const {RAZOR_KEY_SECRET, RAZOR_KEY_ID} = require('../../config');
 const {INSTAMOJO_API_KEY, INSTAMOJO_AUTH_KEY} = require('../../config');
 
 module.exports = function(req, res, db) {
-    if (req.accomodationData) {
+    if (req.query.accomodationData) {
         
         Insta.setKeys(INSTAMOJO_API_KEY,INSTAMOJO_AUTH_KEY);
         // Insta.isSandboxMode(true); //Used to test with test.instamojo.com. Remove in production
 
         var instaPaymentData = new Insta.PaymentData();
         instaPaymentData.purpose = 'Nats20 Accomodation Registration';
-        instaPaymentData.amount = req.accomodationData.amount;
+        instaPaymentData.amount = req.query.accomodationData.amount;
         instaPaymentData.webhook = req.query.webhook;
         instaPaymentData.currency = 'INR';
 
