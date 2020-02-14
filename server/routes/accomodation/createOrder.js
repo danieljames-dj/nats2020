@@ -40,7 +40,7 @@ async function createOrder(req, res, db, order) {
     console.log(order)
     order = JSON.parse(order)
     console.log(order.payment_request)
-    await db.accommodation.findOneAndUpdate(
+    await db.accommodation.update(
         { _id: req.session.userId },
         {$set: {
             accomdetails: req.query,
