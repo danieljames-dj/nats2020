@@ -40,13 +40,10 @@ async function createOrder(req, res, db, order) {
     console.log(order)
     order = JSON.parse(order)
     console.log(order.payment_request)
-    await db.accommodation.update(
-        { _id: req.session.userId },
-        {$set: {
-            accomdetails: req.query,
-            lastPaymentId: order.payment_request.id
-        }},
-        { upsert: true, returnOriginal: false }
-    )
+    await db.accommodation.insertOne({
+        userId: req.session.userId,
+        accomdetails: req.query,
+        lastPaymentId: order.payment_request.id
+    })
     res.send(order)
 }
