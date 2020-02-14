@@ -10,6 +10,7 @@ module.exports.connect = async() => {
     console.log("MongoDB Connected")
 	const db = client.db();
 	Object.assign(module.exports.db, {
-		registrations: db.collection('registrations')
+        registrations: db.collection('registrations'),
+        accommodation: db.collection('accommodation')
     })
 }

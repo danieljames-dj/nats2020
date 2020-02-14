@@ -38,19 +38,15 @@ module.exports = function(req, res, db) {
 
 async function createOrder(req, res, db, order) {
     console.log(order)
-    // order = JSON.parse(order)
-    // console.log(order.payment_request)
-    // await db.registrations.findOneAndUpdate(
-    //     { _id: req.session.userId },
-    //     {$set: {
-    //         regStatus: {
-    //             events: events,
-    //             regCheckbox: regCheckbox,
-    //             regOrderId: order
-    //         },
-    //         lastPaymentId: order.payment_request.id
-    //     }},
-    //     { upsert: true, returnOriginal: false }
-    // )
+    order = JSON.parse(order)
+    console.log(order.payment_request)
+    await db.accommodation.findOneAndUpdate(
+        { _id: req.session.userId },
+        {$set: {
+            accomdetails: req.query,
+            lastPaymentId: order.payment_request.id
+        }},
+        { upsert: true, returnOriginal: false }
+    )
     res.send(order)
 }
