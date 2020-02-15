@@ -51,7 +51,12 @@
     height: 100%;
     margin: 20px;
   }
-
+.volform{
+    margin-top:30px;
+    background-color: #00690e;
+    color: #ebdcd7;
+    font-size: calc(17px + (25 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
 
   /* text-align:center;
   position:relative;
