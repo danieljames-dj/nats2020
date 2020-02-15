@@ -143,13 +143,19 @@ THE SOFTWARE.
 
 @angular/material/checkbox
 
+@angular/material/core
+
 @angular/material/datepicker
 
 @angular/material/dialog
 
 @angular/material/expansion
 
+@angular/material/form-field
+
 @angular/material/icon
+
+@angular/material/select
 
 @angular/material/sidenav
 
