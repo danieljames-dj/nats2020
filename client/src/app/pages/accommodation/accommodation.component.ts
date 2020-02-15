@@ -137,6 +137,8 @@ export class AccommodationComponent implements OnInit {
                   console.log("Payment successful");
                 },
                 onFailure: function(response) {
+                  console.log("FAILURE");
+                  console.log(response);
                   console.log("Payment failed");
                 }
               }
