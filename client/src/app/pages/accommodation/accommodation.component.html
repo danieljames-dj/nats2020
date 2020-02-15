@@ -6,7 +6,7 @@
   </div> -->
 
 
-  <div class="container-fluid">
+  <div  class="container-fluid">
     <div class="text-content">
       
         <div class="travel-header">
@@ -95,7 +95,10 @@
     >
       <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
         <div class="card-body">
-          <div class="form-container">
+          <div *ngIf="loggedIn===false" class="notloggedin">
+Please login to register for accommodation.
+          </div>
+          <div *ngIf="loggedIn===true" class="form-container">
             <mat-form-field>
               <mat-label>Name</mat-label>
               <input matInput placeholder="Last name, First name" required />
