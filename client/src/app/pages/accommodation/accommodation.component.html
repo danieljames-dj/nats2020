@@ -130,7 +130,7 @@ Please login to register for accommodation.
             <div>
               <mat-form-field>
                 <mat-label>Select an option</mat-label>
-                <mat-select [(value)]="mainselect">
+                <mat-select [(value)]="mainselect" (openedChange)="payshare()">
                   <mat-option value="main1">Raju's Residency Park</mat-option>
                   <mat-option value="main2">SRM Hostel Dormitory</mat-option>
                 </mat-select>
@@ -157,6 +157,7 @@ Please login to register for accommodation.
                   <mat-option value="3">24th April</mat-option>
                   <mat-option value="4">25th April</mat-option>
                   <mat-option value="5">26th April</mat-option>
+                  <mat-option value="6">27th April</mat-option>
                 </mat-select>
               </mat-form-field>
             </div>

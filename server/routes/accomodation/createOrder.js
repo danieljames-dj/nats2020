@@ -41,6 +41,7 @@ async function createOrder(req, res, db, order) {
     console.log(order.payment_request)
     db.accommodation.insertOne({
         userId: req.session.userId,
+        //_id: req.session.userId,
         accomdetails: req.query,
         lastPaymentId: order.payment_request.id
     }, function(err, result) {

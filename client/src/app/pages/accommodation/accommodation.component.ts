@@ -80,10 +80,10 @@ export class AccommodationComponent implements OnInit {
     // if(this.selected=='shared3')
     // (this.accomodationChoice=="t1")?this.amount=2400:(this.accomodationChoice=="t2")?this.amount=3200:  (this.accomodationChoice=="t3")?this.amount=3200:(this.accomodationChoice=="t4")?this.amount=4000:this.amount=0;
     if (this.selected == "shared2")
-      this.amount = Math.max(0, (this.shareout - this.sharein + 1) * 900);
+      this.amount = Math.max(0, (this.shareout - this.sharein) * 900);
 
     if (this.selected == "shared3")
-      this.amount = Math.max(0, (this.shareout - this.sharein + 1) * 800);
+      this.amount = Math.max(0, (this.shareout - this.sharein) * 800);
 
     if (this.mainselect == "main2") {
       this.amount = Math.max(0, (this.dormout - this.dormin + 1) * 250);
@@ -92,13 +92,13 @@ export class AccommodationComponent implements OnInit {
       if (this.fulltype == 2) {
         this.amount = Math.max(
           0,
-          this.fullcout.diff(this.fullcin, "days") * 1700
+          this.fullcout.diff(this.fullcin, "days") * 1800
         );
       }
       if (this.fulltype == 3) {
         this.amount = Math.max(
           0,
-          this.fullcout.diff(this.fullcin, "days") * 2260
+          this.fullcout.diff(this.fullcin, "days") * 2400
         );
       }
     }
