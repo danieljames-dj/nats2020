@@ -50,8 +50,8 @@
 			"path": "./routes/accomodation/confirmPayment.js",
 			"method": "POST"
 		},{
-			"route": "/getPaymentStatus",
-			"path": "./routes/accomodation/getPaymentStatus.js",
+			"route": "/getAccomodations",
+			"path": "./routes/accomodation/getAccomodations.js",
 			"method": "GET"
 		}]
 }

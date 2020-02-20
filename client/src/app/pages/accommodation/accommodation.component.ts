@@ -43,17 +43,25 @@ export class AccommodationComponent implements OnInit {
     }
 
     const params = new HttpParams();
-    this.httpClient.get(environment.baseApiUrl + "/api/accomodation/getPaymentStatus", {params: params}).subscribe((res: {details, regPaid}) => {
-      if (res.details != undefined) {
-          this.loggedIn = true;
-      } else {
-          this.loggedIn = false;
+    this.httpClient.get(environment.baseApiUrl + "/api/accomodation/getAccomodations", {params: params}).subscribe((res: {accomdetails, regPaid}) => {
+      console.log(res);
+      // if (res.accomdetails != undefined) {
+      //     this.loggedIn = true;
+      // } else {
+      //     this.loggedIn = false;
+      // }
+      // if (res.regPaid == true) {
+      //     this.accomodationPaid = true;
+      // }
+      // this.loading = false;
+      // console.log(this.loggedIn, this.accomodationPaid);
+
+      var paidAccomodations: []
+      if (res.accomdetails != undefined && res.regPaid == true) {
+        console.log("RESRES");
+        console.log(res);
       }
-      if (res.regPaid == true) {
-          this.accomodationPaid = true;
-      }
-      this.loading = false;
-      console.log(this.loggedIn, this.accomodationPaid);
+
   })
 
 
