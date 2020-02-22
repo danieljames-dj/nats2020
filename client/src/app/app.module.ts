@@ -41,6 +41,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatNativeDateModule} from '@angular/material';
 import { MatMomentDateModule } from "@angular/material-moment-adapter";
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -91,7 +92,8 @@ import { MatMomentDateModule } from "@angular/material-moment-adapter";
     MatSelectModule,
     MatStepperModule,
     MatNativeDateModule,
-    MatMomentDateModule
+    MatMomentDateModule,
+    FormsModule
   ],
 
   providers: [],

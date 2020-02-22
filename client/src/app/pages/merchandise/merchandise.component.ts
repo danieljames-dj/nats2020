@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MerchandiseComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() {
+  merch = [0,0,0,0];
+  constructor() { 
   }
 
+
+
+
+
+  inc(n){
+    this.merch[n]++;
+  }
+  dec(n){
+    this.merch[n]= Math.max(0, this.merch[n]-1);
+  }
+
+
+   
+  ngOnInit() {
+  }
 }
