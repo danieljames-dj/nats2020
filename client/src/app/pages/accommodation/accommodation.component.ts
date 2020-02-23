@@ -34,7 +34,7 @@ export class AccommodationComponent implements OnInit {
   //accomodationChoice="t1";
   sharein = 0;
   shareout = 0;
-
+  prev=0
   preferredRoommate: String;
 
   constructor(private httpClient: HttpClient, private router: Router) {
@@ -45,6 +45,10 @@ export class AccommodationComponent implements OnInit {
     const params = new HttpParams();
     this.httpClient.get(environment.baseApiUrl + "/api/accomodation/getAccomodations", {params: params}).subscribe((res: {accomdetails, regPaid}) => {
       console.log(res);
+      if(res.regPaid==true){
+        this.prev++;
+        console.log(this.prev);
+      }
       // if (res.accomdetails != undefined) {
       //     this.loggedIn = true;
       // } else {
@@ -60,6 +64,7 @@ export class AccommodationComponent implements OnInit {
       if (res.accomdetails != undefined && res.regPaid == true) {
         console.log("RESRES");
         console.log(res);
+        //this.prev=res.length;
       }
 
   })
