@@ -8,9 +8,11 @@ module.exports = function(req, res, db) {
             participant = result[i]
             name = (participant.details != undefined) ? participant.details.name : ""
             events = (participant.regStatus != undefined) ? participant.regStatus.events : []
-            participantCountryName = "India"//country_iso2_map.filter(country => {
-//                return country.id == participant.details.country_iso2;
-//            })[0].name;
+            participantCountryName = (participant.details != undefined) ? 
+                                        (country_iso2_map.filter(country => {
+                                            return country.id == participant.details.country_iso2;
+                                        })[0].name)
+                                        : "";
             finalList.push({
                 name: name,
                 country: participantCountryName,
