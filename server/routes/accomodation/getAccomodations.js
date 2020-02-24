@@ -12,6 +12,6 @@ module.exports = function(req, res, db) {
             res.send(responseArray);
         })
     } else {
-        res.send({})
+        res.send([])
     }
 }

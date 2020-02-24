@@ -59,13 +59,16 @@ export class AccommodationComponent implements OnInit {
       // }
       // this.loading = false;
       // console.log(this.loggedIn, this.accomodationPaid);
-
-      var paidAccomodations: []
+      
+      var paidAccomodationCount = 0;
       for (var accomodation of res) {
         if (accomodation.accomdetails != undefined && accomodation.regPaid == true) {
+          paidAccomodationCount++;
           console.log(accomodation);
         }
       }
+
+      console.log(paidAccomodationCount);
 
   })
 
