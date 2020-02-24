@@ -43,12 +43,12 @@ export class AccommodationComponent implements OnInit {
     }
 
     const params = new HttpParams();
-    this.httpClient.get(environment.baseApiUrl + "/api/accomodation/getAccomodations", {params: params}).subscribe((res: {accomdetails, regPaid}) => {
-      console.log(res);
-      if(res.regPaid==true){
-        this.prev++;
-        console.log(this.prev);
-      }
+    this.httpClient.get(environment.baseApiUrl + "/api/accomodation/getAccomodations", {params: params}).subscribe((res: [{accomdetails, regPaid}]) => {
+      // console.log(res);
+      // if(res.regPaid==true){
+      //   this.prev++;
+      //   console.log(this.prev);
+      // }
       // if (res.accomdetails != undefined) {
       //     this.loggedIn = true;
       // } else {
@@ -61,10 +61,10 @@ export class AccommodationComponent implements OnInit {
       // console.log(this.loggedIn, this.accomodationPaid);
 
       var paidAccomodations: []
-      if (res.accomdetails != undefined && res.regPaid == true) {
-        console.log("RESRES");
-        console.log(res);
-        //this.prev=res.length;
+      for (var accomodation of res) {
+        if (accomodation.accomdetails != undefined && accomodation.regPaid == true) {
+          console.log(accomodation);
+        }
       }
 
   })

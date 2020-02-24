@@ -1,5 +1,5 @@
 module.exports = function(req, res, db) {
-    result = {}
+    result = []
     if (req.session.isLoggedIn) {
         db.accommodation.find({
             userId: req.session.userId
