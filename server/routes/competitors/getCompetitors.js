@@ -1,5 +1,6 @@
-module.exports = function(req, res, db) {
+var country_iso2_map = require('./country_iso2_map.json');
 
+module.exports = function(req, res, db) {
     finalList = []
     db.registrations.find({regPaid: true}).toArray(function(err, result) {
         if (err) throw err;
@@ -7,9 +8,12 @@ module.exports = function(req, res, db) {
             participant = result[i]
             name = (participant.details != undefined) ? participant.details.name : ""
             events = (participant.regStatus != undefined) ? participant.regStatus.events : []
+            participantCountryName = country_iso2_map.filter(country => {
+                return country.id == participant.details.country_iso2;
+            })[0].name;
             finalList.push({
                 name: name,
-                country: participant.country_iso2,
+                country: participantCountryName,
                 events: events
             })
 
