@@ -5,21 +5,19 @@
       <span
         *ngFor="let page of appRoutes"
         [ngClass]="{ 'top-tab': true, selected: isCurrentRouter(page) }"
-        [routerLink]="[page.path]">
-          {{ page.title }}</span>
+        [routerLink]="[page.path]"
+      >
+        {{ page.title }}</span
+      >
     </div>
     <span class="example-spacer"></span>
     <div>
-      <span
-        class="top-tab-right"
-        *ngIf="loggedIn === false"
-        (click)="login()">
-          Login</span>
-      <span
-        class="top-tab-right"
-        *ngIf="loggedIn === true"
-        (click)="logout()">
-          Logout</span>
+      <span class="top-tab-right" *ngIf="loggedIn === false" (click)="login()">
+        Login</span
+      >
+      <span class="top-tab-right" *ngIf="loggedIn === true" (click)="logout()">
+        Logout</span
+      >
     </div>
   </mat-toolbar>
   <mat-sidenav-container fxFlexFill class="example-container">
@@ -35,7 +33,7 @@
       <div fxLayout="column">
         <span
           *ngFor="let page of appRoutes"
-          (click)=open(page)
+          (click)="open(page)"
           [ngClass]="{ 'top-tab': true, selected: isCurrentRouter(page) }"
           >{{ page.title }}</span
         >
@@ -48,7 +46,11 @@
       </div>
     </mat-sidenav>
     <mat-sidenav-content fxFlexFill>
-      <table fxShow="true" fxHide.gt-md="true" style="width:100%; vertical-align: middle;">
+      <table
+        fxShow="true"
+        fxHide.gt-md="true"
+        style="width:100%; vertical-align: middle;"
+      >
         <tr>
           <th style="display: flex;">
             <button mat-icon-button (click)="sidenav.toggle()">
@@ -56,12 +58,15 @@
             </button>
           </th>
           <th style="width: 100%;">
-            <h1 class="heading heading-sidenav" (click)="open(homeRoute)">Indian Nationals 2020</h1>
+            <h1 class="heading heading-sidenav" (click)="open(homeRoute)">
+              Indian Nationals 2020
+            </h1>
           </th>
         </tr>
       </table>
+
       <router-outlet></router-outlet>
-      <app-footer></app-footer>
     </mat-sidenav-content>
   </mat-sidenav-container>
+  <app-footer></app-footer>
 </div>
