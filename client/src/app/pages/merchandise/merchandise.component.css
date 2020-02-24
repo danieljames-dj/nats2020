@@ -59,3 +59,13 @@ input[type=number]::-webkit-outer-spin-button {
   .count{
       padding: 0 10px 0 10px;
   }
+  .order{
+    margin-bottom: 30px;
+    align-content: center;
+  }
+
+  .order-text-class{
+    /* max-width: 350px; */
+    background-color: #ebdcd7;
+    font-size:calc(15px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+  }

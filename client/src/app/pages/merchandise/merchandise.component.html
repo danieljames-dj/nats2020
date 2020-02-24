@@ -5,7 +5,7 @@
     Sales begin on March 01, 2020. 
     
 </div>
-<!-- 
+
 
 <div>
 
@@ -29,7 +29,7 @@
 
             <button mat-button-raised (click)="dec(0)">-</button>
 
-            <b class= "count">{{merch[0]}}</b>
+            <b class= "count">{{merchCount[0]}}</b>
             
 
 
@@ -37,7 +37,7 @@
 
             </span>
             <br>
-         <button mat-button-raised>Add to cart</button>
+         <!-- <button mat-button-raised>Add to cart</button> -->
         
         </mat-card-actions>
       
@@ -46,9 +46,7 @@
 
 
 
-
-      
-    <mat-card class="blocks">
+      <mat-card class="blocks">
         <mat-card-header>
           
           <mat-card-title>Saravanan Gowthaman</mat-card-title>
@@ -62,9 +60,37 @@
           </p>
           
         </mat-card-content>
+        <mat-card-actions>
+            <span>
+
+            <button mat-button-raised (click)="dec(1)">-</button>
+
+            <b class= "count">{{merchCount[1]}}</b>
+            
+
+
+            <button mat-button-raised (click)="inc(1)">+</button>
+
+            </span>
+            <br>
+         <!-- <button mat-button-raised>Add to cart</button> -->
+        
+        </mat-card-actions>
       
       </mat-card>
 
 
+</div>
 
-</div> -->
+
+<div class="order">
+  <div [innerHTML]="orderText" class="order-text-class">
+
+  </div>
+  <div style="font-family:'Times New Roman', Times, serif">
+    ₹ {{ amount }}
+  </div>
+  <button class="pay-btn" mat-raised-button  *ngIf="amount > 0">
+    Proceed to Pay
+  </button>
+</div>
