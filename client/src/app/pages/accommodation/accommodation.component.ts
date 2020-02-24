@@ -34,7 +34,7 @@ export class AccommodationComponent implements OnInit {
   //accomodationChoice="t1";
   sharein = 0;
   shareout = 0;
-  prev=0
+  paidAccomodationCount = 0;
   preferredRoommate: String;
 
   constructor(private httpClient: HttpClient, private router: Router) {
@@ -60,15 +60,15 @@ export class AccommodationComponent implements OnInit {
       // this.loading = false;
       // console.log(this.loggedIn, this.accomodationPaid);
       
-      var paidAccomodationCount = 0;
+      
       for (var accomodation of res) {
         if (accomodation.accomdetails != undefined && accomodation.regPaid == true) {
-          paidAccomodationCount++;
+          this.paidAccomodationCount++;
           console.log(accomodation);
         }
       }
 
-      console.log(paidAccomodationCount);
+      console.log(this.paidAccomodationCount);
 
   })
 
