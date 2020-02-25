@@ -8,7 +8,7 @@ import { AppRoutes } from './app-routes';
             path: "",
             redirectTo: AppRoutes[0].path,
             pathMatch: "full"
-        }, ...AppRoutes], {useHash: true})],
+        }, ...AppRoutes], {})],
     exports: [RouterModule]
 })
 export class AppRoutingModule {}

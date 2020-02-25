@@ -6,7 +6,7 @@ module.exports = function(req, res, db) {
     res.redirect(getLoginURL(redirect, origin))
 }
 
-function getLoginURL(redirect) {
+function getLoginURL(redirect, origin) {
     let wcaAuthUrl = "https://www.worldcubeassociation.org/oauth/authorize"
     let redirect_uri = encodeURIComponent(origin + "/api/auth/callback?redirect=" + redirect + "&origin=" + origin)
     return wcaAuthUrl + "?client_id=" + CLIENT_ID + "&redirect_uri=" + redirect_uri + "&response_type=code&scope=public+dob+email"
