@@ -43,6 +43,9 @@ export class AccommodationComponent implements OnInit {
     }
 
     const params = new HttpParams();
+    this.httpClient.get(environment.baseApiUrl + "/api/payment/getPaymentStatus", {params: params}).subscribe((res: {details}) => {
+        this.loggedIn = (res.details != undefined)
+    })
     this.httpClient.get(environment.baseApiUrl + "/api/accomodation/getAccomodations", {params: params}).subscribe((res: [{accomdetails, regPaid}]) => {
       // console.log(res);
       // if(res.regPaid==true){
