@@ -151,4 +151,8 @@ export class RegistrationComponent implements OnInit {
         })
     }
 
+    login() {
+        window.location.href = window.location.origin + environment.loginPath + "?redirect=" + window.location.href + "&origin=" + window.location.origin
+    }
+
 }
