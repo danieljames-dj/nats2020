@@ -1,7 +1,7 @@
 <div *ngIf="loading===false">
     <div *ngIf="loggedIn===false">
         <img class="banner" src="https://i.ibb.co/1ZHmCvZ/Registration.jpg" alt="Reg-Page" class="banner">
-        <button class="pay-btn" mat-raised-button (click)=login() *ngIf="cost>0">Login to register</button>
+        <button class="pay-btn" mat-raised-button (click)=login()>Login to register</button>
     </div>
     <div *ngIf="loggedIn===true">
         <div *ngIf="registered===true">
