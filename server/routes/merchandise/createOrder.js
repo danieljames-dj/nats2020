@@ -41,8 +41,7 @@ async function createOrder(req, res, db, order) {
     console.log(order.payment_request)
     db.merchandise.insertOne({
         userId: req.session.userId,
-        //_id: req.session.userId,
-        merchdetails: JSON.parse(req.query),
+        merchdetails: JSON.parse(req.query.merchData),
         lastPaymentId: order.payment_request.id
     }, function(err, result) {
         if (!err) {

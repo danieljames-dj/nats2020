@@ -12,6 +12,33 @@ import { environment } from 'src/environments/environment';
 })
 export class MerchandiseComponent implements OnInit {
   constructor(private httpClient: HttpClient) { 
+
+    const params = new HttpParams();
+    this.httpClient.get(environment.baseApiUrl + "/api/merchandise/getMerchandise", {params: params}).subscribe((res: [{merchDetails,regPaid}]) => {
+      // console.log(res);
+      // if(res.regPaid==true){
+      //   this.prev++;
+      //   console.log(this.prev);
+      // }
+      // if (res.accomdetails != undefined) {
+      //     this.loggedIn = true;
+      // } else {
+      //     this.loggedIn = false;
+      // }
+      // if (res.regPaid == true) {
+      //     this.accomodationPaid = true;
+      // }
+      // this.loading = false;
+      // console.log(this.loggedIn, this.accomodationPaid);
+      
+      
+      for (var merch of res) {
+        if (merch.merchDetails != undefined && merch.regPaid == true) {
+          console.log(merch);
+        }
+      }
+  })
+
   }
 
   merchCount = [0,0,0,0];
@@ -58,6 +85,8 @@ updateAmount(){
       'amount': this.amount
     };
 
+    console.log(merchData);
+
     const params = new HttpParams().set('merchData', JSON.stringify(merchData)).set('webhook', window.location.origin + "/api/merchandise/confirmPayment");
 
     this.httpClient.get(environment.baseApiUrl + "/api/merchandise/createOrder", {params: params}).subscribe((res: {payment_request}) => {
@@ -71,7 +100,6 @@ updateAmount(){
                   console.log("Payment dialog closed");
                 },
                 onSuccess: function(response) {
-                  this.accomodationPaid = true;
                   console.log("Payment successful");
                 },
                 onFailure: function(response) {

@@ -11,6 +11,7 @@ module.exports.connect = async() => {
 	const db = client.db();
 	Object.assign(module.exports.db, {
         registrations: db.collection('registrations'),
-        accommodation: db.collection('accommodation')
+        accommodation: db.collection('accommodation'),
+        merchandise: db.collection('merchandise')
     })
 }

@@ -6,7 +6,7 @@ module.exports = function(req, res, db) {
         }).toArray().then(users => {
             var responseArray = [];
             for (var user of users) {
-                responseArray.push({"merchDetails": JSON.parse(user.merchData.merchDetails),
+                responseArray.push({"merchDetails": user.merchdetails,
                                     "regPaid": user.regPaid});
             };
             res.send(responseArray);
