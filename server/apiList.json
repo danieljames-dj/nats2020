@@ -53,5 +53,19 @@
 			"route": "/getAccomodations",
 			"path": "./routes/accomodation/getAccomodations.js",
 			"method": "GET"
-		}]
+		}],
+		"merchandise":
+			[{
+				"route": "/createOrder",
+				"path": "./routes/accomodation/createOrder.js",
+				"method": "GET"
+			},{
+				"route": "/confirmPayment",
+				"path": "./routes/accomodation/confirmPayment.js",
+				"method": "POST"
+			},{
+				"route": "/getMerchandise",
+				"path": "./routes/accomodation/getMerchandise.js",
+				"method": "GET"
+			}]
 }

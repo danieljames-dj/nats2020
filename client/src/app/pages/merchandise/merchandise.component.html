@@ -90,7 +90,7 @@
   <div style="font-family:'Times New Roman', Times, serif">
     ₹ {{ amount }}
   </div>
-  <button class="pay-btn" mat-raised-button  *ngIf="amount > 0">
+  <button class="pay-btn" mat-raised-button (click)=makeMerchOrder() *ngIf="amount > 0">
     Proceed to Pay
   </button>
 </div>

@@ -1,4 +1,8 @@
+declare var Instamojo: any;
+
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -7,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./merchandise.component.css']
 })
 export class MerchandiseComponent implements OnInit {
-  constructor() { 
+  constructor(private httpClient: HttpClient) { 
   }
 
   merchCount = [0,0,0,0];
@@ -48,6 +52,43 @@ updateAmount(){
     this.updateAmount();
   }
 
+  makeMerchOrder() {
+    var merchData = {
+      'merchCounts': this.merchCount,
+      'amount': this.amount
+    };
+
+    const params = new HttpParams().set('merchData', JSON.stringify(merchData)).set('webhook', window.location.origin + "/api/merchandise/confirmPayment");
+
+    this.httpClient.get(environment.baseApiUrl + "/api/merchandise/createOrder", {params: params}).subscribe((res: {payment_request}) => {
+      if (res.payment_request != undefined) {
+          Instamojo.configure({
+              handlers: {
+                onOpen: function() {
+                    console.log("Payment dialog opened");
+                },
+                onClose: function() {
+                  console.log("Payment dialog closed");
+                },
+                onSuccess: function(response) {
+                  this.accomodationPaid = true;
+                  console.log("Payment successful");
+                },
+                onFailure: function(response) {
+                  console.log("FAILURE");
+                  console.log(response);
+                  console.log("Payment failed");
+                }
+              }
+            });
+
+          Instamojo.open(res.payment_request.longurl);
+
+      } else {
+          alert("Something went wrong...")
+      }
+  })
+  }
 
    
   ngOnInit() {
