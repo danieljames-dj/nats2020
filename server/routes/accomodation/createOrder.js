@@ -42,7 +42,7 @@ async function createOrder(req, res, db, order) {
     db.accommodation.insertOne({
         userId: req.session.userId,
         //_id: req.session.userId,
-        accomdetails: JSON.parse(req.query),
+        accomdetails: req.query,
         lastPaymentId: order.payment_request.id
     }, function(err, result) {
         if (!err) {
