@@ -45,12 +45,17 @@ export class MerchandiseComponent implements OnInit {
   merchNames = ['Signature T-shirts','random merch','','']
   merchCosts = [500,700,550,400];
   amount=0
+  merch1Size="";
+  
+  
+
+
 orderText="";
 orderTextFunc(){
   this.orderText="";
   for(var i=0; i<this.merchCount.length; i++) {
     if (this.merchCount[i] > 0 ){
-      this.orderText+= this.merchNames[i]+ " X " + this.merchCount[i].toString() + "<br>"; 
+      this.orderText+= this.merchNames[i] +"("+ this.merch1Size + ")" + " X " + this.merchCount[i].toString() + "<br>"; 
     }
 }
 }
@@ -120,5 +125,7 @@ updateAmount(){
 
    
   ngOnInit() {
+    var wid = document.getElementById('merch1').offsetHeight;
+    console.log(wid);
   }
 }

@@ -6,11 +6,10 @@
     
 </div>
 
-<!-- 
 <div>
 
 
-    <mat-card class="blocks">
+    <mat-card class="blocks" id="merch1">
         <mat-card-header>
           
           <mat-card-title>Saravanan Gowthaman</mat-card-title>
@@ -20,9 +19,22 @@
         <mat-card-content>
           <p>
             A cuber since 2015, he has attended 37 competitions and organised over 15 competitions. Saravanan leads the Website team of the Organizing Committee.
-            <br>&nbsp;
+            
           </p>
           
+          <mat-form-field>
+            <mat-label>Select Size</mat-label>
+            <mat-select [(value)]="merch1Size">
+              <mat-option value="S">Small</mat-option>
+              <mat-option value="M">Medium</mat-option>
+              <mat-option value="L">Large</mat-option>
+              <mat-option value="XL">X-Large</mat-option>
+              <mat-option value="XXL">XX-Large</mat-option>
+
+            </mat-select>
+          </mat-form-field>
+
+
         </mat-card-content>
         <mat-card-actions>
             <span>
@@ -45,37 +57,12 @@
 
 
 
-      <mat-card class="blocks">
-        <mat-card-header>
-          
-          <mat-card-title>Saravanan Gowthaman</mat-card-title>
-          
-        </mat-card-header>
-        <img src="https://i.ibb.co/t3XKP15/Saravanan.jpg" alt="Saravanan" >
-        <mat-card-content>
-          <p>
-            A cuber since 2015, he has attended 37 competitions and organised over 15 competitions. Saravanan leads the Website team of the Organizing Committee.
-            <br>&nbsp;
-          </p>
-          
-        </mat-card-content>
-        <mat-card-actions>
-            <span>
-
-            <button mat-button-raised (click)="dec(1)">-</button>
-
-            <b class= "count">{{merchCount[1]}}</b>
-            
-
-
-            <button mat-button-raised (click)="inc(1)">+</button>
-
-            </span>
-            <br>
+      <div>
         
-        </mat-card-actions>
-      
-      </mat-card>
+   
+        <img src="https://i.ibb.co/qg67cTx/a.jpg" alt="Saravanan" >
+  
+      </div>
 
 
 </div>
@@ -91,4 +78,4 @@
   <button class="pay-btn" mat-raised-button (click)=makeMerchOrder() *ngIf="amount > 0">
     Proceed to Pay
   </button>
-</div> -->
+</div>
