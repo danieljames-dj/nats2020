@@ -1,27 +1,28 @@
-<img src="https://i.ibb.co/v4L9HGy/Merch.jpg" alt="Merch" class="banner">
+<img src="https://i.ibb.co/v4L9HGy/Merch.jpg" alt="Merch" class="banner" />
 
-<link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+<link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet" />
 <div style="margin-top: 30px;">
-    Sales begin on March 03, 2020. 
-    
+  Sales begin on March 03, 2020.
 </div>
-
-<div>
-
-
-    <mat-card class="blocks" id="merch1">
+<div class="container-fluid">
+  <div class="row" style="margin: 30px 0px;">
+    <div class="col-lg-4 col-md-12 col-xs-12 col-sm-12">
+      <mat-card class="blocks" id="merch1">
         <mat-card-header>
-          
           <mat-card-title>Saravanan Gowthaman</mat-card-title>
-          
         </mat-card-header>
-        <img src="https://i.ibb.co/t3XKP15/Saravanan.jpg" alt="Saravanan" >
+        <img
+          src="https://i.ibb.co/t3XKP15/Saravanan.jpg"
+          class="img-responsive"
+          alt="Saravanan"
+        />
         <mat-card-content>
           <p>
-            A cuber since 2015, he has attended 37 competitions and organised over 15 competitions. Saravanan leads the Website team of the Organizing Committee.
-            
+            A cuber since 2015, he has attended 37 competitions and organised
+            over 15 competitions. Saravanan leads the Website team of the
+            Organizing Committee.
           </p>
-          
+
           <mat-form-field>
             <mat-label>Select Size</mat-label>
             <mat-select [(value)]="merch1Size">
@@ -30,52 +31,50 @@
               <mat-option value="L">Large</mat-option>
               <mat-option value="XL">X-Large</mat-option>
               <mat-option value="XXL">XX-Large</mat-option>
-
             </mat-select>
           </mat-form-field>
-
-
         </mat-card-content>
         <mat-card-actions>
-            <span>
-
+          <span>
             <button mat-button-raised (click)="dec(0)">-</button>
 
-            <b class= "count">{{merchCount[0]}}</b>
-            
-
+            <b class="count">{{ merchCount[0] }}</b>
 
             <button mat-button-raised (click)="inc(0)">+</button>
-
-            </span>
-            <br>
-        
+          </span>
+          <br />
         </mat-card-actions>
-      
       </mat-card>
-
-
-
-
-      <div>
-        
-   
-        <img src="https://i.ibb.co/qg67cTx/a.jpg" alt="Saravanan" >
-  
-      </div>
-
-
+    </div>
+    <div class="col-lg-4 col-md-12 col-xs-12 col-sm-12">
+      <img
+        src="https://i.ibb.co/qg67cTx/a.jpg"
+        class="img-responsive"
+        width="100%"
+        height="100%"
+        alt="Saravanan"
+      />
+    </div>
+    <div class="col-lg-4 col-md-12 col-xs-12 col-sm-12">
+      <img
+        src="https://i.ibb.co/qg67cTx/a.jpg"
+        class="img-responsive"
+        width="100%"
+        height="100%"
+        alt="Saravanan"
+      />
+    </div>
+  </div>
 </div>
-
-
 <div class="order">
-  <div [innerHTML]="orderText" class="order-text-class">
-
-  </div>
-  <div style="font-family:'Times New Roman', Times, serif">
-    ₹ {{ amount }}
-  </div>
-  <button class="pay-btn" mat-raised-button (click)=makeMerchOrder() *ngIf="amount > 0">
+  <div [innerHTML]="orderText" class="order-text-class"></div>
+  <div style="font-family:'Times New Roman', Times, serif">₹ {{ amount }}</div>
+  <button
+    class="pay-btn"
+    mat-raised-button
+    (click)="makeMerchOrder()"
+    *ngIf="amount > 0"
+  >
     Proceed to Pay
   </button>
 </div>
