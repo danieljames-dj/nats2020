@@ -57,7 +57,7 @@ module.exports = function(req, res, db) {
 }
 
 function getBaseFee() {
-    return 350;
+    return 400;
 }
 
 async function createOrder(req, res, db, events, regCheckbox, order) {
