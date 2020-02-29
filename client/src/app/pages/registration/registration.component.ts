@@ -53,7 +53,7 @@ export class RegistrationComponent implements OnInit {
     if(c<1){
         this.cost=0;
       }else{
-      this.cost=(c)*50 + 350;
+      this.cost=(c)*50 + 400;
       }
     
     console.log(c, this.cost)
