@@ -109,3 +109,12 @@ mat-expansion-panel {
   line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
 
 }
+
+.merch-image {
+  transition:transform 0.25s ease;
+}
+
+.merch-image:hover {
+  -webkit-transform:scale(1.7); /* or some other value */
+  transform:scale(1.7);
+}
