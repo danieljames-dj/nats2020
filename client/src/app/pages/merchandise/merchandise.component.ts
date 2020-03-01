@@ -45,7 +45,7 @@ export class MerchandiseComponent implements OnInit {
   merchNames = ['Signature T-shirts','random merch','','']
   merchCosts = [500,700,550,400];
   amount=0
-  merch1Size="";
+  merchInfo = ["","","",""];
   
   
 
@@ -55,7 +55,7 @@ orderTextFunc(){
   this.orderText="";
   for(var i=0; i<this.merchCount.length; i++) {
     if (this.merchCount[i] > 0 ){
-      this.orderText+= this.merchNames[i] +"("+ this.merch1Size + ")" + " X " + this.merchCount[i].toString() + "<br>"; 
+      this.orderText+= this.merchNames[i] +"("+ this.merchInfo[i] + ")" + " X " + this.merchCount[i].toString() + "<br>"; 
     }
 }
 }
@@ -69,18 +69,17 @@ updateAmount(){
   for(var i=0; i<this.merchCount.length; i++) {
     this.amount += this.merchCount[i]*this.merchCosts[i];
 }
+this.orderTextFunc()
 }
 
 
   inc(n){
     this.merchCount[n]++;
-    this.orderTextFunc();
     this.updateAmount();
     
   }
   dec(n){
     this.merchCount[n]= Math.max(0, this.merchCount[n]-1);
-    this.orderTextFunc();
     this.updateAmount();
   }
 
@@ -123,9 +122,7 @@ updateAmount(){
   })
   }
 
-   
+  
   ngOnInit() {
-    var wid = document.getElementById('merch1').offsetHeight;
-    console.log(wid);
   }
 }

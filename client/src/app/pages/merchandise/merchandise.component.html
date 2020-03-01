@@ -4,29 +4,52 @@
 <div style="margin-top: 30px;">
   Sales begin on March 03, 2020.
 </div>
-<!-- 
+
+
+
+
+<div class="text-content">
+      
+  <div class="travel-header">
+    What we have to offer
+</div><br />
+<p>
+  Team Indian Nationals 2020 is proud to present to you our very own exclusive range of merchandise. 
+  Order your custom merchandise and receive it when you attend the competition. 
+</p>
+<br />
+
+</div>
+
+
+
+
+
+
+
 <div class="container-fluid">
   <div class="row" style="margin: 30px 0px;">
     <div class="col-lg-4 col-md-12 col-xs-12 col-sm-12">
-      <mat-card class="blocks" id="merch1">
+      <mat-card class="blocks">
         <mat-card-header>
-          <mat-card-title>Saravanan Gowthaman</mat-card-title>
+          <mat-card-title>Signature Tees</mat-card-title>
         </mat-card-header>
         <img
-          src="https://i.ibb.co/t3XKP15/Saravanan.jpg"
+          src="https://i.ibb.co/3FZ5Mz0/stock.jpg"
           class="img-responsive"
           alt="Saravanan"
         />
         <mat-card-content>
           <p>
-            A cuber since 2015, he has attended 37 competitions and organised
-            over 15 competitions. Saravanan leads the Website team of the
-            Organizing Committee.
+            Have you ever experienced the thrill of getting an autograph from your hero? Here’s your chance – 
+            The Indian Nationals 2020 team brings to you a special T-Shirt that has the autograph of not just one hero, 
+            but a collection of heroes
+             from all over the world possibly including World Record holders, World Champions and our very own Indian Heroes as well.
           </p>
 
           <mat-form-field>
             <mat-label>Select Size</mat-label>
-            <mat-select [(value)]="merch1Size">
+            <mat-select [(value)]="merchInfo[0]" (openedChange)="updateAmount()">
               <mat-option value="S">Small</mat-option>
               <mat-option value="M">Medium</mat-option>
               <mat-option value="L">Large</mat-option>
@@ -70,4 +93,48 @@
   >
     Proceed to Pay
   </button>
-</div> -->
+</div>
+
+
+
+
+<div class="container">
+  <div class="text-header">FAQs</div>
+  
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        1. If I place my order today, when will I get my merchandise?
+      </mat-expansion-panel-header>
+      All merchandise will be given to each participant in the registration counter at Indian Nationals 2020.
+       So if you wanted to wear it for the competition, fear not, you’ll get it on time to change and rock the stage.
+    </mat-expansion-panel>
+  
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        2.Can I get the merchandise even if I'm not attending the Nationals? 
+      </mat-expansion-panel-header>
+      Fear not, place the order and drop an email to info@nats20.in with the words 
+      ‘Nats Merchandise for Non-Participant’ as the subject.
+       Our organising team will contact you and get it shipped to you post competition..
+    </mat-expansion-panel>
+  
+  
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        3. Can I return my T-Shirt in case the size does not fit?
+      </mat-expansion-panel-header>
+      Since this is a custom-made to order merchandise, we unfortunately will not be able 
+      to process returns or refunds for the merchandise. However, if you feel that you have given us the wrong size by mistake,
+       please drop an email with the words ‘Merchandise change in size’ in the subject box to info@nats20.in before March 20, 2020.
+    </mat-expansion-panel>
+  
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        4. What material is the T-Shirt?
+      </mat-expansion-panel-header>
+        Our T-Shirt is made of pure 100% cotton for comfortable wearing even during the hottest days of summer ;-)
+    </mat-expansion-panel>
+  
+  </mat-accordion>
+  </div>
