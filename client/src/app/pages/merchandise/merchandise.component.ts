@@ -50,7 +50,7 @@ export class MerchandiseComponent implements OnInit {
   }
 
   merchCount = [0,0,0,0];
-  merchNames = ['Signature T-shirts','','','']
+  merchNames = ['Nats20 Signature T-Shirt','','','']
   merchCosts = [500,700,550,400];
   amount=0
   merchInfo = ["","","",""];
