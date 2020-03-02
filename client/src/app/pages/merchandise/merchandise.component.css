@@ -115,7 +115,7 @@ mat-expansion-panel {
   transition:transform 0.25s ease;
 }
 
-.merch-image:focus {
+.merch-image:hover {
   -webkit-transform:scale(1.7); /* or some other value */
   transform:scale(1.7);
 }

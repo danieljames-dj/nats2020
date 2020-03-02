@@ -11,7 +11,9 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./merchandise.component.css']
 })
 export class MerchandiseComponent implements OnInit {
+  
   constructor(private httpClient: HttpClient) { 
+   
 
     const params = new HttpParams();
     this.httpClient.get(environment.baseApiUrl + "/api/merchandise/getMerchandise", {params: params}).subscribe((res: [{merchDetails,regPaid}]) => {
