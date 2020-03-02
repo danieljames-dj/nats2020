@@ -1,11 +1,17 @@
 <img src="https://i.ibb.co/v4L9HGy/Merch.jpg" alt="Merch" class="banner" />
 
 <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet" />
+
+<!-- 
 <div style="margin-top: 30px;">
   Sales begin on March 03, 2020.
-</div>
+</div> -->
 
+<div *ngIf="loggedIn===false" class="notloggedin">
+  Please login to purchase merchandise.
+            </div>
 
+<div *ngIf="loggedIn===false" >
 
 
 <div class="text-content">
@@ -32,7 +38,7 @@
     <div class="col-lg-4 col-md-12 col-xs-12 col-sm-12">
       <mat-card class="blocks">
         <mat-card-header>
-          <mat-card-title>Signature Tees</mat-card-title>
+          <mat-card-title>Nats20 Signature T-Shirt</mat-card-title>
         </mat-card-header>
         <img
           src="https://i.ibb.co/PZq7YPf/Mr-T.jpg"
@@ -142,4 +148,13 @@
     </mat-expansion-panel>
   
   </mat-accordion>
+  </div>
+
+  <div class="disclaimer">
+    *The images are for illustrative purposes only and designed to be a representation of the final product.
+     The final product will only contain the core elements of the said merchandise (such as the actual signatures in the T-Shirt) 
+     and will be way cooler.
+  </div>
+
+  
   </div>

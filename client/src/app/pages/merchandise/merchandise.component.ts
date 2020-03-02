@@ -3,6 +3,7 @@ declare var Instamojo: any;
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,11 +12,16 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./merchandise.component.css']
 })
 export class MerchandiseComponent implements OnInit {
-  
-  constructor(private httpClient: HttpClient) { 
-   
+  loggedIn=false;
+  constructor(private httpClient: HttpClient,  private router: Router) { 
+    if (localStorage.getItem('loggedIn') != undefined) {
+      this.loggedIn = localStorage.getItem('loggedIn') === 'true'
+    }
 
     const params = new HttpParams();
+    this.httpClient.get(environment.baseApiUrl + "/api/payment/getPaymentStatus", {params: params}).subscribe((res: {details}) => {
+      this.loggedIn = (res.details != undefined)
+  })
     this.httpClient.get(environment.baseApiUrl + "/api/merchandise/getMerchandise", {params: params}).subscribe((res: [{merchDetails,regPaid}]) => {
       // console.log(res);
       // if(res.regPaid==true){

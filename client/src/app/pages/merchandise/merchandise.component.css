@@ -125,3 +125,17 @@ mat-expansion-panel {
   margin: 30% 5% 30% 5%;
   color: #56101b;
 }
+
+
+.notloggedin{
+  margin-top: 50px;
+  font-size: calc(25px + (30 - 14) * ((100vw - 300px) / (1600 - 300)));
+  line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+}
+
+.disclaimer{
+  margin-top: 25px;
+  margin-bottom: 20px;
+  font-size: calc(12px + (17 - 14) * ((100vw - 300px) / (1600 - 300)));
+  line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+}
