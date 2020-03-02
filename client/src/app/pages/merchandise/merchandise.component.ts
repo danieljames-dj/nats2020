@@ -42,7 +42,7 @@ export class MerchandiseComponent implements OnInit {
   }
 
   merchCount = [0,0,0,0];
-  merchNames = ['Signature T-shirts','random merch','','']
+  merchNames = ['Signature T-shirts','','','']
   merchCosts = [500,700,550,400];
   amount=0
   merchInfo = ["","","",""];
@@ -86,7 +86,8 @@ this.orderTextFunc()
   makeMerchOrder() {
     var merchData = {
       'merchCounts': this.merchCount,
-      'amount': this.amount
+      'amount': this.amount,
+      'info': this.merchInfo
     };
 
     console.log(merchData);

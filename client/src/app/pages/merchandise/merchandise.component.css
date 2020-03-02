@@ -86,6 +86,7 @@ button {
 .container {
   margin-top: 40px;
   justify-content: center;
+  margin-bottom: 40px;
 }
 
 
@@ -114,7 +115,13 @@ mat-expansion-panel {
   transition:transform 0.25s ease;
 }
 
-.merch-image:hover {
+.merch-image:focus {
   -webkit-transform:scale(1.7); /* or some other value */
   transform:scale(1.7);
+}
+
+.coming-soon{
+  background-color: #f3eed9;
+  margin: 30% 5% 30% 5%;
+  color: #56101b;
 }
