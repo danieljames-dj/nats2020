@@ -36,12 +36,12 @@
 .key-header{
     text-align: center;
     font-size: calc(25px + (30 - 14) * ((100vw - 300px) / (1600 - 300)));
-    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+    line-height: calc(1.7em + (1.8 - 1.2) * ((100vw - 300px)/(1600 - 300)));
 }
 .key-content{
    text-align: left;
    font-size: calc(20px + (30 - 14) * ((100vw - 300px) / (1600 - 300)));
-   line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+   line-height: calc(1.7em + (1.8 - 1.2) * ((100vw - 300px)/(1600 - 300)));
 }
 
 

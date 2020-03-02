@@ -2,19 +2,19 @@
     text-align: left;
     margin: 10px 5% 5px 5%;
     font-size: calc(25px + (30 - 14) * ((100vw - 300px) / (1600 - 300)));
-    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+    line-height: calc(1.7em + (1.8 - 1.2) * ((100vw - 300px)/(1600 - 300)));
 
 }
 .travel-sub-header{
     text-align: left;
     margin: 10px 5% 5px 5%;
     font-size: calc(23px + (27 - 14) * ((100vw - 300px) / (1600 - 300)));
-    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+    line-height: calc(1.7em + (1.8 - 1.2) * ((100vw - 300px)/(1600 - 300)));
 
 }
 .text-content{
     font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
-    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+    line-height: calc(1.7em + (1.8 - 1.2) * ((100vw - 300px)/(1600 - 300)));
 
     
     text-align: justify;

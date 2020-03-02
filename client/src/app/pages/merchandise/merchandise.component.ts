@@ -82,8 +82,13 @@ this.orderTextFunc()
 
 
   inc(n){
-    this.merchCount[n]++;
-    this.updateAmount();
+    if(this.merchInfo[0]==""){
+      alert("Please choose your size")
+    }
+    else{
+      this.merchCount[n]++;
+      this.updateAmount();
+    }
     
   }
   dec(n){

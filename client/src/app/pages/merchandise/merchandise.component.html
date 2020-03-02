@@ -11,7 +11,7 @@
   Please login to purchase merchandise.
             </div>
 
-<div *ngIf="loggedIn===true" >
+<div *ngIf="loggedIn===false" >
 
 
 <div class="text-content">
@@ -59,7 +59,7 @@
 
           <mat-form-field>
             <mat-label>Select Size</mat-label>
-            <mat-select [(value)]="merchInfo[0]" (openedChange)="updateAmount()">
+            <mat-select name="size1" [(value)]="merchInfo[0]" (openedChange)="updateAmount()" required>
               <mat-option value="XS">X-Small (34)</mat-option>             
               <mat-option value="S">Small (36)</mat-option>
               <mat-option value="M">Medium (38)</mat-option>
@@ -104,13 +104,10 @@
   class="pay-button"
     mat-raised-button
     (click)="makeMerchOrder()"
-    *ngIf="amount > 0"
-  >
+    *ngIf="amount > 0" >
     Proceed to Pay
   </button>
 </div>
-
-
 
 
 <div class="container">
