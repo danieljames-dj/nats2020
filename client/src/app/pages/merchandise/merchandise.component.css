@@ -38,7 +38,7 @@ mat-card img {
 .mat-card-title {
   font-weight: bold;
 }
-button {
+.normal-button {
   background-color: #56101b;
   color: #ebdcd7;
   height: 40px;
@@ -49,6 +49,16 @@ button {
   /* font-size: calc(20px + (30 - 14) * ((100vw - 300px) / (1600 - 300))); */
 }
 
+.pay-button {
+  background-color: #00690e;
+  color: #ebdcd7;
+  height: 40px;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  outline: none;
+  /* font-size: calc(20px + (30 - 14) * ((100vw - 300px) / (1600 - 300))); */
+}
 
 
 .count {
@@ -115,17 +125,20 @@ mat-expansion-panel {
 
 .merch-image {
   transition:transform 0.25s ease;
+  
 }
 
 .merch-image:hover {
   -webkit-transform:scale(1.7); /* or some other value */
   transform:scale(1.7);
+ 
 }
 
 .coming-soon{
   background-color: #f3eed9;
   margin: 30% 5% 30% 5%;
   color: #56101b;
+  z-index: -1;
 }
 
 

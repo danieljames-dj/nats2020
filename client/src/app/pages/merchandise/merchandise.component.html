@@ -11,7 +11,7 @@
   Please login to purchase merchandise.
             </div>
 
-<div *ngIf="loggedIn===false" >
+<div *ngIf="loggedIn===true" >
 
 
 <div class="text-content">
@@ -53,8 +53,8 @@
              from all over the world possibly including World Record holders, World Champions and our very own Indian Heroes as well.
              <br>
              <br><b style="align-items: center !important;">Be an early bird!</b>
-            <br> Order on or before March 7, 2020, 23:59 IST to save ₹50
-          
+            <br> Order before March 7, 2020, 23:59 IST to save ₹50
+          <br><br>*Sizes mentioned below are for round chest in inches.
             </p>
 
           <mat-form-field>
@@ -66,17 +66,17 @@
               <mat-option value="L">Large (40)</mat-option>
               <mat-option value="XL">X-Large (42)</mat-option>
               <mat-option value="XXL">XX-Large (44)</mat-option>
-              <mat-option value="XXXL">XX-Large (46)</mat-option>
+              <mat-option value="XXXL">XXX-Large (46)</mat-option>
             </mat-select>
           </mat-form-field>
         </mat-card-content>
         <mat-card-actions>
           <span>
-            <button mat-button-raised (click)="dec(0)">-</button>
+            <button class="normal-button" mat-button-raised (click)="dec(0)">-</button>
 
             <b class="count">{{ merchCount[0] }}</b>
 
-            <button mat-button-raised (click)="inc(0)">+</button>
+            <button class="normal-button"  mat-button-raised (click)="inc(0)">+</button>
           </span>
           <br />
         </mat-card-actions>
@@ -101,7 +101,7 @@
   <div [innerHTML]="orderText" class="order-text-class"></div>
   <div style="font-family:'Times New Roman', Times, serif">₹ {{ amount }}</div>
   <button
-    class="pay-btn"
+  class="pay-button"
     mat-raised-button
     (click)="makeMerchOrder()"
     *ngIf="amount > 0"
@@ -127,11 +127,11 @@
   
     <mat-expansion-panel>
       <mat-expansion-panel-header>
-        2.Can I get the merchandise even if I'm not attending the Nationals? 
+        2. Can I get the merchandise even if I'm not attending the Nationals?
       </mat-expansion-panel-header>
-      Fear not, place the order and drop an email to info@nats20.in with the words 
-      ‘Nats Merchandise for Non-Participant’ as the subject.
-       Our organising team will contact you and get it shipped to you post competition..
+      Fear not, place the order and drop an email to info@nats20.in with the words ‘Nats Merchandise 
+      for Non-Participant’ as the subject.
+       Our organising team will contact you and get it shipped to you post-competition...
     </mat-expansion-panel>
   
   
@@ -139,9 +139,10 @@
       <mat-expansion-panel-header>
         3. Can I return my T-Shirt in case the size does not fit?
       </mat-expansion-panel-header>
-      Since this is a custom-made to order merchandise, we unfortunately will not be able 
-      to process returns or refunds for the merchandise. However, if you feel that you have given us the wrong size by mistake,
-       please drop an email with the words ‘Merchandise change in size’ in the subject box to info@nats20.in before March 20, 2020.
+      Since this is custom-made-to-order merchandise, we, unfortunately, 
+      will not be able to process returns or refunds for the merchandise. However, if you feel that
+       you have given us the wrong size by mistake, 
+      please drop an email with the words ‘Merchandise change in size’ in the subject box to info@nats20.in before March 31, 2020.
     </mat-expansion-panel>
   
     <mat-expansion-panel>

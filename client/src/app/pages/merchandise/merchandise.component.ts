@@ -63,7 +63,7 @@ orderTextFunc(){
   this.orderText="";
   for(var i=0; i<this.merchCount.length; i++) {
     if (this.merchCount[i] > 0 ){
-      this.orderText+= this.merchNames[i] +"("+ this.merchInfo[i] + ")" + " X " + this.merchCount[i].toString() + "<br>"; 
+      this.orderText+= this.merchNames[i] +"("+ this.merchInfo[i] + ")" + " × " + this.merchCount[i].toString() + "<br>"; 
     }
 }
 }
