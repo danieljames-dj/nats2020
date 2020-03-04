@@ -1,4 +1,4 @@
-const mysqlConnection = require('../../mysql-connector').connection
+const mysqlConnectionPool = require('../../mysql-connector').connectionPool
 
 eventIdToWCAMap = { 
     "2": "222", 
@@ -23,8 +23,11 @@ eventIdToWCAMap = {
 
 module.exports = function (req, res, db) {
 
-    event = req.query.event.toString();
-    console.log(event);
+    event = req.query.event;
+    if (!Object.keys(eventIdToWCAMap).includes(event)) {
+        res.send("Event not found");
+        return;
+    }
 
     db.registrations.find({ regPaid: true }).toArray(function (err, result) {
 
@@ -37,45 +40,45 @@ module.exports = function (req, res, db) {
             }
         }
 
-        // console.log(competitorsInEvent); res.send([])
-
         competitorsInEventWCAIDs = Object.keys(competitorsInEvent);
 
         if (competitorsInEventWCAIDs.length === 0) {
             res.send([]);
         } else {
             getCompetitorRanks = function (callback) {
-                query = mysqlConnection.query("SELECT * FROM RanksAverage where personId IN (" + competitorsInEventWCAIDs + ") AND eventId = '" + eventIdToWCAMap[event] + "'", function (err, rows) {
-                    if (err) throw err;
+                query = mysqlConnectionPool.query("SELECT * FROM RanksAverage where personId IN (" + competitorsInEventWCAIDs + ") AND eventId = '" + eventIdToWCAMap[event] + "'", function (err, rows) {
+                    if (err) {
+                        res.status(500).send("Internal server error");
+                        return;
+                    }
                     return callback(rows);
                 });
             }
 
-            console.log(getCompetitorRanks(function (queryResult) {
-                function GetSortOrder(prop) {  
-                    return function(a, b) {  
-                        if (a[prop] > b[prop]) {  
-                            return 1;  
-                        } else if (a[prop] < b[prop]) {  
-                            return -1;  
-                        }  
-                        return 0;  
-                    }  
-                }  
+            getCompetitorRanks(function (queryResult) {
+
+                function GetSortOrder(prop) {
+                    return function (a, b) {
+                        if (a[prop] > b[prop]) {
+                            return 1;
+                        } else if (a[prop] < b[prop]) {
+                            return -1;
+                        }
+                        return 0;
+                    }
+                }
 
                 queryResult.sort(GetSortOrder("best"))
-                console.log(queryResult)
                 result = []
                 for (let i in queryResult) {
                     competitor = queryResult[i]
-                    console.log(competitor.personId)
                     result.push({
                         name: competitorsInEvent["'" + competitor.personId + "'"],
-                        best: (competitor.best/100)
+                        best: (competitor.best / 100)
                     })
                 }
                 res.send(result);
-            }));
+            });
         }
 
     });
