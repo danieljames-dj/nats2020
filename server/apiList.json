@@ -39,10 +39,6 @@
 			"route": "/getCompetitors",
 			"path": "./routes/competitors/getCompetitors.js",
 			"method": "GET"
-		},{
-			"route": "/psychSheet",
-			"path": "./routes/competitors/psychSheet.js",
-			"method": "GET"
 		}],
 	"accomodation":
 		[{
