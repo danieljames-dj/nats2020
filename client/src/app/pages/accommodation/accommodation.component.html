@@ -44,8 +44,35 @@
         Indian Nationals 2020.
       </p>
     </div>
+
+
+
   
     <div class="container">
+
+      <div class="cost-table mat-elevation-z8">
+
+        <table mat-table [dataSource]="dataSource">
+  
+          <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef> Type </th>
+            <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+          </ng-container>
+        
+          <!-- Name Column -->
+          <ng-container matColumnDef="cost">
+            <th mat-header-cell *matHeaderCellDef> Cost </th>
+            <td mat-cell *matCellDef="let element"> {{element.cost}} </td>
+          </ng-container>
+        
+  
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+  
+      </div>
+
       <div class="text-header">FAQs</div>
       <mat-accordion>
         <mat-expansion-panel>

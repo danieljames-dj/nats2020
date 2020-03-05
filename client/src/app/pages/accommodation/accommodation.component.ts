@@ -6,11 +6,13 @@ import * as moment from "moment";
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+
 @Component({
   selector: "app-accommodation",
   templateUrl: "./accommodation.component.html",
   styleUrls: ["./accommodation.component.css"]
 })
+
 export class AccommodationComponent implements OnInit {
 
   loggedIn = false;
@@ -36,6 +38,10 @@ export class AccommodationComponent implements OnInit {
   shareout = 0;
   paidAccomodationCount = 0;
   preferredRoommate: String;
+
+  displayedColumns: string[] = ['type', 'cost'];
+  dataSource = costData;
+
 
   constructor(private httpClient: HttpClient, private router: Router) {
     if (localStorage.getItem('loggedIn') != undefined) {
@@ -179,3 +185,20 @@ export class AccommodationComponent implements OnInit {
     }
   }
 }
+
+
+
+export interface costTable {
+  type:String;
+  cost:String;
+}
+
+const costData: costTable[] = [
+  {type: 'Raju Residency', cost:null},
+{type: 'Entire Room(Double Occupancy)', cost:'INR 1800 Per Room'},
+{type: 'Entire Room(Triple Occupancy)', cost:'INR 2400 Per Room'},
+{type: 'Sharing Basis(Double Occupancy)', cost:'INR 900 Per Person'},
+{type: 'Sharing Basis(Triple Occupancy)', cost:'INR 800 Per Person'},
+{type: 'SRM Hostel Dormitory', cost:'INR 250 Per Person'}
+
+];

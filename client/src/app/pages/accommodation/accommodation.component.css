@@ -87,3 +87,30 @@ mat-expansion-panel {
   margin:0 0 0 0;
   background-color: #f5b3b3;
 }
+
+.cost-table{
+  
+  
+  overflow: auto;
+  text-align: left;
+ 
+  width: 100%;
+}
+
+
+table {
+  width: 100%;
+}
+.mat-header-cell{
+  font-size: calc(18px + (25 - 14) * ((100vw - 300px) / (1600 - 300)));
+  color:black;
+}
+::ng-deep tbody>:nth-child(1){
+   
+  font-weight: bold;
+ }
+
+ ::ng-deep tbody>:nth-child(6)>:nth-child(1){
+   
+  font-weight: bold;
+ }
