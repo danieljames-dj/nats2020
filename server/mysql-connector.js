@@ -1,9 +1,8 @@
 const mysql = require('mysql');
-const {MYSQL_HOST,MYQSL_USER,MYSQL_PASSWORD,MYSQL_DB_NAME,MYSQL_NUM_CONNECTIONS} = require('./config');
+const {MYSQL_HOST,MYQSL_USER,MYSQL_PASSWORD,MYSQL_DB_NAME} = require('./config');
 
 module.exports = {
-    connectionPool: mysql.createPool({
-                    connectionLimit: MYSQL_NUM_CONNECTIONS,
+    connection: mysql.createConnection({
                     host: MYSQL_HOST,
                     user: MYQSL_USER,
                     password: MYSQL_PASSWORD,
