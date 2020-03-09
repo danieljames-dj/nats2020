@@ -12,6 +12,10 @@ module.exports = {
     RAZOR_KEY_SECRET: process.env.RAZOR_KEY_SECRET || "test",
     RAZOR_KEY_ID: process.env.RAZOR_KEY_ID || "test",
     INSTAMOJO_API_KEY: process.env.INSTAMOJO_API_KEY || "test",
-    INSTAMOJO_AUTH_KEY: process.env.INSTAMOJO_AUTH_KEY || "test"
-
+    INSTAMOJO_AUTH_KEY: process.env.INSTAMOJO_AUTH_KEY || "test",
+    MYSQL_HOST: process.env.MYSQL_HOST || "localhost",
+    MYQSL_USER: process.env.MYSQL_USER || "test",
+    MYSQL_PASSWORD: process.env.MYSQL_PASSWORD || "test",
+    MYSQL_DB_NAME: process.env.MYSQL_DB_NAME || "wca",
+    MYSQL_NUM_CONNECTIONS: process.env.MYSQL_NUM_CONNECTIONS || "99"
 }
