@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 const mysqlConnectionPool = require('../../mysql-connector').connectionPool
-=======
-const mysqlConnection = require('../../mysql-connector').connection
->>>>>>> parent of 4936d5c... Revert "Adding psych sheet backend"
 
 eventIdToWCAMap = { 
     "2": "222", 
