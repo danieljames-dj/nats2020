@@ -17,8 +17,5 @@ module.exports = {
     MYQSL_USER: process.env.MYSQL_USER || "test",
     MYSQL_PASSWORD: process.env.MYSQL_PASSWORD || "test",
     MYSQL_DB_NAME: process.env.MYSQL_DB_NAME || "wca",
-<<<<<<< HEAD
     MYSQL_NUM_CONNECTIONS: process.env.MYSQL_NUM_CONNECTIONS || "99"
-=======
->>>>>>> parent of 4936d5c... Revert "Adding psych sheet backend"
 }

@@ -27,16 +27,11 @@ eventIdToWCAMap = {
 
 module.exports = function (req, res, db) {
 
-<<<<<<< HEAD
     event = req.query.event;
     if (!Object.keys(eventIdToWCAMap).includes(event)) {
         res.send("Event not found");
         return;
     }
-=======
-    event = req.query.event.toString();
-    console.log(event);
->>>>>>> parent of 4936d5c... Revert "Adding psych sheet backend"
 
     db.registrations.find({ regPaid: true }).toArray(function (err, result) {
 
@@ -49,32 +44,21 @@ module.exports = function (req, res, db) {
             }
         }
 
-<<<<<<< HEAD
-=======
-        // console.log(competitorsInEvent); res.send([])
-
->>>>>>> parent of 4936d5c... Revert "Adding psych sheet backend"
         competitorsInEventWCAIDs = Object.keys(competitorsInEvent);
 
         if (competitorsInEventWCAIDs.length === 0) {
             res.send([]);
         } else {
             getCompetitorRanks = function (callback) {
-<<<<<<< HEAD
                 query = mysqlConnectionPool.query("SELECT * FROM RanksAverage where personId IN (" + competitorsInEventWCAIDs + ") AND eventId = '" + eventIdToWCAMap[event] + "'", function (err, rows) {
                     if (err) {
                         res.status(500).send("Internal server error");
                         return;
                     }
-=======
-                query = mysqlConnection.query("SELECT * FROM RanksAverage where personId IN (" + competitorsInEventWCAIDs + ") AND eventId = '" + eventIdToWCAMap[event] + "'", function (err, rows) {
-                    if (err) throw err;
->>>>>>> parent of 4936d5c... Revert "Adding psych sheet backend"
                     return callback(rows);
                 });
             }
 
-<<<<<<< HEAD
             getCompetitorRanks(function (queryResult) {
 
                 function GetSortOrder(prop) {
@@ -99,33 +83,6 @@ module.exports = function (req, res, db) {
                 }
                 res.send(result);
             });
-=======
-            console.log(getCompetitorRanks(function (queryResult) {
-                function GetSortOrder(prop) {  
-                    return function(a, b) {  
-                        if (a[prop] > b[prop]) {  
-                            return 1;  
-                        } else if (a[prop] < b[prop]) {  
-                            return -1;  
-                        }  
-                        return 0;  
-                    }  
-                }  
-
-                queryResult.sort(GetSortOrder("best"))
-                console.log(queryResult)
-                result = []
-                for (let i in queryResult) {
-                    competitor = queryResult[i]
-                    console.log(competitor.personId)
-                    result.push({
-                        name: competitorsInEvent["'" + competitor.personId + "'"],
-                        best: (competitor.best/100)
-                    })
-                }
-                res.send(result);
-            }));
->>>>>>> parent of 4936d5c... Revert "Adding psych sheet backend"
         }
 
     });
