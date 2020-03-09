@@ -22,119 +22,119 @@
       
           <!-- three Column -->
           <ng-container matColumnDef="three">
-            <th mat-header-cell *matHeaderCellDef> <img src={{eventIconUrls.three}} height="23" width="23"> </th>
+            <th mat-header-cell *matHeaderCellDef (click)="psychSheet(3)"> <img src={{eventIconUrls.three}} height="23" width="23"> </th>
             <td mat-cell *matCellDef="let item"> <div *ngIf="item.three != ''"><img src={{item.three}} height="23" width="23"></div> </td>
             <td mat-footer-cell *matFooterCellDef>{{this.aggregate_data.three}}</td>
           </ng-container>
 
           <!-- two Column -->
           <ng-container matColumnDef="two">
-            <th mat-header-cell *matHeaderCellDef> <img src={{eventIconUrls.two}} height="23" width="23"> </th>
+            <th mat-header-cell *matHeaderCellDef (click)="psychSheet(2)"> <img src={{eventIconUrls.two}} height="23" width="23"> </th>
             <td mat-cell *matCellDef="let item"> <div *ngIf="item.two != ''"><img src={{item.two}} height="23" width="23"></div> </td>
             <td mat-footer-cell *matFooterCellDef>{{this.aggregate_data.two}}</td>
           </ng-container>
 
           <!-- four Column -->
           <ng-container matColumnDef="four">
-            <th mat-header-cell *matHeaderCellDef> <img src={{eventIconUrls.four}} height="23" width="23"> </th>
+            <th mat-header-cell *matHeaderCellDef (click)="psychSheet(4)"> <img src={{eventIconUrls.four}} height="23" width="23"> </th>
             <td mat-cell *matCellDef="let item"> <div *ngIf="item.four != ''"><img src={{item.four}} height="23" width="23"></div> </td>
             <td mat-footer-cell *matFooterCellDef>{{this.aggregate_data.four}}</td>
           </ng-container>
 
           <!-- five Column -->
           <ng-container matColumnDef="five">
-            <th mat-header-cell *matHeaderCellDef> <img src={{eventIconUrls.five}} height="23" width="23"> </th>
+            <th mat-header-cell *matHeaderCellDef (click)="psychSheet(5)"> <img src={{eventIconUrls.five}} height="23" width="23"> </th>
             <td mat-cell *matCellDef="let item"> <div *ngIf="item.five != ''"><img src={{item.five}} height="23" width="23"></div> </td>
             <td mat-footer-cell *matFooterCellDef>{{this.aggregate_data.five}}</td>
           </ng-container>
 
           <!-- six Column -->
           <ng-container matColumnDef="six">
-            <th mat-header-cell *matHeaderCellDef> <img src={{eventIconUrls.six}} height="23" width="23"> </th>
+            <th mat-header-cell *matHeaderCellDef (click)="psychSheet(6)"> <img src={{eventIconUrls.six}} height="23" width="23"> </th>
             <td mat-cell *matCellDef="let item"> <div *ngIf="item.six != ''"><img src={{item.six}} height="23" width="23"></div> </td>
             <td mat-footer-cell *matFooterCellDef>{{this.aggregate_data.six}}</td>
           </ng-container>
 
           <!-- seven Column -->
           <ng-container matColumnDef="seven">
-            <th mat-header-cell *matHeaderCellDef> <img src={{eventIconUrls.seven}} height="23" width="23"> </th>
+            <th mat-header-cell *matHeaderCellDef (click)="psychSheet(7)"> <img src={{eventIconUrls.seven}} height="23" width="23"> </th>
             <td mat-cell *matCellDef="let item"> <div *ngIf="item.seven != ''"><img src={{item.seven}} height="23" width="23"></div> </td>
             <td mat-footer-cell *matFooterCellDef>{{this.aggregate_data.seven}}</td>
           </ng-container>
 
           <!-- bld3 Column -->
           <ng-container matColumnDef="bld3">
-            <th mat-header-cell *matHeaderCellDef> <img src={{eventIconUrls.bld3}} height="23" width="23"> </th>
+            <th mat-header-cell *matHeaderCellDef (click)="psychSheet('3b')"> <img src={{eventIconUrls.bld3}} height="23" width="23"> </th>
             <td mat-cell *matCellDef="let item"> <div *ngIf="item.bld3 != ''"><img src={{item.bld3}} height="23" width="23"></div> </td>
             <td mat-footer-cell *matFooterCellDef>{{this.aggregate_data.bld3}}</td>
           </ng-container>
 
           <!-- fmc Column -->
           <ng-container matColumnDef="fmc">
-            <th mat-header-cell *matHeaderCellDef> <img src={{eventIconUrls.fmc}} height="23" width="23"> </th>
+            <th mat-header-cell *matHeaderCellDef (click)="psychSheet('fmc')"> <img src={{eventIconUrls.fmc}} height="23" width="23"> </th>
             <td mat-cell *matCellDef="let item"> <div *ngIf="item.fmc != ''"><img src={{item.fmc}} height="23" width="23"></div> </td>
             <td mat-footer-cell *matFooterCellDef>{{this.aggregate_data.fmc}}</td>
           </ng-container>
 
           <!-- oh Column -->
           <ng-container matColumnDef="oh">
-            <th mat-header-cell *matHeaderCellDef> <img src={{eventIconUrls.oh}} height="23" width="23"> </th>
+            <th mat-header-cell *matHeaderCellDef (click)="psychSheet('oh')"> <img src={{eventIconUrls.oh}} height="23" width="23"> </th>
             <td mat-cell *matCellDef="let item"> <div *ngIf="item.oh != ''"><img src={{item.oh}} height="23" width="23"></div> </td>
             <td mat-footer-cell *matFooterCellDef>{{this.aggregate_data.oh}}</td>
           </ng-container>
 
           <!-- clock Column -->
           <ng-container matColumnDef="clock">
-            <th mat-header-cell *matHeaderCellDef> <img src={{eventIconUrls.clock}} height="23" width="23"> </th>
+            <th mat-header-cell *matHeaderCellDef (click)="psychSheet('cl')"> <img src={{eventIconUrls.clock}} height="23" width="23"> </th>
             <td mat-cell *matCellDef="let item"> <div *ngIf="item.clock != ''"><img src={{item.clock}} height="23" width="23"></div> </td>
             <td mat-footer-cell *matFooterCellDef>{{this.aggregate_data.clock}}</td>
           </ng-container>
 
           <!-- mega Column -->
           <ng-container matColumnDef="mega">
-            <th mat-header-cell *matHeaderCellDef> <img src={{eventIconUrls.mega}} height="23" width="23"> </th>
+            <th mat-header-cell *matHeaderCellDef (click)="psychSheet('me')"> <img src={{eventIconUrls.mega}} height="23" width="23"> </th>
             <td mat-cell *matCellDef="let item"> <div *ngIf="item.mega != ''"><img src={{item.mega}} height="23" width="23"></div> </td>
             <td mat-footer-cell *matFooterCellDef>{{this.aggregate_data.mega}}</td>
           </ng-container>
 
           <!-- pyra Column -->
           <ng-container matColumnDef="pyra">
-            <th mat-header-cell *matHeaderCellDef> <img src={{eventIconUrls.pyra}} height="23" width="23"> </th>
+            <th mat-header-cell *matHeaderCellDef (click)="psychSheet('py')"> <img src={{eventIconUrls.pyra}} height="23" width="23"> </th>
             <td mat-cell *matCellDef="let item"> <div *ngIf="item.pyra != ''"><img src={{item.pyra}} height="23" width="23"></div> </td>
             <td mat-footer-cell *matFooterCellDef>{{this.aggregate_data.pyra}}</td>
           </ng-container>
 
           <!-- skewb Column -->
           <ng-container matColumnDef="skewb">
-            <th mat-header-cell *matHeaderCellDef> <img src={{eventIconUrls.skewb}} height="23" width="23"> </th>
+            <th mat-header-cell *matHeaderCellDef (click)="psychSheet('sk')"> <img src={{eventIconUrls.skewb}} height="23" width="23"> </th>
             <td mat-cell *matCellDef="let item"> <div *ngIf="item.skewb != ''"><img src={{item.skewb}} height="23" width="23"></div> </td>
             <td mat-footer-cell *matFooterCellDef>{{this.aggregate_data.skewb}}</td>
           </ng-container>
 
           <!-- sq1 Column -->
           <ng-container matColumnDef="sq1">
-            <th mat-header-cell *matHeaderCellDef> <img src={{eventIconUrls.sq1}} height="23" width="23"> </th>
+            <th mat-header-cell *matHeaderCellDef (click)="psychSheet('sq')"> <img src={{eventIconUrls.sq1}} height="23" width="23"> </th>
             <td mat-cell *matCellDef="let item"> <div *ngIf="item.sq1 != ''"><img src={{item.sq1}} height="23" width="23"></div> </td>
             <td mat-footer-cell *matFooterCellDef>{{this.aggregate_data.sq1}}</td>
           </ng-container>
 
           <!-- bld4 Column -->
           <ng-container matColumnDef="bld4">
-            <th mat-header-cell *matHeaderCellDef> <img src={{eventIconUrls.bld4}} height="23" width="23"> </th>
+            <th mat-header-cell *matHeaderCellDef (click)="psychSheet('4b')"> <img src={{eventIconUrls.bld4}} height="23" width="23"> </th>
             <td mat-cell *matCellDef="let item"> <div *ngIf="item.bld4 != ''"><img src={{item.bld4}} height="23" width="23"></div> </td>
             <td mat-footer-cell *matFooterCellDef>{{this.aggregate_data.bld4}}</td>
           </ng-container>
 
           <!-- bld5 Column -->
           <ng-container matColumnDef="bld5">
-            <th mat-header-cell *matHeaderCellDef> <img src={{eventIconUrls.bld5}} height="23" width="23"> </th>
+            <th mat-header-cell *matHeaderCellDef (click)="psychSheet('5b')"> <img src={{eventIconUrls.bld5}} height="23" width="23"> </th>
             <td mat-cell *matCellDef="let item"> <div *ngIf="item.bld5 != ''"><img src={{item.bld5}} height="23" width="23"></div> </td>
             <td mat-footer-cell *matFooterCellDef>{{this.aggregate_data.bld5}}</td>
           </ng-container>
 
           <!-- mbld Column -->
           <ng-container matColumnDef="mbld">
-            <th mat-header-cell *matHeaderCellDef> <img src={{eventIconUrls.mbld}} height="23" width="23"> </th>
+            <th mat-header-cell *matHeaderCellDef (click)="psychSheet('mb')"> <img src={{eventIconUrls.mbld}} height="23" width="23"> </th>
             <td mat-cell *matCellDef="let item"> <div *ngIf="item.mbld != ''"><img src={{item.mbld}} height="23" width="23"></div> </td>
             <td mat-footer-cell *matFooterCellDef>{{this.aggregate_data.mbld}}</td>
           </ng-container>
