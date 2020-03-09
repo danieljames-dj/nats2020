@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { parse } from 'querystring';
+import { MatGridTileHeaderCssMatStyler } from '@angular/material';
 
 @Component({
   selector: 'app-competitors',
@@ -36,8 +37,12 @@ export class CompetitorsComponent implements OnInit {
   }
   displayedFooter = [];
   displayedColumns = ['name', 'citizenOf', 'three', 'two', 'four', 'five', 'six', 'seven', 'bld3', 'fmc', 'oh', 'clock', 'mega', 'pyra', 'skewb', 'sq1', 'bld4', 'bld5', 'mbld', 'total'];
+  psychSheetDisplayedColumns = ['back', 'name', 'best']
   public competitorsDataSource: CompetitorRegistrationData[] = [];
-  isDataAvailable: boolean = false;
+  public psychSheetDataSource: [];
+  isFirstTime: boolean = true;
+  showCompetitors: boolean = false;
+  showPsychSheet: boolean = false;
   public aggregate_data = <CompetitorRegistrationData>{};
 
   constructor(private httpClient: HttpClient) {
@@ -46,6 +51,7 @@ export class CompetitorsComponent implements OnInit {
 
   ngOnInit() {
     this.httpClient.get(environment.baseApiUrl + "/api/competitors/getCompetitors").subscribe((res: { competitors }) => {
+      this.competitorsDataSource = [];
       res.competitors.forEach(element => {
         this.competitorsDataSource.push(<CompetitorRegistrationData>{
 
@@ -81,16 +87,18 @@ export class CompetitorsComponent implements OnInit {
 
       console.log(this.competitorsDataSource);
 
-      for (let i in this.competitorsDataSource[0]) {
-        this.aggregate_data[i] = "0"
+      if (this.isFirstTime == true) {
+        for (let i in this.competitorsDataSource[0]) {
+          this.aggregate_data[i] = "0"
+        }
+  
+        this.aggregation();
+        //this.competitorsDataSource.forEach(this.aggregate(this.competitorsDataSource));
+        console.log(this.aggregate_data);
+        this.showCompetitors = true;
+        this.showPsychSheet = false;
+        this.isFirstTime = false;
       }
-
-      this.aggregation();
-      //this.competitorsDataSource.forEach(this.aggregate(this.competitorsDataSource));
-      console.log(this.aggregate_data);
-
-
-      this.isDataAvailable = true;
     });
   }
   aggregation() {
@@ -106,12 +114,26 @@ export class CompetitorsComponent implements OnInit {
     }
   }
 
+  doShowCompetitors() {
+    this.showCompetitors = true;
+    this.showPsychSheet = false;
+    this.ngOnInit();
+  }
+
+  doShowPsychSheet() {
+    this.showCompetitors = false;
+    this.showPsychSheet = true;
+    this.ngOnInit();
+  }
+  
+
   psychSheet(event) {
     console.log(event);
     const params = new HttpParams().set('event', event);
-    this.httpClient.get(environment.baseApiUrl + "/api/competitors/psychSheet", { params: params }).subscribe((res: { competitors }) => {
-      console.log(res);
+    this.httpClient.get(environment.baseApiUrl + "/api/competitors/psychSheet", { params: params }).subscribe((res:  []) => {
+      this.psychSheetDataSource = res;
     })
+    this.doShowPsychSheet();
   }
 
 }
@@ -143,4 +165,3 @@ export interface CompetitorRegistrationData {
 
   total: string;
 }
-
