@@ -19,6 +19,7 @@
     "express-session": "^1.17.0",
     "instamojo-nodejs": "0.0.5",
     "md5": "^2.2.1",
+    "moment": "^2.24.0",
     "mongodb": "^3.4.1",
     "mysql": "^2.18.1",
     "node-fetch": "^2.6.0",

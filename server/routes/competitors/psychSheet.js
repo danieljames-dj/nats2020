@@ -1,4 +1,6 @@
 const mysqlConnectionPool = require('../../mysql-connector').connectionPool
+var moment = require('moment');
+
 
 eventIdToWCAMap = { 
     "2": "222", 
@@ -12,7 +14,7 @@ eventIdToWCAMap = {
     "3b": "333bf", 
     "4b": "444bf", 
     "5b": "555bf", 
-    "mb": "333mb", 
+    "mb": "333mbf", 
     "sk": "skewb", 
     "py": "pyram", 
     "me": "minx", 
@@ -46,7 +48,13 @@ module.exports = function (req, res, db) {
             res.send([]);
         } else {
             getCompetitorRanks = function (callback) {
-                query = mysqlConnectionPool.query("SELECT * FROM RanksAverage where personId IN (" + competitorsInEventWCAIDs + ") AND eventId = '" + eventIdToWCAMap[event] + "'", function (err, rows) {
+                table = "";
+                if (event == "3b" || event == "4b" || event == "5b" || event == "mb") {
+                    table = "RanksSingle";
+                } else {
+                    table = "RanksAverage";
+                }
+                query = mysqlConnectionPool.query("SELECT * FROM " + table + " where personId IN (" + competitorsInEventWCAIDs + ") AND eventId = '" + eventIdToWCAMap[event] + "'", function (err, rows) {
                     if (err) {
                         res.status(500).send("Internal server error");
                         return;
@@ -74,11 +82,25 @@ module.exports = function (req, res, db) {
                     competitor = queryResult[i]
                     result.push({
                         name: competitorsInEvent["'" + competitor.personId + "'"],
-                        best: (competitor.best / 100)
+                        best: formatBest(competitor.best,event)
                     })
                 }
                 res.send(result);
             });
+
+            formatBest = function(best,event) {
+                if (event == "mb") {
+                    console.log(best)
+                    difference = parseInt(best.toString().slice(0,2));
+                    timeInSeconds = parseInt(best.toString().slice(2,7));
+                    console.log(timeInSeconds)
+                    missed = parseInt(best.toString().slice(7,9));
+                    console.log(((99-difference).toString() + "/" + (99-difference+missed).toString() + " " + moment().startOf('day').seconds(timeInSeconds).format('mm:ss')));
+                    return ((99-difference).toString() + "/" + (99-difference+missed).toString() + " " + moment().startOf('day').seconds(timeInSeconds).format('mm:ss'));
+                } else {
+                    return best/100;
+                }
+            }
         }
 
     });

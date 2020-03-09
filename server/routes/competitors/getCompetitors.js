@@ -31,7 +31,6 @@ module.exports = function(req, res, db) {
             }  
 
             finalList.sort(GetSortOrder("name"))
-            console.log(finalList)
         }
         res.send({competitors: finalList})
     })
