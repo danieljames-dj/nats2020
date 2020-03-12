@@ -9,6 +9,7 @@ import { AccommodationComponent } from './pages/accommodation/accommodation.comp
 import { TravelComponent } from './pages/travel/travel.component';
 import { FaqsComponent } from './pages/faqs/faqs.component';
 import { SponsorsComponent } from './pages/sponsors/sponsors.component';
+import { StatescupComponent } from './pages/statescup/statescup.component';
 
 export const AppRoutes = [
     {
@@ -55,5 +56,9 @@ export const AppRoutes = [
         path: "sponsors",
         component: SponsorsComponent,
         title: "Sponsors"
+    },{
+        path: "statescup",
+        component: StatescupComponent,
+        title: "States Cup"
     }
 ];
