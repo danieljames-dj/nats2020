@@ -42,7 +42,6 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatNativeDateModule} from '@angular/material';
 import { MatMomentDateModule } from "@angular/material-moment-adapter";
 import { FormsModule } from '@angular/forms';
-import { SponsorsComponent } from './pages/sponsors/sponsors.component';
 
 
 
@@ -63,8 +62,7 @@ import { SponsorsComponent } from './pages/sponsors/sponsors.component';
     FaqsComponent,
     FooterComponent,
     CountDownComponent,
-    TempRegsComponent,
-    SponsorsComponent
+    TempRegsComponent
     
   ],
   imports: [
