@@ -19,10 +19,6 @@ export const AppRoutes = [
         component: TeamComponent,
         title: "THE TEAM"
     },{
-        path: "registration",
-        component: RegistrationComponent,
-        title: "REGISTRATION"
-    },{
         path: "competitors",
         component: CompetitorsComponent,
         title: "COMPETITORS"
@@ -34,14 +30,6 @@ export const AppRoutes = [
         path: "events",
         component: EventsComponent,
         title: "EVENTS"
-    },{
-        path: "merchandise",
-        component: MerchandiseComponent,
-        title: "MERCHANDISE"
-    },{
-        path: "accommodation",
-        component: AccommodationComponent,
-        title: "ACCOMMODATION"
     },{
         path: "travel",
         component: TravelComponent,

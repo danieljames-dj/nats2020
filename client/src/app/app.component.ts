@@ -13,7 +13,7 @@ export class AppComponent {
     loggedIn = false;
     appRoutes = AppRoutes.slice(1);
     homeRoute = AppRoutes[0]
-    pages = ["Team", "Registration", "Competitors", "Schedule", "Events", "Merchandise", "Accommodation", "Travel", "FAQs"];
+    pages = ["Team", "Competitors", "Schedule", "Events", "Travel", "FAQs"];
     selectedPage = "Home";
     name = ""
     avatarUrl = ""
