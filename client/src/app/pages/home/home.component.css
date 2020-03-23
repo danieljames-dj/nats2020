@@ -57,6 +57,10 @@
     color: #ebdcd7;
     font-size: calc(17px + (25 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
+hr{
+    border: 10px solid; 
+    color:#56101b;
+}
 
   /* text-align:center;
   position:relative;
